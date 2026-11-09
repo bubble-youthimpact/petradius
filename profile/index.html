@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Profile | PetRadius</title>
+  <meta name="description" content="Your PetRadius profile, favorite pets and quiz history.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="My Profile | PetRadius">
+  <meta property="og:description" content="Your PetRadius profile, favorite pets and quiz history.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-base="../" data-page="profile">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="PetRadius home">
+        <img src="../assets/img/logo.webp" alt="" width="36" height="36">
+        <span>PetRadius</span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../pets/">Pet Profiles</a></li>
+          <li><a href="../resources/">Resources</a></li>
+          <li><a href="../quiz/">Quiz</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions" data-auth="out">
+        <a class="btn btn-outline" href="../signup/">Sign Up</a>
+        <a class="btn btn-primary" href="../login/">Login</a>
+      </div>
+      <div class="account-menu" data-auth="in" hidden>
+        <button class="avatar-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Account menu">
+          <span class="avatar" data-user-avatar><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+          <span class="account-name" data-user-first>Account</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="account-dropdown" hidden>
+          <div class="account-who"><span class="avatar avatar-sm" data-user-avatar><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span><strong data-user-name>My account</strong><small data-user-email></small></span></div>
+          <a href="../profile/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>My profile</a>
+          <a href="../profile/#favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>Favorite pets</a>
+          <a href="../profile/#quizzes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>Quiz history</a>
+          <button type="button" data-signout><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>Log out</button>
+        </div>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span class="bars"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <ul>
+          <li><a href="../about/">About<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+          <li><a href="../pets/">Pet Profiles<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+          <li><a href="../resources/">Resources<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+          <li><a href="../quiz/">Quiz<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+          <li><a href="../contact/">Contact<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      </ul>
+    </nav>
+    <div class="mobile-actions" data-auth="out">
+      <a class="btn btn-outline" href="../signup/">Sign Up</a>
+      <a class="btn btn-primary" href="../login/">Login</a>
+    </div>
+    <div class="mobile-account" data-auth="in" hidden>
+      <a class="mobile-account-card" href="../profile/">
+        <span class="avatar" data-user-avatar><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+        <span><strong data-user-name>My account</strong><small data-user-email></small></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <button class="btn btn-outline btn-block mobile-logout" type="button" data-signout>Log out</button>
+    </div>
+    <p class="mobile-contact">Questions? <a href="mailto:petradius.official@gmail.com">petradius.official@gmail.com</a></p>
+  </div>
+
+  <main id="main">
+    <section class="section profile-gate" id="profile-gate">
+      <div class="container">
+        <div class="gate-card">
+          <span class="gate-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+          <h1>Your PetRadius profile</h1>
+          <p>Log in to edit your details, see your favorite pets and review your quiz results.</p>
+          <div class="gate-actions">
+            <a class="btn btn-primary" id="gate-login" href="../login/">Log in</a>
+            <a class="btn btn-outline" href="../signup/">Create an account</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="profile-app" hidden>
+      <section class="profile-hero">
+        <div class="container profile-head">
+          <span class="avatar avatar-xl" id="pf-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+          <div class="profile-id">
+            <h1 id="pf-name">Welcome!</h1>
+            <p id="pf-email"></p>
+            <div class="profile-chips"><span class="chip" id="pf-provider"></span><span class="chip" id="pf-since"></span></div>
+          </div>
+          <button class="btn btn-ghost profile-signout" type="button" data-signout><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>Log out</button>
+        </div>
+      </section>
+
+      <section class="profile-body">
+        <div class="container">
+          <p class="preview-note" data-preview-note hidden><strong>Preview mode.</strong> Firebase isn’t connected yet, so accounts are saved only in this browser.</p>
+          <div class="tabs" role="tablist" aria-label="Profile sections">
+            <button class="tab" role="tab" id="t-info" aria-controls="tab-info" data-tab="info" aria-selected="true">Profile</button>
+            <button class="tab" role="tab" id="t-favorites" aria-controls="tab-favorites" data-tab="favorites" aria-selected="false" tabindex="-1">Favorites <span class="count" data-count="favorites">0</span></button>
+            <button class="tab" role="tab" id="t-quizzes" aria-controls="tab-quizzes" data-tab="quizzes" aria-selected="false" tabindex="-1">Quiz history <span class="count" data-count="quizzes">0</span></button>
+          </div>
+
+          <div class="tab-panel" id="tab-info" role="tabpanel" aria-labelledby="t-info">
+            <form class="profile-card" id="profile-form" novalidate>
+              <div class="profile-card-head"><h2>Basic info</h2><p>This helps shelters get to know you when you reach out about a pet.</p></div>
+              <div class="form-grid">
+                <div class="field"><label for="pf-displayName">Full name</label><input id="pf-displayName" name="displayName" type="text" autocomplete="name" maxlength="120" required></div>
+                <div class="field"><label for="pf-email-input">Email</label><input id="pf-email-input" name="email" type="email" readonly aria-describedby="email-hint"><small class="hint" id="email-hint">Your sign-in email can’t be changed here.</small></div>
+                <div class="field"><label for="pf-location">Location</label><input id="pf-location" name="location" type="text" autocomplete="address-level2" placeholder="City, State" maxlength="120"></div>
+                <div class="field"><label for="pf-phone">Phone <span class="optional">(optional)</span></label><input id="pf-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+                <div class="field full"><label for="pf-bio">About me</label><textarea id="pf-bio" name="bio" rows="4" maxlength="600" placeholder="Your home, schedule, experience with pets…"></textarea><small class="hint"><span id="bio-count">0</span>/600</small></div>
+              </div>
+              <div class="pw-row" id="pw-row"><div><strong>Password</strong><span>We’ll email you a secure link to change it.</span></div><button class="btn btn-ghost" id="pf-reset" type="button">Change password</button></div>
+              <div class="profile-actions">
+                <p class="form-note" id="profile-note" role="status"></p>
+                <button class="btn btn-primary" type="submit">Save changes</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="tab-panel" id="tab-favorites" role="tabpanel" aria-labelledby="t-favorites" hidden>
+            <div class="pet-grid" id="fav-grid"></div>
+            <div class="empty-card" id="fav-empty" hidden>
+              <span class="gate-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+              <h2>No favorites yet</h2>
+              <p>Tap the heart on any pet to save them here.</p>
+              <a class="btn btn-primary" href="../pets/">Browse pets</a>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-quizzes" role="tabpanel" aria-labelledby="t-quizzes" hidden>
+            <div class="summary-grid" id="quiz-summary"></div>
+            <h2 class="panel-title">History</h2>
+            <ul class="history-list" id="quiz-list"></ul>
+            <div class="empty-card" id="quiz-empty" hidden>
+              <span class="gate-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
+              <h2>No quiz results yet</h2>
+              <p>Finish a quiz while logged in and your results will appear here.</p>
+              <a class="btn btn-primary" href="../quiz/">Take a quiz</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../">
+            <img src="../assets/img/logo.webp" alt="" width="36" height="36">
+            <span>PetRadius</span>
+          </a>
+          <p>Connecting loving families with pets in need of a forever home.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="../about/">About</a></li><li><a href="../pets/">Pet Profiles</a></li><li><a href="../resources/">Resources</a></li><li><a href="../quiz/">Quiz</a></li><li><a href="../contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="caps">Contact</h3>
+          <ul class="footer-contact">
+            <li><a href="mailto:petradius.official@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>petradius.official@gmail.com</span></a></li>
+            <li><a href="https://www.instagram.com/petradiusofficial/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg><span>@petradiusofficial</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; PetRadius. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/account.js"></script>
+</body>
+</html>
