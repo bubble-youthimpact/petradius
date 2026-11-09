@@ -348,7 +348,10 @@ def layout(path, title, description, body, active="", extra_head="", extra_scrip
           </ul>
         </div>
       </div>
-      <p class="copyright">&copy; {SITE_NAME}. All Rights Reserved.</p>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; {SITE_NAME}. All Rights Reserved.</p>
+        <nav class="legal-links" aria-label="Legal"><a href="{p}privacy/">Privacy Policy</a><a href="{p}terms/">Terms of Service</a></nav>
+      </div>
     </div>
   </footer>
 
@@ -767,7 +770,7 @@ def auth(kind):
               <div class="input-icon has-toggle">{icon('lock')}<input id="a-pass" name="password" type="password" autocomplete="current-password" placeholder="Your password" required>
                 <button class="pw-toggle" type="button" aria-label="Show password" aria-pressed="false">{icon('eye')}</button></div></div>"""
         alt = f'New to PetRadius? <a href="{p}signup/">Create an account</a>'
-        legal = ""
+        legal = f'<p class="auth-legal">By continuing you agree to our <a href="{p}terms/">Terms of Service</a> and <a href="{p}privacy/">Privacy Policy</a>.</p>'
         demo = ('\n            <div class="demo-box" data-preview-note hidden>'
                 '<div><strong>Demo account</strong><span>demo@petradius.com &middot; demo1234</span></div>'
                 '<button class="btn btn-outline" id="demo-btn" type="button">Use demo account</button></div>')
@@ -783,7 +786,7 @@ def auth(kind):
               <div class="input-icon has-toggle">{icon('lock')}<input id="a-pass" name="password" type="password" autocomplete="new-password" placeholder="At least 6 characters" minlength="6" required>
                 <button class="pw-toggle" type="button" aria-label="Show password" aria-pressed="false">{icon('eye')}</button></div></div>"""
         alt = f'Already have an account? <a href="{p}login/">Log in</a>'
-        legal = '<p class="auth-legal">By creating an account you agree to use PetRadius responsibly and kindly.</p>'
+        legal = f'<p class="auth-legal">By creating an account you agree to our <a href="{p}terms/">Terms of Service</a> and <a href="{p}privacy/">Privacy Policy</a>.</p>'
 
     body = f"""    <section class="auth-page">
       <div class="container">
@@ -891,6 +894,107 @@ def profile():
     write("profile", layout("profile", "My Profile", "Your PetRadius profile, favorite pets and quiz history.", body, page="profile"))
 
 
+LEGAL_UPDATED = "November 9, 2026"
+
+
+def legal_page(slug, title, intro, sections):
+    toc = "".join(f'<li><a href="#{sid}">{e(h)}</a></li>' for sid, h, _ in sections)
+    body_html = "".join(f'<section id="{sid}"><h2>{e(h)}</h2>{content}</section>' for sid, h, content in sections)
+    body = f"""    <section class="page-hero">
+      <div class="container">
+        <h1>{e(title)}</h1>
+        <p>Last updated: {LEGAL_UPDATED}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container legal">
+        <p class="legal-intro">{intro}</p>
+        <nav class="legal-toc" aria-label="On this page"><h2>On this page</h2><ol>{toc}</ol></nav>
+        {body_html}
+      </div>
+    </section>"""
+    write(slug, layout(slug, title, f"PetRadius {title}.", body))
+
+
+def privacy():
+    m = f'<a href="mailto:{EMAIL}">{EMAIL}</a>'
+    sections = [
+        ("who", "Who we are", f"""<p>PetRadius (“PetRadius,” “we,” “us”) is a website that helps people discover adoptable pets listed by animal shelters and rescues and learn about responsible pet ownership. You can contact us at {m}.</p>"""),
+        ("collect", "Information we collect", """<p><strong>Information you give us.</strong></p>
+<ul>
+<li><strong>Account details:</strong> when you create an account with email and password, we collect your name, email address and password. Passwords are handled by Firebase Authentication and are never visible to us.</li>
+<li><strong>Profile details (optional):</strong> location, phone number and an “About me” description, if you choose to add them.</li>
+<li><strong>Activity you save:</strong> the pets you mark as favorites and the results of quizzes you complete while logged in.</li>
+<li><strong>Contact form messages:</strong> your name, email address, subject and message when you contact us.</li>
+</ul>
+<p><strong>Information from Google Sign-In.</strong> If you choose “Continue with Google,” Google shares your <strong>name, email address and profile picture</strong> with us, as shown on Google’s consent screen. We do not request access to your contacts, Gmail, Google Drive, calendar or any other Google data.</p>
+<p><strong>Information stored on your device.</strong> We use your browser’s local storage to remember basic settings, such as whether you are signed in. Firebase Authentication may also store sign-in information on your device. We do not use advertising or tracking cookies.</p>"""),
+        ("use", "How we use your information", """<ul>
+<li>To create and manage your account and let you sign in.</li>
+<li>To show your profile, saved favorite pets and quiz history back to you.</li>
+<li>To respond to messages you send through our contact form.</li>
+<li>To keep the website secure and prevent abuse.</li>
+</ul>
+<p>We do <strong>not</strong> sell your personal information, use it for advertising, or share it with shelters or other third parties for marketing.</p>"""),
+        ("google", "Google user data", """<p>PetRadius’s use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<ul>
+<li>We use your Google name, email address and profile picture only to create your PetRadius account, sign you in and display your name and picture on your profile.</li>
+<li>We do not transfer Google user data to others except as needed to provide the service (our hosting and database provider, Firebase), to comply with the law, or with your permission.</li>
+<li>We do not use Google user data for advertising, and we do not allow humans to read it except with your permission, for security purposes, or to comply with the law.</li>
+</ul>"""),
+        ("share", "How information is shared", """<p>We share information only with the service providers that help us run PetRadius:</p>
+<ul>
+<li><strong>Google Firebase</strong> (Authentication and Cloud Firestore) stores account, profile, favorites and quiz data. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase’s privacy information</a>.</li>
+<li><strong>FormSubmit</strong> delivers contact form messages to our inbox. See <a href="https://formsubmit.co/privacy.html" target="_blank" rel="noopener">FormSubmit’s privacy policy</a>.</li>
+<li><strong>GitHub Pages</strong> hosts the website and <strong>Google Fonts</strong> provides its typeface; like most web services, they may receive your IP address and basic browser information when pages load.</li>
+</ul>
+<p>We may also disclose information if required by law or to protect the safety of our users or the public.</p>
+<p>When you click “Visit shelter” or other outside links, you leave PetRadius. Those websites have their own privacy policies, and we are not responsible for them.</p>"""),
+        ("security", "Storage and security", """<p>Your account data is stored with Google Firebase. Database security rules allow each signed-in user to read and change only their own data. No method of transmission or storage is completely secure, but we take reasonable steps to protect your information.</p>"""),
+        ("retention", "Keeping and deleting your data", f"""<p>We keep your account information for as long as your account exists. You can edit your profile details at any time on your profile page and remove favorites whenever you like.</p>
+<p>To delete your account and all associated data (profile, favorites and quiz history), email us at {m} from the address linked to your account. We will delete it within 30 days. Contact form messages are kept only as long as needed to respond to you.</p>
+<p>If you signed in with Google, you can also remove PetRadius’s access at any time from your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions</a>.</p>"""),
+        ("rights", "Your choices and rights", f"""<p>You can ask to access, correct or delete your personal information by emailing {m}. Depending on where you live, you may have additional rights under local privacy laws, and we will honor requests as required by applicable law.</p>"""),
+        ("children", "Children’s privacy", f"""<p>PetRadius is not directed to children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has given us personal information, please contact us at {m} and we will delete it.</p>"""),
+        ("changes", "Changes to this policy", """<p>We may update this Privacy Policy from time to time. When we do, we will change the “Last updated” date at the top of this page. Significant changes will be highlighted on the website.</p>"""),
+        ("contact", "Contact us", f"""<p>If you have questions about this Privacy Policy or your data, email us at {m}.</p>"""),
+    ]
+    legal_page("privacy", "Privacy Policy",
+               "This Privacy Policy explains what information PetRadius collects, how we use it, and the choices you have. By using PetRadius, you agree to this policy.",
+               sections)
+
+
+def terms():
+    m = f'<a href="mailto:{EMAIL}">{EMAIL}</a>'
+    sections = [
+        ("agreement", "Agreement to these terms", """<p>By accessing or using PetRadius (the “Service”), you agree to these Terms of Service and our <a href="../privacy/">Privacy Policy</a>. If you do not agree, please do not use the Service.</p>"""),
+        ("service", "What PetRadius does", """<p>PetRadius showcases pets listed by independent animal shelters and rescue organizations and provides educational resources and quizzes about pet ownership. <strong>PetRadius is not an animal shelter or rescue and does not own, house or adopt out any animals.</strong> All adoptions are handled directly by the listing shelter or rescue under its own policies, fees and requirements.</p>"""),
+        ("listings", "Pet listings and information", """<p>Pet profiles are based on information provided by shelters and rescues and may change or become outdated at any time. A pet shown on PetRadius may already be adopted or unavailable. We do our best to keep listings accurate but cannot guarantee the accuracy, completeness or availability of any listing, including a pet’s health, behavior or history. Please confirm all details directly with the shelter before making any decision.</p>
+<p>Resources and quizzes are for general educational purposes only and are not veterinary, behavioral or professional advice. Breed-match quiz results are just for fun.</p>"""),
+        ("accounts", "Your account", """<p>You may create an account with an email address and password or by signing in with Google. You agree to provide accurate information, keep your password secure, and are responsible for activity on your account. Please tell us promptly if you believe your account has been used without permission.</p>"""),
+        ("conduct", "Acceptable use", """<p>You agree not to:</p>
+<ul>
+<li>use the Service for any unlawful, harmful or fraudulent purpose;</li>
+<li>submit false, misleading, abusive or spam messages through the contact form;</li>
+<li>attempt to access other users’ accounts or data, or interfere with the Service’s security or operation;</li>
+<li>copy, scrape or redistribute the Service’s content for commercial purposes without our permission.</li>
+</ul>"""),
+        ("content", "Content and intellectual property", """<p>The PetRadius name, logo, design and original content belong to PetRadius. Pet photos and descriptions may belong to the shelters and rescues that provided them. Linked third-party resources belong to their respective owners. You may view and share the Service for personal, non-commercial use.</p>"""),
+        ("links", "Third-party websites", """<p>The Service links to outside websites, including shelter pages, product listings and educational resources. We do not control and are not responsible for those websites, their content, products or practices. Product links are provided for convenience and are not endorsements.</p>"""),
+        ("disclaimer", "Disclaimers", """<p>The Service is provided “as is” and “as available,” without warranties of any kind, express or implied. We do not guarantee that the Service will be uninterrupted, error-free or secure, or that any pet will be suitable for you or your household.</p>"""),
+        ("liability", "Limitation of liability", """<p>To the fullest extent permitted by law, PetRadius and its team will not be liable for any indirect, incidental or consequential damages, or for any loss arising from your use of the Service, your reliance on listing information, or your dealings with any shelter, rescue or third party, including any adoption.</p>"""),
+        ("termination", "Suspension and termination", f"""<p>We may suspend or close accounts that violate these terms or misuse the Service. You may stop using the Service at any time and may request deletion of your account by emailing {m}.</p>"""),
+        ("changes", "Changes to these terms", """<p>We may update these Terms from time to time. When we do, we will change the “Last updated” date at the top of this page. Continuing to use the Service after changes take effect means you accept the updated Terms.</p>"""),
+        ("contact", "Contact us", f"""<p>Questions about these Terms? Email us at {m}.</p>"""),
+    ]
+    legal_page("terms", "Terms of Service",
+               "These Terms of Service govern your use of the PetRadius website. Please read them carefully.",
+               sections)
+
+
+
+
 def site_data():
     import json
     pets = [{"slug": x["slug"], "name": x["name"], "breed": x["breed"], "type": x["type"], "img": pet_img(x),
@@ -922,4 +1026,6 @@ if __name__ == "__main__":
     auth("login")
     auth("signup")
     profile()
+    privacy()
+    terms()
     site_data()
