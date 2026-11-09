@@ -748,3 +748,8 @@ p { margin: 0; }
 .show-more { padding: 12px 26px; }
 .show-more svg { width: 16px; height: 16px; }
 @media (max-width: 640px) { .show-more { width: 100%; } }
+
+/* Slightly larger overall scale on laptop/desktop screens */
+@media (min-width: 861px) {
+  html { zoom: 1.1; }
+}
