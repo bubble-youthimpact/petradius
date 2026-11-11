@@ -172,6 +172,15 @@ export const PETS = [
     "meta": "Adult · Female · Laguna Beach, CA"
   },
   {
+    "slug": "chiqi",
+    "name": "Chiqi",
+    "breed": "Alaskan Husky",
+    "type": "Dog",
+    "img": "assets/img/pets/chiqi.webp",
+    "status": "Available",
+    "meta": "Adult · Female · Los Angeles, CA"
+  },
+  {
     "slug": "artie",
     "name": "Artie",
     "breed": "German Shepherd Mix",
@@ -269,33 +278,6 @@ export const PETS = [
     "img": "assets/img/pets/disco.webp",
     "status": "Available",
     "meta": "Adult · Male · Pasadena, CA"
-  },
-  {
-    "slug": "frida",
-    "name": "Frida",
-    "breed": "Staffordshire Bull Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "status": "Available",
-    "meta": "Senior · Female · Los Angeles, CA"
-  },
-  {
-    "slug": "chiqi",
-    "name": "Chiqi",
-    "breed": "Alaskan Husky",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "status": "Available",
-    "meta": "Adult · Female · Los Angeles, CA"
-  },
-  {
-    "slug": "midas",
-    "name": "Midas",
-    "breed": "Pit Bull Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "status": "Available",
-    "meta": "Adult · Male · Los Angeles, CA"
   },
   {
     "slug": "poppy",
@@ -667,6 +649,15 @@ export const PETS = [
     "meta": "Adult · Male · Los Angeles, CA"
   },
   {
+    "slug": "frida",
+    "name": "Frida",
+    "breed": "Staffordshire Bull Terrier",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Female · Los Angeles, CA"
+  },
+  {
     "slug": "titan",
     "name": "Titan",
     "breed": "Boxer",
@@ -706,6 +697,15 @@ export const PETS = [
     "slug": "bueller",
     "name": "Bueller",
     "breed": "German Shepherd",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Los Angeles, CA"
+  },
+  {
+    "slug": "midas",
+    "name": "Midas",
+    "breed": "Pit Bull Terrier",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
     "status": "Unavailable",
