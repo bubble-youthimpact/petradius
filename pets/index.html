@@ -101,11 +101,13 @@
       <div class="container">
         <div class="pet-filters" id="pet-filters">
           <div class="type-chips" role="group" aria-label="Filter by type">
-            <button type="button" class="filter-chip" data-type-filter="" aria-pressed="true">All <span>90</span></button>
-            <button type="button" class="filter-chip" data-type-filter="dog" aria-pressed="false">Dogs <span>85</span></button>
-            <button type="button" class="filter-chip" data-type-filter="cat" aria-pressed="false">Cats <span>5</span></button>
+            <button type="button" class="filter-chip" data-type-filter="" aria-pressed="true">All <span data-count-type="">90</span></button>
+            <button type="button" class="filter-chip" data-type-filter="dog" aria-pressed="false">Dogs <span data-count-type="dog">85</span></button>
+            <button type="button" class="filter-chip" data-type-filter="cat" aria-pressed="false">Cats <span data-count-type="cat">5</span></button>
           </div>
           <div class="filter-selects">
+            <label class="visually-hidden" for="f-status">Status</label>
+            <select id="f-status"><option value="">All statuses</option><option value="available" selected>Available</option><option value="unavailable">Unavailable</option></select>
             <label class="visually-hidden" for="f-age">Age</label>
             <select id="f-age"><option value="">Any age</option><option value="puppy">Puppy</option><option value="young">Young</option><option value="adult">Adult</option><option value="senior">Senior</option></select>
             <label class="visually-hidden" for="f-shelter">Shelter</label>
@@ -114,7 +116,7 @@
         </div>
         <p class="results-count" id="results-count" aria-live="polite">Showing 90 pets</p>
         <div class="pet-grid">
-        <div class="pet-card-wrap" data-search="aj pointer dog adult male athletic, playful, smart, gentle laguna beach animal shelter laguna beach, ca black, white / cream" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter">
+        <div class="pet-card-wrap" data-search="aj pointer dog adult male athletic, playful, smart, gentle laguna beach animal shelter laguna beach, ca black, white / cream" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter" data-status="available">
         <a class="pet-card" href="../pets/aj/">
           <div class="thumb"><img src="../assets/img/pets/aj.webp" alt="AJ, Pointer" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -125,7 +127,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="aj" data-name="AJ" aria-pressed="false" aria-label="Save AJ to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="rollie pollie american staffordshire terrier dog adult female affectionate, couch potato, friendly, funny, gentle, loves kisses, quiet laguna beach animal shelter laguna beach, ca red / chestnut / orange, white / cream" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter">
+        <div class="pet-card-wrap" data-search="rollie pollie american staffordshire terrier dog adult female affectionate, couch potato, friendly, funny, gentle, loves kisses, quiet laguna beach animal shelter laguna beach, ca red / chestnut / orange, white / cream" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter" data-status="available">
         <a class="pet-card" href="../pets/rollie-pollie/">
           <div class="thumb"><img src="../assets/img/pets/rollie-pollie.webp" alt="Rollie Pollie, American Staffordshire Terrier" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -136,7 +138,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="rollie-pollie" data-name="Rollie Pollie" aria-pressed="false" aria-label="Save Rollie Pollie to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="lili cairn terrier &amp; chihuahua mix dog adult female quiet, curious, very shy timid laguna beach animal shelter laguna beach, ca brown, black, &amp; white" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter">
+        <div class="pet-card-wrap" data-search="lili cairn terrier &amp; chihuahua mix dog adult female quiet, curious, very shy timid laguna beach animal shelter laguna beach, ca brown, black, &amp; white" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter" data-status="available">
         <a class="pet-card" href="../pets/lili/">
           <div class="thumb"><img src="../assets/img/pets/lili.webp" alt="Lili, Cairn Terrier &amp; Chihuahua Mix" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -147,18 +149,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="lili" data-name="Lili" aria-pressed="false" aria-label="Save Lili to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="poppy beagle &amp; chihuahua mix dog adult female playful, funny, curious, friendly laguna beach animal shelter laguna beach, ca red / chestnut / orange, white / cream" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter">
-        <a class="pet-card" href="../pets/poppy/">
-          <div class="thumb"><img src="../assets/img/pets/poppy.webp" alt="Poppy, Beagle &amp; Chihuahua Mix" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Poppy</h3><span class="tag">Dog</span></div>
-            <p class="breed">Beagle &amp; Chihuahua Mix</p>
-            <p class="pet-meta">Adult · Female · Laguna Beach, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="poppy" data-name="Poppy" aria-pressed="false" aria-label="Save Poppy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="peppa pug pug &amp; chihuahua mix dog adult female athletic, playful, funny, friendly laguna beach animal shelter laguna beach, ca black, brown / chocolate" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter">
+        <div class="pet-card-wrap" data-search="peppa pug pug &amp; chihuahua mix dog adult female athletic, playful, funny, friendly laguna beach animal shelter laguna beach, ca black, brown / chocolate" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter" data-status="available">
         <a class="pet-card" href="../pets/peppa-pug/">
           <div class="thumb"><img src="../assets/img/pets/peppa-pug.webp" alt="Peppa Pug, Pug &amp; Chihuahua Mix" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -169,139 +160,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="peppa-pug" data-name="Peppa Pug" aria-pressed="false" aria-label="Save Peppa Pug to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="hamlet shepherd (mixed) dog puppy male energetic, intelligent, playful irvine animal care center irvine, ca tan/black" data-type="dog" data-age="puppy" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/hamlet/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Hamlet, Shepherd (Mixed)" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Hamlet</h3><span class="tag">Dog</span></div>
-            <p class="breed">Shepherd (Mixed)</p>
-            <p class="pet-meta">Puppy · Male · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="hamlet" data-name="Hamlet" aria-pressed="false" aria-label="Save Hamlet to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="laila domestic shorthair cat adult female calm, independent, affectionate irvine animal care center irvine, ca " data-type="cat" data-age="adult" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/laila/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Laila, Domestic Shorthair" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Laila</h3><span class="tag">Cat</span></div>
-            <p class="breed">Domestic Shorthair</p>
-            <p class="pet-meta">Adult · Female · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="laila" data-name="Laila" aria-pressed="false" aria-label="Save Laila to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="catino domestic shorthair cat senior male gentle, relaxed, friendly irvine animal care center irvine, ca " data-type="cat" data-age="senior" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/catino/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Catino, Domestic Shorthair" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Catino</h3><span class="tag">Cat</span></div>
-            <p class="breed">Domestic Shorthair</p>
-            <p class="pet-meta">Senior · Male · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="catino" data-name="Catino" aria-pressed="false" aria-label="Save Catino to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="dusty domestic shorthair cat adult female curious, playful irvine animal care center irvine, ca gray" data-type="cat" data-age="adult" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/dusty/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Dusty, Domestic Shorthair" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Dusty</h3><span class="tag">Cat</span></div>
-            <p class="breed">Domestic Shorthair</p>
-            <p class="pet-meta">Adult · Female · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="dusty" data-name="Dusty" aria-pressed="false" aria-label="Save Dusty to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="tux domestic shorthair cat adult female friendly, affectionate irvine animal care center irvine, ca tuxedo pattern" data-type="cat" data-age="adult" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/tux/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Tux, Domestic Shorthair" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Tux</h3><span class="tag">Cat</span></div>
-            <p class="breed">Domestic Shorthair</p>
-            <p class="pet-meta">Adult · Female · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="tux" data-name="Tux" aria-pressed="false" aria-label="Save Tux to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="dave boxer dog adult male loyal, active, people-oriented irvine animal care center irvine, ca " data-type="dog" data-age="adult" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/dave/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Dave, Boxer" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Dave</h3><span class="tag">Dog</span></div>
-            <p class="breed">Boxer</p>
-            <p class="pet-meta">Adult · Male · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="dave" data-name="Dave" aria-pressed="false" aria-label="Save Dave to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="wolf siberian husky dog adult male athletic, energetic, intelligent irvine animal care center irvine, ca gray/white" data-type="dog" data-age="adult" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/wolf/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Wolf, Siberian Husky" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Wolf</h3><span class="tag">Dog</span></div>
-            <p class="breed">Siberian Husky</p>
-            <p class="pet-meta">Adult · Male · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="wolf" data-name="Wolf" aria-pressed="false" aria-label="Save Wolf to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="icey german shepherd dog dog young female smart, trainable, loyal irvine animal care center irvine, ca black/tan" data-type="dog" data-age="young" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/icey/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Icey, German Shepherd Dog" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Icey</h3><span class="tag">Dog</span></div>
-            <p class="breed">German Shepherd Dog</p>
-            <p class="pet-meta">Young · Female · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="icey" data-name="Icey" aria-pressed="false" aria-label="Save Icey to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="nero labrador retriever dog senior male calm, gentle, friendly irvine animal care center irvine, ca black or yellow (not specified)" data-type="dog" data-age="senior" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/nero/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Nero, Labrador Retriever" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Nero</h3><span class="tag">Dog</span></div>
-            <p class="breed">Labrador Retriever</p>
-            <p class="pet-meta">Senior · Male · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="nero" data-name="Nero" aria-pressed="false" aria-label="Save Nero to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="cupcake domestic shorthair cat senior female quiet, affectionate, easygoing irvine animal care center irvine, ca " data-type="cat" data-age="senior" data-shelter="irvine-animal-care-center">
-        <a class="pet-card" href="../pets/cupcake/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Cupcake, Domestic Shorthair" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Cupcake</h3><span class="tag">Cat</span></div>
-            <p class="breed">Domestic Shorthair</p>
-            <p class="pet-meta">Senior · Female · Irvine, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="cupcake" data-name="Cupcake" aria-pressed="false" aria-label="Save Cupcake to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="asher chihuahua dog senior male  no stray left behind tustin, ca white/tan/yellow/fawn" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/asher/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Asher, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Asher</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Senior · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="asher" data-name="Asher" aria-pressed="false" aria-label="Save Asher to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="mischief chihuahua / mixed breed dog senior male  no stray left behind tustin, ca black/brown/chocolate" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/mischief/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Mischief, Chihuahua / Mixed Breed" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Mischief</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua / Mixed Breed</p>
-            <p class="pet-meta">Senior · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="mischief" data-name="Mischief" aria-pressed="false" aria-label="Save Mischief to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="freda terrier dog adult female  no stray left behind tustin, ca black/brown/chocolate" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="freda terrier dog adult female  no stray left behind tustin, ca black/brown/chocolate" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/freda/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Freda, Terrier" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -312,7 +171,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="freda" data-name="Freda" aria-pressed="false" aria-label="Save Freda to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="amy-rose dachshund dog senior female  no stray left behind tustin, ca brown/chocolate/tan/yellow/fawn" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="amy-rose dachshund dog senior female  no stray left behind tustin, ca brown/chocolate/tan/yellow/fawn" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/amy-rose/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Amy-Rose, Dachshund" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -323,18 +182,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="amy-rose" data-name="Amy-Rose" aria-pressed="false" aria-label="Save Amy-Rose to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="austin terrier dog adult male  no stray left behind tustin, ca black/white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/austin/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Austin, Terrier" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Austin</h3><span class="tag">Dog</span></div>
-            <p class="breed">Terrier</p>
-            <p class="pet-meta">Adult · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="austin" data-name="Austin" aria-pressed="false" aria-label="Save Austin to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="baby huey mastiff dog adult male  no stray left behind tustin, ca brindle" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="baby huey mastiff dog adult male  no stray left behind tustin, ca brindle" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/baby-huey/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Baby Huey, Mastiff" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -345,29 +193,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="baby-huey" data-name="Baby Huey" aria-pressed="false" aria-label="Save Baby Huey to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="ben french bulldog dog adult male  no stray left behind tustin, ca tan/yellow/fawn/brown/chocolate" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/ben/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Ben, French Bulldog" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Ben</h3><span class="tag">Dog</span></div>
-            <p class="breed">French Bulldog</p>
-            <p class="pet-meta">Adult · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="ben" data-name="Ben" aria-pressed="false" aria-label="Save Ben to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="boba chihuahua dog puppy female  no stray left behind tustin, ca black/tan/yellow/fawn" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/boba/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Boba, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Boba</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Puppy · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="boba" data-name="Boba" aria-pressed="false" aria-label="Save Boba to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="boo pug dog adult female  no stray left behind tustin, ca white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="boo pug dog adult female  no stray left behind tustin, ca white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/boo/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Boo, Pug" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -378,18 +204,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="boo" data-name="Boo" aria-pressed="false" aria-label="Save Boo to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="bugsy beagle dog adult male  no stray left behind tustin, ca cream/tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/bugsy/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Bugsy, Beagle" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Bugsy</h3><span class="tag">Dog</span></div>
-            <p class="breed">Beagle</p>
-            <p class="pet-meta">Adult · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="bugsy" data-name="Bugsy" aria-pressed="false" aria-label="Save Bugsy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="chico terrier dog adult male  no stray left behind tustin, ca tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="chico terrier dog adult male  no stray left behind tustin, ca tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/chico/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Chico, Terrier" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -400,7 +215,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="chico" data-name="Chico" aria-pressed="false" aria-label="Save Chico to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="cocoa chihuahua dog puppy female  no stray left behind tustin, ca black/tan/yellow/fawn" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="cocoa chihuahua dog puppy female  no stray left behind tustin, ca black/tan/yellow/fawn" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/cocoa/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Cocoa, Chihuahua" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -411,7 +226,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="cocoa" data-name="Cocoa" aria-pressed="false" aria-label="Save Cocoa to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="drake terrier dog senior male  no stray left behind tustin, ca white" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="drake terrier dog senior male  no stray left behind tustin, ca white" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/drake/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Drake, Terrier" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -422,29 +237,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="drake" data-name="Drake" aria-pressed="false" aria-label="Save Drake to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="gregory chihuahua dog adult female  no stray left behind tustin, ca white/brown/chocolate" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/gregory/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Gregory, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Gregory</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Adult · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="gregory" data-name="Gregory" aria-pressed="false" aria-label="Save Gregory to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="happy terrier dog adult male not good with cats no stray left behind tustin, ca white/tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/happy/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Happy, Terrier" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Happy</h3><span class="tag">Dog</span></div>
-            <p class="breed">Terrier</p>
-            <p class="pet-meta">Adult · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="happy" data-name="Happy" aria-pressed="false" aria-label="Save Happy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="harley &amp; remi chihuahua dog adult male &amp; female  no stray left behind tustin, ca black/brown/chocolate" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="harley &amp; remi chihuahua dog adult male &amp; female  no stray left behind tustin, ca black/brown/chocolate" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/harley-and-remi/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Harley &amp; Remi, Chihuahua" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -455,18 +248,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="harley-and-remi" data-name="Harley &amp; Remi" aria-pressed="false" aria-label="Save Harley &amp; Remi to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="jane german shepherd dog dog puppy female  no stray left behind tustin, ca black/white" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/jane/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Jane, German Shepherd Dog" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Jane</h3><span class="tag">Dog</span></div>
-            <p class="breed">German Shepherd Dog</p>
-            <p class="pet-meta">Puppy · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="jane" data-name="Jane" aria-pressed="false" aria-label="Save Jane to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="julio chihuahua dog senior male  no stray left behind tustin, ca tan/yellow/fawn" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="julio chihuahua dog senior male  no stray left behind tustin, ca tan/yellow/fawn" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/julio/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Julio, Chihuahua" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -477,51 +259,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="julio" data-name="Julio" aria-pressed="false" aria-label="Save Julio to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="kira chihuahua dog adult female  no stray left behind tustin, ca black/tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/kira/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Kira, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Kira</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Adult · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="kira" data-name="Kira" aria-pressed="false" aria-label="Save Kira to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="leia dachshund dog senior female  no stray left behind tustin, ca brindle" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/leia/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Leia, Dachshund" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Leia</h3><span class="tag">Dog</span></div>
-            <p class="breed">Dachshund</p>
-            <p class="pet-meta">Senior · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="leia" data-name="Leia" aria-pressed="false" aria-label="Save Leia to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="lemon chihuahua dog adult female  no stray left behind tustin, ca tan/yellow/fawn/white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/lemon/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Lemon, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Lemon</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Adult · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="lemon" data-name="Lemon" aria-pressed="false" aria-label="Save Lemon to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="maeve chihuahua dog adult female  no stray left behind tustin, ca black" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/maeve/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Maeve, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Maeve</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Adult · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="maeve" data-name="Maeve" aria-pressed="false" aria-label="Save Maeve to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="mary celeste boxer dog senior female  no stray left behind tustin, ca white/black" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="mary celeste boxer dog senior female  no stray left behind tustin, ca white/black" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/mary-celeste/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Mary Celeste, Boxer" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -532,7 +270,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="mary-celeste" data-name="Mary Celeste" aria-pressed="false" aria-label="Save Mary Celeste to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="mickey jr. chihuahua dog senior male  no stray left behind tustin, ca black/white" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="mickey jr. chihuahua dog senior male  no stray left behind tustin, ca black/white" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/mickey-jr/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Mickey Jr., Chihuahua" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -543,7 +281,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="mickey-jr" data-name="Mickey Jr." aria-pressed="false" aria-label="Save Mickey Jr. to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="mila chihuahua dog senior female  no stray left behind tustin, ca brown/chocolate" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="mila chihuahua dog senior female  no stray left behind tustin, ca brown/chocolate" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/mila/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Mila, Chihuahua" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -554,29 +292,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="mila" data-name="Mila" aria-pressed="false" aria-label="Save Mila to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="nala chihuahua dog adult female  no stray left behind tustin, ca brown" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/nala/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Nala, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Nala</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Adult · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="nala" data-name="Nala" aria-pressed="false" aria-label="Save Nala to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="nena chihuahua dog adult female  no stray left behind tustin, ca " data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/nena/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Nena, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Nena</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Adult · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="nena" data-name="Nena" aria-pressed="false" aria-label="Save Nena to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="oscar french bulldog dog adult male  no stray left behind tustin, ca brindle/white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="oscar french bulldog dog adult male  no stray left behind tustin, ca brindle/white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/oscar/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Oscar, French Bulldog" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -587,18 +303,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="oscar" data-name="Oscar" aria-pressed="false" aria-label="Save Oscar to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="peep miniature dachshund dog senior female  no stray left behind tustin, ca brown/chocolate" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/peep/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Peep, Miniature Dachshund" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Peep</h3><span class="tag">Dog</span></div>
-            <p class="breed">Miniature Dachshund</p>
-            <p class="pet-meta">Senior · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="peep" data-name="Peep" aria-pressed="false" aria-label="Save Peep to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="poncho dachshund dog adult male  no stray left behind tustin, ca red/golden/orange/chestnut/black" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="poncho dachshund dog adult male  no stray left behind tustin, ca red/golden/orange/chestnut/black" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/poncho/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Poncho, Dachshund" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -609,40 +314,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="poncho" data-name="Poncho" aria-pressed="false" aria-label="Save Poncho to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="pumpkin miniature pinscher dog puppy female  no stray left behind tustin, ca tan/yellow/fawn/white" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/pumpkin/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Pumpkin, Miniature Pinscher" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Pumpkin</h3><span class="tag">Dog</span></div>
-            <p class="breed">Miniature Pinscher</p>
-            <p class="pet-meta">Puppy · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="pumpkin" data-name="Pumpkin" aria-pressed="false" aria-label="Save Pumpkin to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="robert pug dog adult male  no stray left behind tustin, ca brown/chocolate/black" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/robert/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Robert, Pug" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Robert</h3><span class="tag">Dog</span></div>
-            <p class="breed">Pug</p>
-            <p class="pet-meta">Adult · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="robert" data-name="Robert" aria-pressed="false" aria-label="Save Robert to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="sullivan yorkshire terrier dog senior female  no stray left behind tustin, ca brown/chocolate/cream" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/sullivan/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Sullivan, Yorkshire Terrier" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Sullivan</h3><span class="tag">Dog</span></div>
-            <p class="breed">Yorkshire Terrier</p>
-            <p class="pet-meta">Senior · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="sullivan" data-name="Sullivan" aria-pressed="false" aria-label="Save Sullivan to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="trudy french bulldog dog adult female  no stray left behind tustin, ca brown/chocolate/white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
+        <div class="pet-card-wrap" data-search="trudy french bulldog dog adult female  no stray left behind tustin, ca brown/chocolate/white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="available">
         <a class="pet-card" href="../pets/trudy/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Trudy, French Bulldog" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -653,128 +325,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="trudy" data-name="Trudy" aria-pressed="false" aria-label="Save Trudy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="truffle chihuahua dog puppy female  no stray left behind tustin, ca black/tan/yellow/fawn" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/truffle/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Truffle, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Truffle</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Puppy · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="truffle" data-name="Truffle" aria-pressed="false" aria-label="Save Truffle to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="zella french bulldog dog adult female  no stray left behind tustin, ca brown/chocolate/black" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind">
-        <a class="pet-card" href="../pets/zella/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Zella, French Bulldog" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Zella</h3><span class="tag">Dog</span></div>
-            <p class="breed">French Bulldog</p>
-            <p class="pet-meta">Adult · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="zella" data-name="Zella" aria-pressed="false" aria-label="Save Zella to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="clay siberian husky dog adult male  oc animal care tustin, ca black" data-type="dog" data-age="adult" data-shelter="oc-animal-care">
-        <a class="pet-card" href="../pets/clay/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Clay, Siberian Husky" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Clay</h3><span class="tag">Dog</span></div>
-            <p class="breed">Siberian Husky</p>
-            <p class="pet-meta">Adult · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="clay" data-name="Clay" aria-pressed="false" aria-label="Save Clay to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="alfredo american bulldog dog adult male  oc animal care tustin, ca white" data-type="dog" data-age="adult" data-shelter="oc-animal-care">
-        <a class="pet-card" href="../pets/alfredo/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Alfredo, American Bulldog" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Alfredo</h3><span class="tag">Dog</span></div>
-            <p class="breed">American Bulldog</p>
-            <p class="pet-meta">Adult · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="alfredo" data-name="Alfredo" aria-pressed="false" aria-label="Save Alfredo to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="chico terrier/chihuahua dog adult male  oc animal care tustin, ca tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="oc-animal-care">
-        <a class="pet-card" href="../pets/chico-oc-animal-care/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Chico, Terrier/Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Chico</h3><span class="tag">Dog</span></div>
-            <p class="breed">Terrier/Chihuahua</p>
-            <p class="pet-meta">Adult · Male · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="chico-oc-animal-care" data-name="Chico" aria-pressed="false" aria-label="Save Chico to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="mimi pit bull mix dog senior female  oc animal care tustin, ca " data-type="dog" data-age="senior" data-shelter="oc-animal-care">
-        <a class="pet-card" href="../pets/mimi/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Mimi, Pit Bull Mix" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Mimi</h3><span class="tag">Dog</span></div>
-            <p class="breed">Pit Bull Mix</p>
-            <p class="pet-meta">Senior · Female · Tustin, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="mimi" data-name="Mimi" aria-pressed="false" aria-label="Save Mimi to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="butter bean pug &amp; chihuahua mix dog adult female friendly, athletic, affectionate laguna beach animal shelter laguna beach, ca merle (red)" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter">
-        <a class="pet-card" href="../pets/butter-bean/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Butter Bean, Pug &amp; Chihuahua Mix" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Butter Bean</h3><span class="tag">Dog</span></div>
-            <p class="breed">Pug &amp; Chihuahua Mix</p>
-            <p class="pet-meta">Adult · Female · Laguna Beach, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="butter-bean" data-name="Butter Bean" aria-pressed="false" aria-label="Save Butter Bean to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="boyd german shepherd dog dog adult male friendly, playful, affectionate laguna beach animal shelter laguna beach, ca brown brindle" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter">
-        <a class="pet-card" href="../pets/boyd/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Boyd, German Shepherd Dog" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Boyd</h3><span class="tag">Dog</span></div>
-            <p class="breed">German Shepherd Dog</p>
-            <p class="pet-meta">Adult · Male · Laguna Beach, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="boyd" data-name="Boyd" aria-pressed="false" aria-label="Save Boyd to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="lucy german shepherd dog dog adult female  la animal services los angeles, ca black" data-type="dog" data-age="adult" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/lucy/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Lucy, German Shepherd Dog" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Lucy</h3><span class="tag">Dog</span></div>
-            <p class="breed">German Shepherd Dog</p>
-            <p class="pet-meta">Adult · Female · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="lucy" data-name="Lucy" aria-pressed="false" aria-label="Save Lucy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="kai chihuahua dog adult female  la animal services los angeles, ca white" data-type="dog" data-age="adult" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/kai/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Kai, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Kai</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Adult · Female · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="kai" data-name="Kai" aria-pressed="false" aria-label="Save Kai to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="ron american staffordshire terrier dog adult male  la animal services los angeles, ca black" data-type="dog" data-age="adult" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/ron/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Ron, American Staffordshire Terrier" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Ron</h3><span class="tag">Dog</span></div>
-            <p class="breed">American Staffordshire Terrier</p>
-            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="ron" data-name="Ron" aria-pressed="false" aria-label="Save Ron to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="frida staffordshire bull terrier dog senior female  la animal services los angeles, ca brown" data-type="dog" data-age="senior" data-shelter="la-animal-services">
+        <div class="pet-card-wrap" data-search="frida staffordshire bull terrier dog senior female  la animal services los angeles, ca brown" data-type="dog" data-age="senior" data-shelter="la-animal-services" data-status="available">
         <a class="pet-card" href="../pets/frida/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Frida, Staffordshire Bull Terrier" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -785,51 +336,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="frida" data-name="Frida" aria-pressed="false" aria-label="Save Frida to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="titan boxer dog adult male  la animal services los angeles, ca black" data-type="dog" data-age="adult" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/titan/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Titan, Boxer" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Titan</h3><span class="tag">Dog</span></div>
-            <p class="breed">Boxer</p>
-            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="titan" data-name="Titan" aria-pressed="false" aria-label="Save Titan to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="estella labrador retriever dog senior female  la animal services los angeles, ca chocolate" data-type="dog" data-age="senior" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/estella/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Estella, Labrador Retriever" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Estella</h3><span class="tag">Dog</span></div>
-            <p class="breed">Labrador Retriever</p>
-            <p class="pet-meta">Senior · Female · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="estella" data-name="Estella" aria-pressed="false" aria-label="Save Estella to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="pippen chihuahua dog adult male  la animal services los angeles, ca white" data-type="dog" data-age="adult" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/pippen/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Pippen, Chihuahua" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Pippen</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chihuahua</p>
-            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="pippen" data-name="Pippen" aria-pressed="false" aria-label="Save Pippen to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="sasha pit bull terrier dog adult female  la animal services los angeles, ca brown" data-type="dog" data-age="adult" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/sasha/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Sasha, Pit Bull Terrier" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Sasha</h3><span class="tag">Dog</span></div>
-            <p class="breed">Pit Bull Terrier</p>
-            <p class="pet-meta">Adult · Female · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="sasha" data-name="Sasha" aria-pressed="false" aria-label="Save Sasha to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="chiqi alaskan husky dog adult female  la animal services los angeles, ca white" data-type="dog" data-age="adult" data-shelter="la-animal-services">
+        <div class="pet-card-wrap" data-search="chiqi alaskan husky dog adult female  la animal services los angeles, ca white" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="available">
         <a class="pet-card" href="../pets/chiqi/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Chiqi, Alaskan Husky" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -840,18 +347,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="chiqi" data-name="Chiqi" aria-pressed="false" aria-label="Save Chiqi to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="bueller german shepherd dog adult male  la animal services los angeles, ca brown" data-type="dog" data-age="adult" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/bueller/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Bueller, German Shepherd" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Bueller</h3><span class="tag">Dog</span></div>
-            <p class="breed">German Shepherd</p>
-            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="bueller" data-name="Bueller" aria-pressed="false" aria-label="Save Bueller to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="midas pit bull terrier dog adult male  la animal services los angeles, ca fawn" data-type="dog" data-age="adult" data-shelter="la-animal-services">
+        <div class="pet-card-wrap" data-search="midas pit bull terrier dog adult male  la animal services los angeles, ca fawn" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="available">
         <a class="pet-card" href="../pets/midas/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Midas, Pit Bull Terrier" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -862,51 +358,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="midas" data-name="Midas" aria-pressed="false" aria-label="Save Midas to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="zeus boxer dog adult male  la animal services los angeles, ca red" data-type="dog" data-age="adult" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/zeus/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Zeus, Boxer" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Zeus</h3><span class="tag">Dog</span></div>
-            <p class="breed">Boxer</p>
-            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="zeus" data-name="Zeus" aria-pressed="false" aria-label="Save Zeus to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="racco skye terrier dog adult male  la animal services los angeles, ca black" data-type="dog" data-age="adult" data-shelter="la-animal-services">
-        <a class="pet-card" href="../pets/racco/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Racco, Skye Terrier" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Racco</h3><span class="tag">Dog</span></div>
-            <p class="breed">Skye Terrier</p>
-            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="racco" data-name="Racco" aria-pressed="false" aria-label="Save Racco to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="coco chow chow dog adult female  pets in need redwood city, ca brown" data-type="dog" data-age="adult" data-shelter="pets-in-need">
-        <a class="pet-card" href="../pets/coco/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Coco, Chow Chow" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Coco</h3><span class="tag">Dog</span></div>
-            <p class="breed">Chow Chow</p>
-            <p class="pet-meta">Adult · Female · Redwood City, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="coco" data-name="Coco" aria-pressed="false" aria-label="Save Coco to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="nani husky dog puppy female  pets in need redwood city, ca black and white" data-type="dog" data-age="puppy" data-shelter="pets-in-need">
-        <a class="pet-card" href="../pets/nani/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Nani, Husky" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Nani</h3><span class="tag">Dog</span></div>
-            <p class="breed">Husky</p>
-            <p class="pet-meta">Puppy · Female · Redwood City, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="nani" data-name="Nani" aria-pressed="false" aria-label="Save Nani to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="artie german shepherd mix dog adult male  pets in need redwood city, ca brown" data-type="dog" data-age="adult" data-shelter="pets-in-need">
+        <div class="pet-card-wrap" data-search="artie german shepherd mix dog adult male  pets in need redwood city, ca brown" data-type="dog" data-age="adult" data-shelter="pets-in-need" data-status="available">
         <a class="pet-card" href="../pets/artie/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Artie, German Shepherd Mix" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -917,7 +369,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="artie" data-name="Artie" aria-pressed="false" aria-label="Save Artie to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="coral pit bull terrier mix dog adult female  pets in need redwood city, ca white and brown" data-type="dog" data-age="adult" data-shelter="pets-in-need">
+        <div class="pet-card-wrap" data-search="coral pit bull terrier mix dog adult female  pets in need redwood city, ca white and brown" data-type="dog" data-age="adult" data-shelter="pets-in-need" data-status="available">
         <a class="pet-card" href="../pets/coral/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Coral, Pit Bull Terrier Mix" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -928,62 +380,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="coral" data-name="Coral" aria-pressed="false" aria-label="Save Coral to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="edwin jack russell terrier mix dog puppy male  pets in need redwood city, ca white and gray" data-type="dog" data-age="puppy" data-shelter="pets-in-need">
-        <a class="pet-card" href="../pets/edwin/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Edwin, Jack Russell Terrier Mix" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Edwin</h3><span class="tag">Dog</span></div>
-            <p class="breed">Jack Russell Terrier Mix</p>
-            <p class="pet-meta">Puppy · Male · Redwood City, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="edwin" data-name="Edwin" aria-pressed="false" aria-label="Save Edwin to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="marigold poodle mix dog puppy female  pets in need redwood city, ca white/cream" data-type="dog" data-age="puppy" data-shelter="pets-in-need">
-        <a class="pet-card" href="../pets/marigold/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Marigold, Poodle Mix" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Marigold</h3><span class="tag">Dog</span></div>
-            <p class="breed">Poodle Mix</p>
-            <p class="pet-meta">Puppy · Female · Redwood City, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="marigold" data-name="Marigold" aria-pressed="false" aria-label="Save Marigold to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="coconut husky dog adult female  pets in need redwood city, ca white" data-type="dog" data-age="adult" data-shelter="pets-in-need">
-        <a class="pet-card" href="../pets/coconut/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Coconut, Husky" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Coconut</h3><span class="tag">Dog</span></div>
-            <p class="breed">Husky</p>
-            <p class="pet-meta">Adult · Female · Redwood City, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="coconut" data-name="Coconut" aria-pressed="false" aria-label="Save Coconut to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="chloe pit bull terrier mix dog puppy female  pets in need redwood city, ca white and black" data-type="dog" data-age="puppy" data-shelter="pets-in-need">
-        <a class="pet-card" href="../pets/chloe/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Chloe, Pit Bull Terrier Mix" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Chloe</h3><span class="tag">Dog</span></div>
-            <p class="breed">Pit Bull Terrier Mix</p>
-            <p class="pet-meta">Puppy · Female · Redwood City, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="chloe" data-name="Chloe" aria-pressed="false" aria-label="Save Chloe to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="missy cane corso dog adult female  pets in need redwood city, ca black" data-type="dog" data-age="adult" data-shelter="pets-in-need">
-        <a class="pet-card" href="../pets/missy/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Missy, Cane Corso" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Missy</h3><span class="tag">Dog</span></div>
-            <p class="breed">Cane Corso</p>
-            <p class="pet-meta">Adult · Female · Redwood City, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="missy" data-name="Missy" aria-pressed="false" aria-label="Save Missy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="kona german shepherd dog adult female smart, athletic, goofy, playful, adventurous; loves pools and chew treats. pasadena humane pasadena, ca tan" data-type="dog" data-age="adult" data-shelter="pasadena-humane">
+        <div class="pet-card-wrap" data-search="kona german shepherd dog adult female smart, athletic, goofy, playful, adventurous; loves pools and chew treats. pasadena humane pasadena, ca tan" data-type="dog" data-age="adult" data-shelter="pasadena-humane" data-status="available">
         <a class="pet-card" href="../pets/kona/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Kona, German Shepherd" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -994,18 +391,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="kona" data-name="Kona" aria-pressed="false" aria-label="Save Kona to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="chica pit bull terrier dog adult female sweet, loyal, affectionate, cuddly, people-oriented. pasadena humane pasadena, ca grey/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane">
-        <a class="pet-card" href="../pets/chica/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Chica, Pit Bull Terrier" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Chica</h3><span class="tag">Dog</span></div>
-            <p class="breed">Pit Bull Terrier</p>
-            <p class="pet-meta">Adult · Female · Pasadena, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="chica" data-name="Chica" aria-pressed="false" aria-label="Save Chica to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="boda pit bull terrier dog adult male gentle, confident, mellow, playful, polite; loves toys and swimming. pasadena humane pasadena, ca grey/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane">
+        <div class="pet-card-wrap" data-search="boda pit bull terrier dog adult male gentle, confident, mellow, playful, polite; loves toys and swimming. pasadena humane pasadena, ca grey/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane" data-status="available">
         <a class="pet-card" href="../pets/boda/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Boda, Pit Bull Terrier" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -1016,7 +402,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="boda" data-name="Boda" aria-pressed="false" aria-label="Save Boda to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="raya pit bull terrier / dutch shepherd dog adult female silly, playful, social, affectionate, cuddly. pasadena humane pasadena, ca brindle/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane">
+        <div class="pet-card-wrap" data-search="raya pit bull terrier / dutch shepherd dog adult female silly, playful, social, affectionate, cuddly. pasadena humane pasadena, ca brindle/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane" data-status="available">
         <a class="pet-card" href="../pets/raya/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Raya, Pit Bull Terrier / Dutch Shepherd" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -1027,18 +413,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="raya" data-name="Raya" aria-pressed="false" aria-label="Save Raya to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="monica american pit bull terrier dog adult female sweet, enthusiastic, playful, people-loving; would do best as the only pet. pasadena humane pasadena, ca black/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane">
-        <a class="pet-card" href="../pets/monica/">
-          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Monica, American Pit Bull Terrier" loading="lazy" width="577" height="577"></div>
-          <div class="body">
-            <div class="row"><h3>Monica</h3><span class="tag">Dog</span></div>
-            <p class="breed">American Pit Bull Terrier</p>
-            <p class="pet-meta">Adult · Female · Pasadena, CA</p>
-          </div>
-        </a>
-        <button class="card-fav" type="button" data-fav="monica" data-name="Monica" aria-pressed="false" aria-label="Save Monica to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
-        </div>
-        <div class="pet-card-wrap" data-search="saba german shepherd dog senior female playful, confident, easygoing, affectionate, loyal. pasadena humane pasadena, ca tan/black" data-type="dog" data-age="senior" data-shelter="pasadena-humane">
+        <div class="pet-card-wrap" data-search="saba german shepherd dog senior female playful, confident, easygoing, affectionate, loyal. pasadena humane pasadena, ca tan/black" data-type="dog" data-age="senior" data-shelter="pasadena-humane" data-status="available">
         <a class="pet-card" href="../pets/saba/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Saba, German Shepherd" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -1049,7 +424,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="saba" data-name="Saba" aria-pressed="false" aria-label="Save Saba to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="whimsy german shepherd dog adult female adventurous, affectionate, playful, intelligent, food-motivated. pasadena humane pasadena, ca black/brown" data-type="dog" data-age="adult" data-shelter="pasadena-humane">
+        <div class="pet-card-wrap" data-search="whimsy german shepherd dog adult female adventurous, affectionate, playful, intelligent, food-motivated. pasadena humane pasadena, ca black/brown" data-type="dog" data-age="adult" data-shelter="pasadena-humane" data-status="available">
         <a class="pet-card" href="../pets/whimsy/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Whimsy, German Shepherd" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -1060,7 +435,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="whimsy" data-name="Whimsy" aria-pressed="false" aria-label="Save Whimsy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="osito pit bull terrier dog senior male sweet, easygoing, goofy, gentle, affectionate; good leash manners. pasadena humane pasadena, ca grey/white" data-type="dog" data-age="senior" data-shelter="pasadena-humane">
+        <div class="pet-card-wrap" data-search="osito pit bull terrier dog senior male sweet, easygoing, goofy, gentle, affectionate; good leash manners. pasadena humane pasadena, ca grey/white" data-type="dog" data-age="senior" data-shelter="pasadena-humane" data-status="available">
         <a class="pet-card" href="../pets/osito/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Osito, Pit Bull Terrier" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -1071,7 +446,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="osito" data-name="Osito" aria-pressed="false" aria-label="Save Osito to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="rocco american pit bull terrier dog adult male gentle, happy, affectionate, treat-loving, playful. pasadena humane pasadena, ca fawn/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane">
+        <div class="pet-card-wrap" data-search="rocco american pit bull terrier dog adult male gentle, happy, affectionate, treat-loving, playful. pasadena humane pasadena, ca fawn/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane" data-status="available">
         <a class="pet-card" href="../pets/rocco/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Rocco, American Pit Bull Terrier" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -1082,7 +457,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="rocco" data-name="Rocco" aria-pressed="false" aria-label="Save Rocco to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="ella german shepherd dog senior female  pasadena humane pasadena, ca brown/black" data-type="dog" data-age="senior" data-shelter="pasadena-humane">
+        <div class="pet-card-wrap" data-search="ella german shepherd dog senior female  pasadena humane pasadena, ca brown/black" data-type="dog" data-age="senior" data-shelter="pasadena-humane" data-status="available">
         <a class="pet-card" href="../pets/ella/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Ella, German Shepherd" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -1093,7 +468,7 @@
         </a>
         <button class="card-fav" type="button" data-fav="ella" data-name="Ella" aria-pressed="false" aria-label="Save Ella to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
-        <div class="pet-card-wrap" data-search="disco german shepherd dog adult male  pasadena humane pasadena, ca black/brown" data-type="dog" data-age="adult" data-shelter="pasadena-humane">
+        <div class="pet-card-wrap" data-search="disco german shepherd dog adult male  pasadena humane pasadena, ca black/brown" data-type="dog" data-age="adult" data-shelter="pasadena-humane" data-status="available">
         <a class="pet-card" href="../pets/disco/">
           <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Disco, German Shepherd" loading="lazy" width="577" height="577"></div>
           <div class="body">
@@ -1103,6 +478,633 @@
           </div>
         </a>
         <button class="card-fav" type="button" data-fav="disco" data-name="Disco" aria-pressed="false" aria-label="Save Disco to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="poppy beagle &amp; chihuahua mix dog adult female playful, funny, curious, friendly laguna beach animal shelter laguna beach, ca red / chestnut / orange, white / cream" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter" data-status="unavailable">
+        <a class="pet-card" href="../pets/poppy/">
+          <div class="thumb"><img src="../assets/img/pets/poppy.webp" alt="Poppy, Beagle &amp; Chihuahua Mix" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Poppy</h3><span class="tag">Dog</span></div>
+            <p class="breed">Beagle &amp; Chihuahua Mix</p>
+            <p class="pet-meta">Adult · Female · Laguna Beach, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="poppy" data-name="Poppy" aria-pressed="false" aria-label="Save Poppy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="hamlet shepherd (mixed) dog puppy male energetic, intelligent, playful irvine animal care center irvine, ca tan/black" data-type="dog" data-age="puppy" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/hamlet/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Hamlet, Shepherd (Mixed)" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Hamlet</h3><span class="tag">Dog</span></div>
+            <p class="breed">Shepherd (Mixed)</p>
+            <p class="pet-meta">Puppy · Male · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="hamlet" data-name="Hamlet" aria-pressed="false" aria-label="Save Hamlet to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="laila domestic shorthair cat adult female calm, independent, affectionate irvine animal care center irvine, ca " data-type="cat" data-age="adult" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/laila/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Laila, Domestic Shorthair" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Laila</h3><span class="tag">Cat</span></div>
+            <p class="breed">Domestic Shorthair</p>
+            <p class="pet-meta">Adult · Female · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="laila" data-name="Laila" aria-pressed="false" aria-label="Save Laila to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="catino domestic shorthair cat senior male gentle, relaxed, friendly irvine animal care center irvine, ca " data-type="cat" data-age="senior" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/catino/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Catino, Domestic Shorthair" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Catino</h3><span class="tag">Cat</span></div>
+            <p class="breed">Domestic Shorthair</p>
+            <p class="pet-meta">Senior · Male · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="catino" data-name="Catino" aria-pressed="false" aria-label="Save Catino to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="dusty domestic shorthair cat adult female curious, playful irvine animal care center irvine, ca gray" data-type="cat" data-age="adult" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/dusty/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Dusty, Domestic Shorthair" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Dusty</h3><span class="tag">Cat</span></div>
+            <p class="breed">Domestic Shorthair</p>
+            <p class="pet-meta">Adult · Female · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="dusty" data-name="Dusty" aria-pressed="false" aria-label="Save Dusty to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="tux domestic shorthair cat adult female friendly, affectionate irvine animal care center irvine, ca tuxedo pattern" data-type="cat" data-age="adult" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/tux/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Tux, Domestic Shorthair" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Tux</h3><span class="tag">Cat</span></div>
+            <p class="breed">Domestic Shorthair</p>
+            <p class="pet-meta">Adult · Female · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="tux" data-name="Tux" aria-pressed="false" aria-label="Save Tux to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="dave boxer dog adult male loyal, active, people-oriented irvine animal care center irvine, ca " data-type="dog" data-age="adult" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/dave/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Dave, Boxer" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Dave</h3><span class="tag">Dog</span></div>
+            <p class="breed">Boxer</p>
+            <p class="pet-meta">Adult · Male · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="dave" data-name="Dave" aria-pressed="false" aria-label="Save Dave to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="wolf siberian husky dog adult male athletic, energetic, intelligent irvine animal care center irvine, ca gray/white" data-type="dog" data-age="adult" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/wolf/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Wolf, Siberian Husky" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Wolf</h3><span class="tag">Dog</span></div>
+            <p class="breed">Siberian Husky</p>
+            <p class="pet-meta">Adult · Male · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="wolf" data-name="Wolf" aria-pressed="false" aria-label="Save Wolf to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="icey german shepherd dog dog young female smart, trainable, loyal irvine animal care center irvine, ca black/tan" data-type="dog" data-age="young" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/icey/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Icey, German Shepherd Dog" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Icey</h3><span class="tag">Dog</span></div>
+            <p class="breed">German Shepherd Dog</p>
+            <p class="pet-meta">Young · Female · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="icey" data-name="Icey" aria-pressed="false" aria-label="Save Icey to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="nero labrador retriever dog senior male calm, gentle, friendly irvine animal care center irvine, ca black or yellow (not specified)" data-type="dog" data-age="senior" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/nero/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Nero, Labrador Retriever" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Nero</h3><span class="tag">Dog</span></div>
+            <p class="breed">Labrador Retriever</p>
+            <p class="pet-meta">Senior · Male · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="nero" data-name="Nero" aria-pressed="false" aria-label="Save Nero to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="cupcake domestic shorthair cat senior female quiet, affectionate, easygoing irvine animal care center irvine, ca " data-type="cat" data-age="senior" data-shelter="irvine-animal-care-center" data-status="unavailable">
+        <a class="pet-card" href="../pets/cupcake/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-cat.webp" alt="Cupcake, Domestic Shorthair" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Cupcake</h3><span class="tag">Cat</span></div>
+            <p class="breed">Domestic Shorthair</p>
+            <p class="pet-meta">Senior · Female · Irvine, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="cupcake" data-name="Cupcake" aria-pressed="false" aria-label="Save Cupcake to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="asher chihuahua dog senior male  no stray left behind tustin, ca white/tan/yellow/fawn" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/asher/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Asher, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Asher</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Senior · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="asher" data-name="Asher" aria-pressed="false" aria-label="Save Asher to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="mischief chihuahua / mixed breed dog senior male  no stray left behind tustin, ca black/brown/chocolate" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/mischief/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Mischief, Chihuahua / Mixed Breed" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Mischief</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua / Mixed Breed</p>
+            <p class="pet-meta">Senior · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="mischief" data-name="Mischief" aria-pressed="false" aria-label="Save Mischief to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="austin terrier dog adult male  no stray left behind tustin, ca black/white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/austin/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Austin, Terrier" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Austin</h3><span class="tag">Dog</span></div>
+            <p class="breed">Terrier</p>
+            <p class="pet-meta">Adult · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="austin" data-name="Austin" aria-pressed="false" aria-label="Save Austin to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="ben french bulldog dog adult male  no stray left behind tustin, ca tan/yellow/fawn/brown/chocolate" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/ben/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Ben, French Bulldog" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Ben</h3><span class="tag">Dog</span></div>
+            <p class="breed">French Bulldog</p>
+            <p class="pet-meta">Adult · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="ben" data-name="Ben" aria-pressed="false" aria-label="Save Ben to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="boba chihuahua dog puppy female  no stray left behind tustin, ca black/tan/yellow/fawn" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/boba/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Boba, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Boba</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Puppy · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="boba" data-name="Boba" aria-pressed="false" aria-label="Save Boba to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="bugsy beagle dog adult male  no stray left behind tustin, ca cream/tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/bugsy/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Bugsy, Beagle" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Bugsy</h3><span class="tag">Dog</span></div>
+            <p class="breed">Beagle</p>
+            <p class="pet-meta">Adult · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="bugsy" data-name="Bugsy" aria-pressed="false" aria-label="Save Bugsy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="gregory chihuahua dog adult female  no stray left behind tustin, ca white/brown/chocolate" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/gregory/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Gregory, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Gregory</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Adult · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="gregory" data-name="Gregory" aria-pressed="false" aria-label="Save Gregory to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="happy terrier dog adult male not good with cats no stray left behind tustin, ca white/tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/happy/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Happy, Terrier" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Happy</h3><span class="tag">Dog</span></div>
+            <p class="breed">Terrier</p>
+            <p class="pet-meta">Adult · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="happy" data-name="Happy" aria-pressed="false" aria-label="Save Happy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="jane german shepherd dog dog puppy female  no stray left behind tustin, ca black/white" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/jane/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Jane, German Shepherd Dog" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Jane</h3><span class="tag">Dog</span></div>
+            <p class="breed">German Shepherd Dog</p>
+            <p class="pet-meta">Puppy · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="jane" data-name="Jane" aria-pressed="false" aria-label="Save Jane to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="kira chihuahua dog adult female  no stray left behind tustin, ca black/tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/kira/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Kira, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Kira</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Adult · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="kira" data-name="Kira" aria-pressed="false" aria-label="Save Kira to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="leia dachshund dog senior female  no stray left behind tustin, ca brindle" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/leia/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Leia, Dachshund" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Leia</h3><span class="tag">Dog</span></div>
+            <p class="breed">Dachshund</p>
+            <p class="pet-meta">Senior · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="leia" data-name="Leia" aria-pressed="false" aria-label="Save Leia to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="lemon chihuahua dog adult female  no stray left behind tustin, ca tan/yellow/fawn/white" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/lemon/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Lemon, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Lemon</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Adult · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="lemon" data-name="Lemon" aria-pressed="false" aria-label="Save Lemon to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="maeve chihuahua dog adult female  no stray left behind tustin, ca black" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/maeve/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Maeve, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Maeve</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Adult · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="maeve" data-name="Maeve" aria-pressed="false" aria-label="Save Maeve to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="nala chihuahua dog adult female  no stray left behind tustin, ca brown" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/nala/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Nala, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Nala</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Adult · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="nala" data-name="Nala" aria-pressed="false" aria-label="Save Nala to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="nena chihuahua dog adult female  no stray left behind tustin, ca " data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/nena/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Nena, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Nena</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Adult · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="nena" data-name="Nena" aria-pressed="false" aria-label="Save Nena to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="peep miniature dachshund dog senior female  no stray left behind tustin, ca brown/chocolate" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/peep/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Peep, Miniature Dachshund" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Peep</h3><span class="tag">Dog</span></div>
+            <p class="breed">Miniature Dachshund</p>
+            <p class="pet-meta">Senior · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="peep" data-name="Peep" aria-pressed="false" aria-label="Save Peep to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="pumpkin miniature pinscher dog puppy female  no stray left behind tustin, ca tan/yellow/fawn/white" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/pumpkin/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Pumpkin, Miniature Pinscher" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Pumpkin</h3><span class="tag">Dog</span></div>
+            <p class="breed">Miniature Pinscher</p>
+            <p class="pet-meta">Puppy · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="pumpkin" data-name="Pumpkin" aria-pressed="false" aria-label="Save Pumpkin to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="robert pug dog adult male  no stray left behind tustin, ca brown/chocolate/black" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/robert/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Robert, Pug" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Robert</h3><span class="tag">Dog</span></div>
+            <p class="breed">Pug</p>
+            <p class="pet-meta">Adult · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="robert" data-name="Robert" aria-pressed="false" aria-label="Save Robert to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="sullivan yorkshire terrier dog senior female  no stray left behind tustin, ca brown/chocolate/cream" data-type="dog" data-age="senior" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/sullivan/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Sullivan, Yorkshire Terrier" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Sullivan</h3><span class="tag">Dog</span></div>
+            <p class="breed">Yorkshire Terrier</p>
+            <p class="pet-meta">Senior · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="sullivan" data-name="Sullivan" aria-pressed="false" aria-label="Save Sullivan to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="truffle chihuahua dog puppy female  no stray left behind tustin, ca black/tan/yellow/fawn" data-type="dog" data-age="puppy" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/truffle/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Truffle, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Truffle</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Puppy · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="truffle" data-name="Truffle" aria-pressed="false" aria-label="Save Truffle to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="zella french bulldog dog adult female  no stray left behind tustin, ca brown/chocolate/black" data-type="dog" data-age="adult" data-shelter="no-stray-left-behind" data-status="unavailable">
+        <a class="pet-card" href="../pets/zella/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Zella, French Bulldog" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Zella</h3><span class="tag">Dog</span></div>
+            <p class="breed">French Bulldog</p>
+            <p class="pet-meta">Adult · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="zella" data-name="Zella" aria-pressed="false" aria-label="Save Zella to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="clay siberian husky dog adult male  oc animal care tustin, ca black" data-type="dog" data-age="adult" data-shelter="oc-animal-care" data-status="unavailable">
+        <a class="pet-card" href="../pets/clay/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Clay, Siberian Husky" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Clay</h3><span class="tag">Dog</span></div>
+            <p class="breed">Siberian Husky</p>
+            <p class="pet-meta">Adult · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="clay" data-name="Clay" aria-pressed="false" aria-label="Save Clay to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="alfredo american bulldog dog adult male  oc animal care tustin, ca white" data-type="dog" data-age="adult" data-shelter="oc-animal-care" data-status="unavailable">
+        <a class="pet-card" href="../pets/alfredo/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Alfredo, American Bulldog" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Alfredo</h3><span class="tag">Dog</span></div>
+            <p class="breed">American Bulldog</p>
+            <p class="pet-meta">Adult · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="alfredo" data-name="Alfredo" aria-pressed="false" aria-label="Save Alfredo to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="chico terrier/chihuahua dog adult male  oc animal care tustin, ca tan/yellow/fawn" data-type="dog" data-age="adult" data-shelter="oc-animal-care" data-status="unavailable">
+        <a class="pet-card" href="../pets/chico-oc-animal-care/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Chico, Terrier/Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Chico</h3><span class="tag">Dog</span></div>
+            <p class="breed">Terrier/Chihuahua</p>
+            <p class="pet-meta">Adult · Male · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="chico-oc-animal-care" data-name="Chico" aria-pressed="false" aria-label="Save Chico to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="mimi pit bull mix dog senior female  oc animal care tustin, ca " data-type="dog" data-age="senior" data-shelter="oc-animal-care" data-status="unavailable">
+        <a class="pet-card" href="../pets/mimi/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Mimi, Pit Bull Mix" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Mimi</h3><span class="tag">Dog</span></div>
+            <p class="breed">Pit Bull Mix</p>
+            <p class="pet-meta">Senior · Female · Tustin, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="mimi" data-name="Mimi" aria-pressed="false" aria-label="Save Mimi to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="butter bean pug &amp; chihuahua mix dog adult female friendly, athletic, affectionate laguna beach animal shelter laguna beach, ca merle (red)" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter" data-status="unavailable">
+        <a class="pet-card" href="../pets/butter-bean/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Butter Bean, Pug &amp; Chihuahua Mix" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Butter Bean</h3><span class="tag">Dog</span></div>
+            <p class="breed">Pug &amp; Chihuahua Mix</p>
+            <p class="pet-meta">Adult · Female · Laguna Beach, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="butter-bean" data-name="Butter Bean" aria-pressed="false" aria-label="Save Butter Bean to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="boyd german shepherd dog dog adult male friendly, playful, affectionate laguna beach animal shelter laguna beach, ca brown brindle" data-type="dog" data-age="adult" data-shelter="laguna-beach-animal-shelter" data-status="unavailable">
+        <a class="pet-card" href="../pets/boyd/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Boyd, German Shepherd Dog" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Boyd</h3><span class="tag">Dog</span></div>
+            <p class="breed">German Shepherd Dog</p>
+            <p class="pet-meta">Adult · Male · Laguna Beach, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="boyd" data-name="Boyd" aria-pressed="false" aria-label="Save Boyd to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="lucy german shepherd dog dog adult female  la animal services los angeles, ca black" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/lucy/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Lucy, German Shepherd Dog" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Lucy</h3><span class="tag">Dog</span></div>
+            <p class="breed">German Shepherd Dog</p>
+            <p class="pet-meta">Adult · Female · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="lucy" data-name="Lucy" aria-pressed="false" aria-label="Save Lucy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="kai chihuahua dog adult female  la animal services los angeles, ca white" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/kai/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Kai, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Kai</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Adult · Female · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="kai" data-name="Kai" aria-pressed="false" aria-label="Save Kai to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="ron american staffordshire terrier dog adult male  la animal services los angeles, ca black" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/ron/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Ron, American Staffordshire Terrier" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Ron</h3><span class="tag">Dog</span></div>
+            <p class="breed">American Staffordshire Terrier</p>
+            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="ron" data-name="Ron" aria-pressed="false" aria-label="Save Ron to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="titan boxer dog adult male  la animal services los angeles, ca black" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/titan/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Titan, Boxer" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Titan</h3><span class="tag">Dog</span></div>
+            <p class="breed">Boxer</p>
+            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="titan" data-name="Titan" aria-pressed="false" aria-label="Save Titan to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="estella labrador retriever dog senior female  la animal services los angeles, ca chocolate" data-type="dog" data-age="senior" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/estella/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Estella, Labrador Retriever" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Estella</h3><span class="tag">Dog</span></div>
+            <p class="breed">Labrador Retriever</p>
+            <p class="pet-meta">Senior · Female · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="estella" data-name="Estella" aria-pressed="false" aria-label="Save Estella to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="pippen chihuahua dog adult male  la animal services los angeles, ca white" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/pippen/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Pippen, Chihuahua" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Pippen</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chihuahua</p>
+            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="pippen" data-name="Pippen" aria-pressed="false" aria-label="Save Pippen to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="sasha pit bull terrier dog adult female  la animal services los angeles, ca brown" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/sasha/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Sasha, Pit Bull Terrier" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Sasha</h3><span class="tag">Dog</span></div>
+            <p class="breed">Pit Bull Terrier</p>
+            <p class="pet-meta">Adult · Female · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="sasha" data-name="Sasha" aria-pressed="false" aria-label="Save Sasha to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="bueller german shepherd dog adult male  la animal services los angeles, ca brown" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/bueller/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Bueller, German Shepherd" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Bueller</h3><span class="tag">Dog</span></div>
+            <p class="breed">German Shepherd</p>
+            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="bueller" data-name="Bueller" aria-pressed="false" aria-label="Save Bueller to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="zeus boxer dog adult male  la animal services los angeles, ca red" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/zeus/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Zeus, Boxer" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Zeus</h3><span class="tag">Dog</span></div>
+            <p class="breed">Boxer</p>
+            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="zeus" data-name="Zeus" aria-pressed="false" aria-label="Save Zeus to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="racco skye terrier dog adult male  la animal services los angeles, ca black" data-type="dog" data-age="adult" data-shelter="la-animal-services" data-status="unavailable">
+        <a class="pet-card" href="../pets/racco/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Racco, Skye Terrier" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Racco</h3><span class="tag">Dog</span></div>
+            <p class="breed">Skye Terrier</p>
+            <p class="pet-meta">Adult · Male · Los Angeles, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="racco" data-name="Racco" aria-pressed="false" aria-label="Save Racco to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="coco chow chow dog adult female  pets in need redwood city, ca brown" data-type="dog" data-age="adult" data-shelter="pets-in-need" data-status="unavailable">
+        <a class="pet-card" href="../pets/coco/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Coco, Chow Chow" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Coco</h3><span class="tag">Dog</span></div>
+            <p class="breed">Chow Chow</p>
+            <p class="pet-meta">Adult · Female · Redwood City, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="coco" data-name="Coco" aria-pressed="false" aria-label="Save Coco to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="nani husky dog puppy female  pets in need redwood city, ca black and white" data-type="dog" data-age="puppy" data-shelter="pets-in-need" data-status="unavailable">
+        <a class="pet-card" href="../pets/nani/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Nani, Husky" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Nani</h3><span class="tag">Dog</span></div>
+            <p class="breed">Husky</p>
+            <p class="pet-meta">Puppy · Female · Redwood City, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="nani" data-name="Nani" aria-pressed="false" aria-label="Save Nani to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="edwin jack russell terrier mix dog puppy male  pets in need redwood city, ca white and gray" data-type="dog" data-age="puppy" data-shelter="pets-in-need" data-status="unavailable">
+        <a class="pet-card" href="../pets/edwin/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Edwin, Jack Russell Terrier Mix" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Edwin</h3><span class="tag">Dog</span></div>
+            <p class="breed">Jack Russell Terrier Mix</p>
+            <p class="pet-meta">Puppy · Male · Redwood City, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="edwin" data-name="Edwin" aria-pressed="false" aria-label="Save Edwin to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="marigold poodle mix dog puppy female  pets in need redwood city, ca white/cream" data-type="dog" data-age="puppy" data-shelter="pets-in-need" data-status="unavailable">
+        <a class="pet-card" href="../pets/marigold/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Marigold, Poodle Mix" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Marigold</h3><span class="tag">Dog</span></div>
+            <p class="breed">Poodle Mix</p>
+            <p class="pet-meta">Puppy · Female · Redwood City, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="marigold" data-name="Marigold" aria-pressed="false" aria-label="Save Marigold to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="coconut husky dog adult female  pets in need redwood city, ca white" data-type="dog" data-age="adult" data-shelter="pets-in-need" data-status="unavailable">
+        <a class="pet-card" href="../pets/coconut/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Coconut, Husky" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Coconut</h3><span class="tag">Dog</span></div>
+            <p class="breed">Husky</p>
+            <p class="pet-meta">Adult · Female · Redwood City, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="coconut" data-name="Coconut" aria-pressed="false" aria-label="Save Coconut to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="chloe pit bull terrier mix dog puppy female  pets in need redwood city, ca white and black" data-type="dog" data-age="puppy" data-shelter="pets-in-need" data-status="unavailable">
+        <a class="pet-card" href="../pets/chloe/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Chloe, Pit Bull Terrier Mix" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Chloe</h3><span class="tag">Dog</span></div>
+            <p class="breed">Pit Bull Terrier Mix</p>
+            <p class="pet-meta">Puppy · Female · Redwood City, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="chloe" data-name="Chloe" aria-pressed="false" aria-label="Save Chloe to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="missy cane corso dog adult female  pets in need redwood city, ca black" data-type="dog" data-age="adult" data-shelter="pets-in-need" data-status="unavailable">
+        <a class="pet-card" href="../pets/missy/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Missy, Cane Corso" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Missy</h3><span class="tag">Dog</span></div>
+            <p class="breed">Cane Corso</p>
+            <p class="pet-meta">Adult · Female · Redwood City, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="missy" data-name="Missy" aria-pressed="false" aria-label="Save Missy to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="chica pit bull terrier dog adult female sweet, loyal, affectionate, cuddly, people-oriented. pasadena humane pasadena, ca grey/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane" data-status="unavailable">
+        <a class="pet-card" href="../pets/chica/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Chica, Pit Bull Terrier" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Chica</h3><span class="tag">Dog</span></div>
+            <p class="breed">Pit Bull Terrier</p>
+            <p class="pet-meta">Adult · Female · Pasadena, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="chica" data-name="Chica" aria-pressed="false" aria-label="Save Chica to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+        </div>
+        <div class="pet-card-wrap is-unavailable" data-search="monica american pit bull terrier dog adult female sweet, enthusiastic, playful, people-loving; would do best as the only pet. pasadena humane pasadena, ca black/white" data-type="dog" data-age="adult" data-shelter="pasadena-humane" data-status="unavailable">
+        <a class="pet-card" href="../pets/monica/">
+          <div class="thumb"><img src="../assets/img/pets/placeholder-dog.webp" alt="Monica, American Pit Bull Terrier" loading="lazy" width="577" height="577"><span class="status-badge status-unavailable">Unavailable</span></div>
+          <div class="body">
+            <div class="row"><h3>Monica</h3><span class="tag">Dog</span></div>
+            <p class="breed">American Pit Bull Terrier</p>
+            <p class="pet-meta">Adult · Female · Pasadena, CA</p>
+          </div>
+        </a>
+        <button class="card-fav" type="button" data-fav="monica" data-name="Monica" aria-pressed="false" aria-label="Save Monica to favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
         </div>
         </div>
         <div class="show-more-wrap">
