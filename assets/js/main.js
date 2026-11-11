@@ -61,6 +61,8 @@
     var count = document.getElementById('results-count');
     var ageSel = document.getElementById('f-age');
     var shelterSel = document.getElementById('f-shelter');
+    var statusSel = document.getElementById('f-status');
+    var typeCounts = Array.prototype.slice.call(document.querySelectorAll('[data-count-type]'));
     var chips = Array.prototype.slice.call(document.querySelectorAll('[data-type-filter]'));
     var type = '';
     var PAGE = 12;
@@ -70,12 +72,15 @@
       var q = input.value.trim().toLowerCase();
       var age = ageSel ? ageSel.value : '';
       var shelter = shelterSel ? shelterSel.value : '';
-      var matches = 0, visible = 0;
+      var status = statusSel ? statusSel.value : '';
+      var matches = 0, visible = 0, perType = { '': 0, dog: 0, cat: 0 };
       cards.forEach(function (card) {
-        var match = (!q || card.getAttribute('data-search').indexOf(q) !== -1) &&
-          (!type || card.getAttribute('data-type') === type) &&
+        var base = (!q || card.getAttribute('data-search').indexOf(q) !== -1) &&
+          (!status || card.getAttribute('data-status') === status) &&
           (!age || card.getAttribute('data-age') === age) &&
           (!shelter || card.getAttribute('data-shelter') === shelter);
+        if (base) { perType['']++; perType[card.getAttribute('data-type')] = (perType[card.getAttribute('data-type')] || 0) + 1; }
+        var match = base && (!type || card.getAttribute('data-type') === type);
         var show = match && matches < limit;
         if (match) matches++;
         if (show) visible++;
@@ -85,6 +90,7 @@
       if (count) count.textContent = matches === 0 ? 'No pets found'
         : 'Showing ' + visible + (visible < matches ? ' of ' + matches : '') + (matches === 1 ? ' pet' : ' pets');
       if (moreBtn) moreBtn.hidden = visible >= matches;
+      typeCounts.forEach(function (el) { el.textContent = perType[el.getAttribute('data-count-type')] || 0; });
     };
     // Any filter change starts again from the first page
     var filter = function () { limit = PAGE; render(); };
@@ -104,7 +110,7 @@
         filter();
       });
     });
-    [ageSel, shelterSel].forEach(function (el) { if (el) el.addEventListener('change', filter); });
+    [statusSel, ageSel, shelterSel].forEach(function (el) { if (el) el.addEventListener('change', filter); });
     input.addEventListener('input', filter);
     searchForm.addEventListener('submit', function (e) { e.preventDefault(); filter(); });
     var clear = document.getElementById('clear-filters');
@@ -112,6 +118,7 @@
       input.value = ''; type = '';
       if (ageSel) ageSel.value = '';
       if (shelterSel) shelterSel.value = '';
+      if (statusSel) statusSel.value = 'available';
       chips.forEach(function (c, i) { c.setAttribute('aria-pressed', i === 0 ? 'true' : 'false'); });
       filter();
     });

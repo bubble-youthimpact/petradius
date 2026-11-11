@@ -241,9 +241,9 @@ function wireAuthPages(backend) {
    Profile page
    ================================================================ */
 function petCardHTML(p) {
-  return `<div class="pet-card-wrap">
+  return `<div class="pet-card-wrap${p.status && p.status !== 'Available' ? ' is-unavailable' : ''}">
     <a class="pet-card" href="${u('pets/' + p.slug + '/')}">
-      <div class="thumb"><img src="${ROOT}${p.img}" alt="${esc(p.name)}, ${esc(p.breed)}" loading="lazy" width="577" height="577"></div>
+      <div class="thumb"><img src="${ROOT}${p.img}" alt="${esc(p.name)}, ${esc(p.breed)}" loading="lazy" width="577" height="577">${p.status && p.status !== 'Available' ? `<span class="status-badge status-${esc(p.status.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}">${esc(p.status)}</span>` : ''}</div>
       <div class="body"><div class="row"><h3>${esc(p.name)}</h3><span class="tag">${esc(p.type)}</span></div><p class="breed">${esc(p.breed)}</p><p class="pet-meta">${esc(p.meta || '')}</p></div>
     </a>
     <button class="card-fav" type="button" data-fav="${p.slug}" data-name="${esc(p.name)}" aria-pressed="true">${HEART}</button>

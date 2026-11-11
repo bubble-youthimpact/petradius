@@ -59,7 +59,9 @@ NAME_OVERRIDES = {
     # Bonded pair: Remi is female, Harley is male
     "Harley AND Remi": {"name": "Harley & Remi", "gender": "Male & Female"},
 }
-FEATURED = ["aj", "rollie-pollie", "lili", "poppy"]
+FEATURED = ["aj", "rollie-pollie", "lili", "peppa-pug"]
+# Status column (optional, last column of the sheet): Available, Pending, Adopted, Unavailable...
+STATUS_ORDER = ["Available", "Pending", "Adopted", "Unavailable"]
 EMPTY_NOTES = ("reference: story", "detailed personality story isn")
 
 
@@ -104,6 +106,8 @@ def load_pets():
     with open(PETS_CSV, newline="", encoding="utf-8-sig") as fh:
         rows = list(csv.reader(fh))
     for row in rows[1:]:
+        status = clean(row[11]).title() if len(row) > 11 else ""
+        status = status or "Available"
         row = (row + [""] * 11)[:11]
         name, breed, age, gender, story, _img, medical, traits, shelter, hours, _extra = row
         name = clean(name)
@@ -136,10 +140,11 @@ def load_pets():
             "shelter": sh["name"], "shelter_location": sh["location"], "shelter_url": sh["url"],
             "hours": clean(hours),
             "photo": find_photo(slug),
-            "featured": slug in FEATURED,
+            "status": status,
+            "featured": slug in FEATURED and status == "Available",
         })
-    # Pets with photos first, then the rest in sheet order
-    pets.sort(key=lambda x: 0 if x["photo"] else 1)
+    # Available pets first; within each group, pets with photos first, then sheet order
+    pets.sort(key=lambda x: (0 if x["status"] == "Available" else 1, 0 if x["photo"] else 1))
     return pets
 
 
@@ -362,13 +367,19 @@ def layout(path, title, description, body, active="", extra_head="", extra_scrip
 """
 
 
+def status_badge(pet):
+    if pet["status"] == "Available":
+        return ""
+    return f'<span class="status-badge status-{slugify(pet["status"])}">{e(pet["status"])}</span>'
+
+
 def pet_card(pet, p):
     search = " ".join([pet["name"], pet["breed"], pet["type"], pet["age"], pet["sex"], pet["characteristics"],
                        pet["shelter"], pet["location"], pet["color"]]).lower()
     meta = " · ".join(x for x in [pet["age"], pet["sex"], pet["location"]] if x)
-    return f"""        <div class="pet-card-wrap" data-search="{e(search)}" data-type="{pet['type'].lower()}" data-age="{e(pet['age'].lower())}" data-shelter="{slugify(pet['shelter'])}">
+    return f"""        <div class="pet-card-wrap{'' if pet['status'] == 'Available' else ' is-unavailable'}" data-search="{e(search)}" data-type="{pet['type'].lower()}" data-age="{e(pet['age'].lower())}" data-shelter="{slugify(pet['shelter'])}" data-status="{slugify(pet['status'])}">
         <a class="pet-card" href="{p}pets/{pet['slug']}/">
-          <div class="thumb"><img src="{p}{pet_img(pet)}" alt="{e(pet['name'])}, {e(pet['breed'])}" loading="lazy" width="577" height="577"></div>
+          <div class="thumb"><img src="{p}{pet_img(pet)}" alt="{e(pet['name'])}, {e(pet['breed'])}" loading="lazy" width="577" height="577">{status_badge(pet)}</div>
           <div class="body">
             <div class="row"><h3>{e(pet['name'])}</h3><span class="tag">{e(pet['type'])}</span></div>
             <p class="breed">{e(pet['breed'])}</p>
@@ -492,6 +503,9 @@ def pets_index():
     shelters = sorted({x["shelter"] for x in PETS if x["shelter"]})
     age_opts = "".join(f'<option value="{a.lower()}">{a}</option>' for a in ages)
     sh_opts = "".join(f'<option value="{slugify(n)}">{e(n)}</option>' for n in shelters)
+    present = [st for st in STATUS_ORDER if any(x["status"] == st for x in PETS)]
+    present += sorted({x["status"] for x in PETS} - set(STATUS_ORDER))
+    st_opts = "".join(f'<option value="{slugify(st)}"{" selected" if st == "Available" else ""}>{e(st)}</option>' for st in present)
     n_dogs = sum(1 for x in PETS if x["type"] == "Dog")
     n_cats = len(PETS) - n_dogs
     body = f"""    <section class="page-hero">
@@ -510,11 +524,13 @@ def pets_index():
       <div class="container">
         <div class="pet-filters" id="pet-filters">
           <div class="type-chips" role="group" aria-label="Filter by type">
-            <button type="button" class="filter-chip" data-type-filter="" aria-pressed="true">All <span>{len(PETS)}</span></button>
-            <button type="button" class="filter-chip" data-type-filter="dog" aria-pressed="false">Dogs <span>{n_dogs}</span></button>
-            <button type="button" class="filter-chip" data-type-filter="cat" aria-pressed="false">Cats <span>{n_cats}</span></button>
+            <button type="button" class="filter-chip" data-type-filter="" aria-pressed="true">All <span data-count-type="">{len(PETS)}</span></button>
+            <button type="button" class="filter-chip" data-type-filter="dog" aria-pressed="false">Dogs <span data-count-type="dog">{n_dogs}</span></button>
+            <button type="button" class="filter-chip" data-type-filter="cat" aria-pressed="false">Cats <span data-count-type="cat">{n_cats}</span></button>
           </div>
           <div class="filter-selects">
+            <label class="visually-hidden" for="f-status">Status</label>
+            <select id="f-status"><option value="">All statuses</option>{st_opts}</select>
             <label class="visually-hidden" for="f-age">Age</label>
             <select id="f-age"><option value="">Any age</option>{age_opts}</select>
             <label class="visually-hidden" for="f-shelter">Shelter</label>
@@ -564,6 +580,13 @@ def pet_detail(pet):
         hours = f'<p>{e(pet["hours"])}</p>' if pet["hours"] else ""
         blocks += (f'<div class="shelter-box"><h2>Currently at</h2><p>{e(pet["shelter"])}</p>'
                    f'<p>{e(pet["shelter_location"])}</p>{hours}</div>')
+    status_html = ""
+    if pet["status"] != "Available":
+        msg = {"Adopted": f"Good news \u2014 {e(pet['name'])} has been adopted!",
+               "Pending": f"{e(pet['name'])}\u2019s adoption is pending."}.get(
+            pet["status"], f"{e(pet['name'])} is no longer listed as available by {e(pet['shelter'] or 'the shelter')}. Contact the shelter to check, or meet other pets looking for homes.")
+        status_html = (f'<div class="status-note status-{slugify(pet["status"])}"><strong>{e(pet["status"])}</strong>'
+                       f'<span>{msg}</span><a href="{p}pets/">See available pets</a></div>')
     if pet["shelter_url"]:
         cta = f'<a class="btn btn-primary btn-block" href="{e(pet["shelter_url"])}" target="_blank" rel="noopener">Visit shelter</a>'
     else:
@@ -574,11 +597,12 @@ def pet_detail(pet):
       <article class="pet-detail">
         <div class="photo{' no-photo' if not pet['photo'] else ''}"><img src="{p}{pet_img(pet)}" alt="{e(pet['name'])}, {e(pet['breed'])}" width="800" height="800"></div>
         <div>
-          <span class="tag">{e(pet['type'])}</span>
+          <span class="tag">{e(pet['type'])}</span>{'' if pet['status'] == 'Available' else ' <span class="tag tag-status">' + e(pet['status']) + '</span>'}
           <div class="pet-title">
             <h1>{e(pet['name'])}</h1>
             <button class="fav-btn" type="button" data-fav="{pet['slug']}" data-name="{e(pet['name'])}" aria-pressed="false" aria-label="Save {e(pet['name'])} to favorites">{icon('heart')}</button>
           </div>
+          {status_html}
           {chips_html}
           {blocks}
           {cta}
@@ -997,7 +1021,7 @@ def terms():
 
 def site_data():
     import json
-    pets = [{"slug": x["slug"], "name": x["name"], "breed": x["breed"], "type": x["type"], "img": pet_img(x),
+    pets = [{"slug": x["slug"], "name": x["name"], "breed": x["breed"], "type": x["type"], "img": pet_img(x), "status": x["status"],
              "meta": " \u00b7 ".join(v for v in [x["age"], x["sex"], x["location"]] if v)} for x in PETS]
     quizzes = []
     for q in QUIZZES:

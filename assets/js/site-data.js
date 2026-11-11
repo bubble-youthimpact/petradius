@@ -6,6 +6,7 @@ export const PETS = [
     "breed": "Pointer",
     "type": "Dog",
     "img": "assets/img/pets/aj.webp",
+    "status": "Available",
     "meta": "Adult · Male · Laguna Beach, CA"
   },
   {
@@ -14,6 +15,7 @@ export const PETS = [
     "breed": "American Staffordshire Terrier",
     "type": "Dog",
     "img": "assets/img/pets/rollie-pollie.webp",
+    "status": "Available",
     "meta": "Adult · Female · Laguna Beach, CA"
   },
   {
@@ -22,14 +24,7 @@ export const PETS = [
     "breed": "Cairn Terrier & Chihuahua Mix",
     "type": "Dog",
     "img": "assets/img/pets/lili.webp",
-    "meta": "Adult · Female · Laguna Beach, CA"
-  },
-  {
-    "slug": "poppy",
-    "name": "Poppy",
-    "breed": "Beagle & Chihuahua Mix",
-    "type": "Dog",
-    "img": "assets/img/pets/poppy.webp",
+    "status": "Available",
     "meta": "Adult · Female · Laguna Beach, CA"
   },
   {
@@ -38,103 +33,8 @@ export const PETS = [
     "breed": "Pug & Chihuahua Mix",
     "type": "Dog",
     "img": "assets/img/pets/peppa-pug.webp",
+    "status": "Available",
     "meta": "Adult · Female · Laguna Beach, CA"
-  },
-  {
-    "slug": "hamlet",
-    "name": "Hamlet",
-    "breed": "Shepherd (Mixed)",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Puppy · Male · Irvine, CA"
-  },
-  {
-    "slug": "laila",
-    "name": "Laila",
-    "breed": "Domestic Shorthair",
-    "type": "Cat",
-    "img": "assets/img/pets/placeholder-cat.webp",
-    "meta": "Adult · Female · Irvine, CA"
-  },
-  {
-    "slug": "catino",
-    "name": "Catino",
-    "breed": "Domestic Shorthair",
-    "type": "Cat",
-    "img": "assets/img/pets/placeholder-cat.webp",
-    "meta": "Senior · Male · Irvine, CA"
-  },
-  {
-    "slug": "dusty",
-    "name": "Dusty",
-    "breed": "Domestic Shorthair",
-    "type": "Cat",
-    "img": "assets/img/pets/placeholder-cat.webp",
-    "meta": "Adult · Female · Irvine, CA"
-  },
-  {
-    "slug": "tux",
-    "name": "Tux",
-    "breed": "Domestic Shorthair",
-    "type": "Cat",
-    "img": "assets/img/pets/placeholder-cat.webp",
-    "meta": "Adult · Female · Irvine, CA"
-  },
-  {
-    "slug": "dave",
-    "name": "Dave",
-    "breed": "Boxer",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Irvine, CA"
-  },
-  {
-    "slug": "wolf",
-    "name": "Wolf",
-    "breed": "Siberian Husky",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Irvine, CA"
-  },
-  {
-    "slug": "icey",
-    "name": "Icey",
-    "breed": "German Shepherd Dog",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Young · Female · Irvine, CA"
-  },
-  {
-    "slug": "nero",
-    "name": "Nero",
-    "breed": "Labrador Retriever",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Senior · Male · Irvine, CA"
-  },
-  {
-    "slug": "cupcake",
-    "name": "Cupcake",
-    "breed": "Domestic Shorthair",
-    "type": "Cat",
-    "img": "assets/img/pets/placeholder-cat.webp",
-    "meta": "Senior · Female · Irvine, CA"
-  },
-  {
-    "slug": "asher",
-    "name": "Asher",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Senior · Male · Tustin, CA"
-  },
-  {
-    "slug": "mischief",
-    "name": "Mischief",
-    "breed": "Chihuahua / Mixed Breed",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Senior · Male · Tustin, CA"
   },
   {
     "slug": "freda",
@@ -142,6 +42,7 @@ export const PETS = [
     "breed": "Terrier",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Female · Tustin, CA"
   },
   {
@@ -150,15 +51,8 @@ export const PETS = [
     "breed": "Dachshund",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Female · Tustin, CA"
-  },
-  {
-    "slug": "austin",
-    "name": "Austin",
-    "breed": "Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Tustin, CA"
   },
   {
     "slug": "baby-huey",
@@ -166,23 +60,8 @@ export const PETS = [
     "breed": "Mastiff",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male · Tustin, CA"
-  },
-  {
-    "slug": "ben",
-    "name": "Ben",
-    "breed": "French Bulldog",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Tustin, CA"
-  },
-  {
-    "slug": "boba",
-    "name": "Boba",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Puppy · Female · Tustin, CA"
   },
   {
     "slug": "boo",
@@ -190,15 +69,8 @@ export const PETS = [
     "breed": "Pug",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Female · Tustin, CA"
-  },
-  {
-    "slug": "bugsy",
-    "name": "Bugsy",
-    "breed": "Beagle",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Tustin, CA"
   },
   {
     "slug": "chico",
@@ -206,6 +78,7 @@ export const PETS = [
     "breed": "Terrier",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male · Tustin, CA"
   },
   {
@@ -214,6 +87,7 @@ export const PETS = [
     "breed": "Chihuahua",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Puppy · Female · Tustin, CA"
   },
   {
@@ -222,23 +96,8 @@ export const PETS = [
     "breed": "Terrier",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Male · Tustin, CA"
-  },
-  {
-    "slug": "gregory",
-    "name": "Gregory",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Tustin, CA"
-  },
-  {
-    "slug": "happy",
-    "name": "Happy",
-    "breed": "Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Tustin, CA"
   },
   {
     "slug": "harley-and-remi",
@@ -246,15 +105,8 @@ export const PETS = [
     "breed": "Chihuahua",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male & Female · Tustin, CA"
-  },
-  {
-    "slug": "jane",
-    "name": "Jane",
-    "breed": "German Shepherd Dog",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Puppy · Female · Tustin, CA"
   },
   {
     "slug": "julio",
@@ -262,39 +114,8 @@ export const PETS = [
     "breed": "Chihuahua",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Male · Tustin, CA"
-  },
-  {
-    "slug": "kira",
-    "name": "Kira",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Tustin, CA"
-  },
-  {
-    "slug": "leia",
-    "name": "Leia",
-    "breed": "Dachshund",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Senior · Female · Tustin, CA"
-  },
-  {
-    "slug": "lemon",
-    "name": "Lemon",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Tustin, CA"
-  },
-  {
-    "slug": "maeve",
-    "name": "Maeve",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Tustin, CA"
   },
   {
     "slug": "mary-celeste",
@@ -302,6 +123,7 @@ export const PETS = [
     "breed": "Boxer",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Female · Tustin, CA"
   },
   {
@@ -310,6 +132,7 @@ export const PETS = [
     "breed": "Chihuahua",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Male · Tustin, CA"
   },
   {
@@ -318,23 +141,8 @@ export const PETS = [
     "breed": "Chihuahua",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Female · Tustin, CA"
-  },
-  {
-    "slug": "nala",
-    "name": "Nala",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Tustin, CA"
-  },
-  {
-    "slug": "nena",
-    "name": "Nena",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Tustin, CA"
   },
   {
     "slug": "oscar",
@@ -342,15 +150,8 @@ export const PETS = [
     "breed": "French Bulldog",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male · Tustin, CA"
-  },
-  {
-    "slug": "peep",
-    "name": "Peep",
-    "breed": "Miniature Dachshund",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Senior · Female · Tustin, CA"
   },
   {
     "slug": "poncho",
@@ -358,31 +159,8 @@ export const PETS = [
     "breed": "Dachshund",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male · Tustin, CA"
-  },
-  {
-    "slug": "pumpkin",
-    "name": "Pumpkin",
-    "breed": "Miniature Pinscher",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Puppy · Female · Tustin, CA"
-  },
-  {
-    "slug": "robert",
-    "name": "Robert",
-    "breed": "Pug",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Tustin, CA"
-  },
-  {
-    "slug": "sullivan",
-    "name": "Sullivan",
-    "breed": "Yorkshire Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Senior · Female · Tustin, CA"
   },
   {
     "slug": "trudy",
@@ -390,95 +168,8 @@ export const PETS = [
     "breed": "French Bulldog",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Female · Tustin, CA"
-  },
-  {
-    "slug": "truffle",
-    "name": "Truffle",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Puppy · Female · Tustin, CA"
-  },
-  {
-    "slug": "zella",
-    "name": "Zella",
-    "breed": "French Bulldog",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Tustin, CA"
-  },
-  {
-    "slug": "clay",
-    "name": "Clay",
-    "breed": "Siberian Husky",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Tustin, CA"
-  },
-  {
-    "slug": "alfredo",
-    "name": "Alfredo",
-    "breed": "American Bulldog",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Tustin, CA"
-  },
-  {
-    "slug": "chico-oc-animal-care",
-    "name": "Chico",
-    "breed": "Terrier/Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Tustin, CA"
-  },
-  {
-    "slug": "mimi",
-    "name": "Mimi",
-    "breed": "Pit Bull Mix",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Senior · Female · Tustin, CA"
-  },
-  {
-    "slug": "butter-bean",
-    "name": "Butter Bean",
-    "breed": "Pug & Chihuahua Mix",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Laguna Beach, CA"
-  },
-  {
-    "slug": "boyd",
-    "name": "Boyd",
-    "breed": "German Shepherd Dog",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Laguna Beach, CA"
-  },
-  {
-    "slug": "lucy",
-    "name": "Lucy",
-    "breed": "German Shepherd Dog",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Los Angeles, CA"
-  },
-  {
-    "slug": "kai",
-    "name": "Kai",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Los Angeles, CA"
-  },
-  {
-    "slug": "ron",
-    "name": "Ron",
-    "breed": "American Staffordshire Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Los Angeles, CA"
   },
   {
     "slug": "frida",
@@ -486,39 +177,8 @@ export const PETS = [
     "breed": "Staffordshire Bull Terrier",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Female · Los Angeles, CA"
-  },
-  {
-    "slug": "titan",
-    "name": "Titan",
-    "breed": "Boxer",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Los Angeles, CA"
-  },
-  {
-    "slug": "estella",
-    "name": "Estella",
-    "breed": "Labrador Retriever",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Senior · Female · Los Angeles, CA"
-  },
-  {
-    "slug": "pippen",
-    "name": "Pippen",
-    "breed": "Chihuahua",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Los Angeles, CA"
-  },
-  {
-    "slug": "sasha",
-    "name": "Sasha",
-    "breed": "Pit Bull Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Los Angeles, CA"
   },
   {
     "slug": "chiqi",
@@ -526,15 +186,8 @@ export const PETS = [
     "breed": "Alaskan Husky",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Female · Los Angeles, CA"
-  },
-  {
-    "slug": "bueller",
-    "name": "Bueller",
-    "breed": "German Shepherd",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Los Angeles, CA"
   },
   {
     "slug": "midas",
@@ -542,39 +195,8 @@ export const PETS = [
     "breed": "Pit Bull Terrier",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male · Los Angeles, CA"
-  },
-  {
-    "slug": "zeus",
-    "name": "Zeus",
-    "breed": "Boxer",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Los Angeles, CA"
-  },
-  {
-    "slug": "racco",
-    "name": "Racco",
-    "breed": "Skye Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Male · Los Angeles, CA"
-  },
-  {
-    "slug": "coco",
-    "name": "Coco",
-    "breed": "Chow Chow",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Redwood City, CA"
-  },
-  {
-    "slug": "nani",
-    "name": "Nani",
-    "breed": "Husky",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Puppy · Female · Redwood City, CA"
   },
   {
     "slug": "artie",
@@ -582,6 +204,7 @@ export const PETS = [
     "breed": "German Shepherd Mix",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male · Redwood City, CA"
   },
   {
@@ -590,46 +213,7 @@ export const PETS = [
     "breed": "Pit Bull Terrier Mix",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Redwood City, CA"
-  },
-  {
-    "slug": "edwin",
-    "name": "Edwin",
-    "breed": "Jack Russell Terrier Mix",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Puppy · Male · Redwood City, CA"
-  },
-  {
-    "slug": "marigold",
-    "name": "Marigold",
-    "breed": "Poodle Mix",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Puppy · Female · Redwood City, CA"
-  },
-  {
-    "slug": "coconut",
-    "name": "Coconut",
-    "breed": "Husky",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Redwood City, CA"
-  },
-  {
-    "slug": "chloe",
-    "name": "Chloe",
-    "breed": "Pit Bull Terrier Mix",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Puppy · Female · Redwood City, CA"
-  },
-  {
-    "slug": "missy",
-    "name": "Missy",
-    "breed": "Cane Corso",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Female · Redwood City, CA"
   },
   {
@@ -638,14 +222,7 @@ export const PETS = [
     "breed": "German Shepherd",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Pasadena, CA"
-  },
-  {
-    "slug": "chica",
-    "name": "Chica",
-    "breed": "Pit Bull Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Female · Pasadena, CA"
   },
   {
@@ -654,6 +231,7 @@ export const PETS = [
     "breed": "Pit Bull Terrier",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male · Pasadena, CA"
   },
   {
@@ -662,14 +240,7 @@ export const PETS = [
     "breed": "Pit Bull Terrier / Dutch Shepherd",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
-    "meta": "Adult · Female · Pasadena, CA"
-  },
-  {
-    "slug": "monica",
-    "name": "Monica",
-    "breed": "American Pit Bull Terrier",
-    "type": "Dog",
-    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Female · Pasadena, CA"
   },
   {
@@ -678,6 +249,7 @@ export const PETS = [
     "breed": "German Shepherd",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Female · Pasadena, CA"
   },
   {
@@ -686,6 +258,7 @@ export const PETS = [
     "breed": "German Shepherd",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Female · Pasadena, CA"
   },
   {
@@ -694,6 +267,7 @@ export const PETS = [
     "breed": "Pit Bull Terrier",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Male · Pasadena, CA"
   },
   {
@@ -702,6 +276,7 @@ export const PETS = [
     "breed": "American Pit Bull Terrier",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male · Pasadena, CA"
   },
   {
@@ -710,6 +285,7 @@ export const PETS = [
     "breed": "German Shepherd",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Senior · Female · Pasadena, CA"
   },
   {
@@ -718,7 +294,521 @@ export const PETS = [
     "breed": "German Shepherd",
     "type": "Dog",
     "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Available",
     "meta": "Adult · Male · Pasadena, CA"
+  },
+  {
+    "slug": "poppy",
+    "name": "Poppy",
+    "breed": "Beagle & Chihuahua Mix",
+    "type": "Dog",
+    "img": "assets/img/pets/poppy.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Laguna Beach, CA"
+  },
+  {
+    "slug": "hamlet",
+    "name": "Hamlet",
+    "breed": "Shepherd (Mixed)",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Puppy · Male · Irvine, CA"
+  },
+  {
+    "slug": "laila",
+    "name": "Laila",
+    "breed": "Domestic Shorthair",
+    "type": "Cat",
+    "img": "assets/img/pets/placeholder-cat.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Irvine, CA"
+  },
+  {
+    "slug": "catino",
+    "name": "Catino",
+    "breed": "Domestic Shorthair",
+    "type": "Cat",
+    "img": "assets/img/pets/placeholder-cat.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Male · Irvine, CA"
+  },
+  {
+    "slug": "dusty",
+    "name": "Dusty",
+    "breed": "Domestic Shorthair",
+    "type": "Cat",
+    "img": "assets/img/pets/placeholder-cat.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Irvine, CA"
+  },
+  {
+    "slug": "tux",
+    "name": "Tux",
+    "breed": "Domestic Shorthair",
+    "type": "Cat",
+    "img": "assets/img/pets/placeholder-cat.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Irvine, CA"
+  },
+  {
+    "slug": "dave",
+    "name": "Dave",
+    "breed": "Boxer",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Irvine, CA"
+  },
+  {
+    "slug": "wolf",
+    "name": "Wolf",
+    "breed": "Siberian Husky",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Irvine, CA"
+  },
+  {
+    "slug": "icey",
+    "name": "Icey",
+    "breed": "German Shepherd Dog",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Young · Female · Irvine, CA"
+  },
+  {
+    "slug": "nero",
+    "name": "Nero",
+    "breed": "Labrador Retriever",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Male · Irvine, CA"
+  },
+  {
+    "slug": "cupcake",
+    "name": "Cupcake",
+    "breed": "Domestic Shorthair",
+    "type": "Cat",
+    "img": "assets/img/pets/placeholder-cat.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Female · Irvine, CA"
+  },
+  {
+    "slug": "asher",
+    "name": "Asher",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Male · Tustin, CA"
+  },
+  {
+    "slug": "mischief",
+    "name": "Mischief",
+    "breed": "Chihuahua / Mixed Breed",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Male · Tustin, CA"
+  },
+  {
+    "slug": "austin",
+    "name": "Austin",
+    "breed": "Terrier",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Tustin, CA"
+  },
+  {
+    "slug": "ben",
+    "name": "Ben",
+    "breed": "French Bulldog",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Tustin, CA"
+  },
+  {
+    "slug": "boba",
+    "name": "Boba",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Puppy · Female · Tustin, CA"
+  },
+  {
+    "slug": "bugsy",
+    "name": "Bugsy",
+    "breed": "Beagle",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Tustin, CA"
+  },
+  {
+    "slug": "gregory",
+    "name": "Gregory",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Tustin, CA"
+  },
+  {
+    "slug": "happy",
+    "name": "Happy",
+    "breed": "Terrier",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Tustin, CA"
+  },
+  {
+    "slug": "jane",
+    "name": "Jane",
+    "breed": "German Shepherd Dog",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Puppy · Female · Tustin, CA"
+  },
+  {
+    "slug": "kira",
+    "name": "Kira",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Tustin, CA"
+  },
+  {
+    "slug": "leia",
+    "name": "Leia",
+    "breed": "Dachshund",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Female · Tustin, CA"
+  },
+  {
+    "slug": "lemon",
+    "name": "Lemon",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Tustin, CA"
+  },
+  {
+    "slug": "maeve",
+    "name": "Maeve",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Tustin, CA"
+  },
+  {
+    "slug": "nala",
+    "name": "Nala",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Tustin, CA"
+  },
+  {
+    "slug": "nena",
+    "name": "Nena",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Tustin, CA"
+  },
+  {
+    "slug": "peep",
+    "name": "Peep",
+    "breed": "Miniature Dachshund",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Female · Tustin, CA"
+  },
+  {
+    "slug": "pumpkin",
+    "name": "Pumpkin",
+    "breed": "Miniature Pinscher",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Puppy · Female · Tustin, CA"
+  },
+  {
+    "slug": "robert",
+    "name": "Robert",
+    "breed": "Pug",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Tustin, CA"
+  },
+  {
+    "slug": "sullivan",
+    "name": "Sullivan",
+    "breed": "Yorkshire Terrier",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Female · Tustin, CA"
+  },
+  {
+    "slug": "truffle",
+    "name": "Truffle",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Puppy · Female · Tustin, CA"
+  },
+  {
+    "slug": "zella",
+    "name": "Zella",
+    "breed": "French Bulldog",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Tustin, CA"
+  },
+  {
+    "slug": "clay",
+    "name": "Clay",
+    "breed": "Siberian Husky",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Tustin, CA"
+  },
+  {
+    "slug": "alfredo",
+    "name": "Alfredo",
+    "breed": "American Bulldog",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Tustin, CA"
+  },
+  {
+    "slug": "chico-oc-animal-care",
+    "name": "Chico",
+    "breed": "Terrier/Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Tustin, CA"
+  },
+  {
+    "slug": "mimi",
+    "name": "Mimi",
+    "breed": "Pit Bull Mix",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Female · Tustin, CA"
+  },
+  {
+    "slug": "butter-bean",
+    "name": "Butter Bean",
+    "breed": "Pug & Chihuahua Mix",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Laguna Beach, CA"
+  },
+  {
+    "slug": "boyd",
+    "name": "Boyd",
+    "breed": "German Shepherd Dog",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Laguna Beach, CA"
+  },
+  {
+    "slug": "lucy",
+    "name": "Lucy",
+    "breed": "German Shepherd Dog",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Los Angeles, CA"
+  },
+  {
+    "slug": "kai",
+    "name": "Kai",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Los Angeles, CA"
+  },
+  {
+    "slug": "ron",
+    "name": "Ron",
+    "breed": "American Staffordshire Terrier",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Los Angeles, CA"
+  },
+  {
+    "slug": "titan",
+    "name": "Titan",
+    "breed": "Boxer",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Los Angeles, CA"
+  },
+  {
+    "slug": "estella",
+    "name": "Estella",
+    "breed": "Labrador Retriever",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Senior · Female · Los Angeles, CA"
+  },
+  {
+    "slug": "pippen",
+    "name": "Pippen",
+    "breed": "Chihuahua",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Los Angeles, CA"
+  },
+  {
+    "slug": "sasha",
+    "name": "Sasha",
+    "breed": "Pit Bull Terrier",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Los Angeles, CA"
+  },
+  {
+    "slug": "bueller",
+    "name": "Bueller",
+    "breed": "German Shepherd",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Los Angeles, CA"
+  },
+  {
+    "slug": "zeus",
+    "name": "Zeus",
+    "breed": "Boxer",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Los Angeles, CA"
+  },
+  {
+    "slug": "racco",
+    "name": "Racco",
+    "breed": "Skye Terrier",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Male · Los Angeles, CA"
+  },
+  {
+    "slug": "coco",
+    "name": "Coco",
+    "breed": "Chow Chow",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Redwood City, CA"
+  },
+  {
+    "slug": "nani",
+    "name": "Nani",
+    "breed": "Husky",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Puppy · Female · Redwood City, CA"
+  },
+  {
+    "slug": "edwin",
+    "name": "Edwin",
+    "breed": "Jack Russell Terrier Mix",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Puppy · Male · Redwood City, CA"
+  },
+  {
+    "slug": "marigold",
+    "name": "Marigold",
+    "breed": "Poodle Mix",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Puppy · Female · Redwood City, CA"
+  },
+  {
+    "slug": "coconut",
+    "name": "Coconut",
+    "breed": "Husky",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Redwood City, CA"
+  },
+  {
+    "slug": "chloe",
+    "name": "Chloe",
+    "breed": "Pit Bull Terrier Mix",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Puppy · Female · Redwood City, CA"
+  },
+  {
+    "slug": "missy",
+    "name": "Missy",
+    "breed": "Cane Corso",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Redwood City, CA"
+  },
+  {
+    "slug": "chica",
+    "name": "Chica",
+    "breed": "Pit Bull Terrier",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Pasadena, CA"
+  },
+  {
+    "slug": "monica",
+    "name": "Monica",
+    "breed": "American Pit Bull Terrier",
+    "type": "Dog",
+    "img": "assets/img/pets/placeholder-dog.webp",
+    "status": "Unavailable",
+    "meta": "Adult · Female · Pasadena, CA"
   }
 ];
 export const QUIZ_META = [

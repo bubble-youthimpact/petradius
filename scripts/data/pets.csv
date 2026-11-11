@@ -1,50 +1,50 @@
-Name,Type/Breed,Age < 1 year puppy / 8+ Senior,Gender,Story,Image,Medical Information/Weight/Color,Characteristics/Personality/Likes/Dislikes,Source(Shelter),Shelter Operating Hours,Image URL
-Hamlet,Shepherd (Mixed),Puppy,Male,Young shepherd looking for a permanent home after arriving at the Irvine Animal Care Center.,,Medical: Contact shelter for vaccination/neuter status. Weight: Not listed. Color: Tan/Black.,"Energetic, intelligent, playful",Irvine Animal Care Center,,
-Laila,Domestic Shorthair,Adult,Female,Adult cat waiting for adoption at the Irvine Animal Care Center.,,Medical: Contact shelter for medical records. Weight: Not listed. Color: Not listed.,"Calm, independent, affectionate",Irvine Animal Care Center,,
-Catino,Domestic Shorthair,Senior,Male,Senior cat looking for a quiet forever home.,,Medical: Contact shelter for health details. Weight: Not listed. Color: Not listed.,"Gentle, relaxed, friendly",Irvine Animal Care Center,,
-Dusty,Domestic Shorthair,Adult,Female,Young adult cat available for adoption.,,Medical: Contact shelter for vaccination information. Weight: Not listed. Color: Gray.,"Curious, playful",Irvine Animal Care Center,,
-Tux,Domestic Shorthair,Adult,Female,Adult cat currently available for adoption.,,Medical: Contact shelter for medical history. Weight: Not listed. Color: Tuxedo pattern.,"Friendly, affectionate",Irvine Animal Care Center,,
-Dave,Boxer,Adult,Male,Adult Boxer available through Irvine Animal Care Center.,,Medical: Contact shelter for medical details. Weight: Not listed. Color: Not listed.,"Loyal, active, people-oriented",Irvine Animal Care Center,,
-Wolf,Siberian Husky,Adult,Male,Husky searching for an active family.,,Medical: Contact shelter for health records. Weight: Not listed. Color: Gray/White.,"Athletic, energetic, intelligent",Irvine Animal Care Center,,
-Icey,German Shepherd Dog,Young,Female,Young German Shepherd waiting for adoption.,,Medical: Contact shelter for vaccinations/spay status. Weight: Not listed. Color: Black/Tan.,"Smart, trainable, loyal",Irvine Animal Care Center,,
-Nero,Labrador Retriever,Senior,Male,Senior Labrador looking for a loving retirement home.,,Medical: Contact shelter for medical information. Weight: Not listed. Color: Black or Yellow (not specified).,"Calm, gentle, friendly",Irvine Animal Care Center,,
-Cupcake,Domestic Shorthair,Senior,Female,Senior cat available for adoption.,,Medical: Contact shelter for health details. Weight: Not listed. Color: Not listed.,"Quiet, affectionate, easygoing",Irvine Animal Care Center,,
-Asher,Chihuahua,Senior,Male,,,Color: White/Tan/Yellow/Fawn Weight: 9 lbs (current) Medical: Spayed/neutered,,No Stray Left Behind ,,https://www.nostrayleftbehind.com/adopt-a-dog.html
-Mischief,Chihuahua / Mixed Breed (Medium),Senior,Male,,,Medical: Spayed/neutered Color: Black/Brown/Chocolate Weight: 10 pounds,,No Stray Left Behind ,,https://new.shelterluv.com/matchme/foster/NSLB/Dog
-Freda,Terrier ,Adult,Female,"Freda is a small terrier mix that was found as a stray and brought to No Stray Left Behind. She is sweet but needy. She can be a bit of a loner, but I prefer naps with my people or sitting on their lap while they’re at the computer. I don’t really play with toys. I’m good with other dogs. I love going on walks and riding in the car.",,Medical: Spayed/neutered Color: Black/Brown/Chocolate Weight: 6 pounds,Reference: Story,No Stray Left Behind ,,
-Amy-Rose,Dachshund,Senior,Female,,,Medical: Spayed/neutered Color: Brown/Chocolate/Tan/Yellow/Fawn Weight: 15 lbs,,No Stray Left Behind ,,
+Name,Type/Breed,Age < 1 year puppy / 8+ Senior,Gender,Story,Image,Medical Information/Weight/Color,Characteristics/Personality/Likes/Dislikes,Source(Shelter),Shelter Operating Hours,Image URL,Status
+Hamlet,Shepherd (Mixed),Puppy,Male,Young shepherd looking for a permanent home after arriving at the Irvine Animal Care Center.,,Medical: Contact shelter for vaccination/neuter status. Weight: Not listed. Color: Tan/Black.,"Energetic, intelligent, playful",Irvine Animal Care Center,,,Unavailable
+Laila,Domestic Shorthair,Adult,Female,Adult cat waiting for adoption at the Irvine Animal Care Center.,,Medical: Contact shelter for medical records. Weight: Not listed. Color: Not listed.,"Calm, independent, affectionate",Irvine Animal Care Center,,,Unavailable
+Catino,Domestic Shorthair,Senior,Male,Senior cat looking for a quiet forever home.,,Medical: Contact shelter for health details. Weight: Not listed. Color: Not listed.,"Gentle, relaxed, friendly",Irvine Animal Care Center,,,Unavailable
+Dusty,Domestic Shorthair,Adult,Female,Young adult cat available for adoption.,,Medical: Contact shelter for vaccination information. Weight: Not listed. Color: Gray.,"Curious, playful",Irvine Animal Care Center,,,Unavailable
+Tux,Domestic Shorthair,Adult,Female,Adult cat currently available for adoption.,,Medical: Contact shelter for medical history. Weight: Not listed. Color: Tuxedo pattern.,"Friendly, affectionate",Irvine Animal Care Center,,,Unavailable
+Dave,Boxer,Adult,Male,Adult Boxer available through Irvine Animal Care Center.,,Medical: Contact shelter for medical details. Weight: Not listed. Color: Not listed.,"Loyal, active, people-oriented",Irvine Animal Care Center,,,Unavailable
+Wolf,Siberian Husky,Adult,Male,Husky searching for an active family.,,Medical: Contact shelter for health records. Weight: Not listed. Color: Gray/White.,"Athletic, energetic, intelligent",Irvine Animal Care Center,,,Unavailable
+Icey,German Shepherd Dog,Young,Female,Young German Shepherd waiting for adoption.,,Medical: Contact shelter for vaccinations/spay status. Weight: Not listed. Color: Black/Tan.,"Smart, trainable, loyal",Irvine Animal Care Center,,,Unavailable
+Nero,Labrador Retriever,Senior,Male,Senior Labrador looking for a loving retirement home.,,Medical: Contact shelter for medical information. Weight: Not listed. Color: Black or Yellow (not specified).,"Calm, gentle, friendly",Irvine Animal Care Center,,,Unavailable
+Cupcake,Domestic Shorthair,Senior,Female,Senior cat available for adoption.,,Medical: Contact shelter for health details. Weight: Not listed. Color: Not listed.,"Quiet, affectionate, easygoing",Irvine Animal Care Center,,,Unavailable
+Asher,Chihuahua,Senior,Male,,,Color: White/Tan/Yellow/Fawn Weight: 9 lbs (current) Medical: Spayed/neutered,,No Stray Left Behind ,,https://www.nostrayleftbehind.com/adopt-a-dog.html,Unavailable
+Mischief,Chihuahua / Mixed Breed (Medium),Senior,Male,,,Medical: Spayed/neutered Color: Black/Brown/Chocolate Weight: 10 pounds,,No Stray Left Behind ,,https://new.shelterluv.com/matchme/foster/NSLB/Dog,Unavailable
+Freda ,Terrier ,Adult,Female,"Freda is a small terrier mix that was found as a stray and brought to No Stray Left Behind. She is sweet but needy. She can be a bit of a loner, but I prefer naps with my people or sitting on their lap while they’re at the computer. I don’t really play with toys. I’m good with other dogs. I love going on walks and riding in the car.",,Medical: Spayed/neutered Color: Black/Brown/Chocolate Weight: 6 pounds,Reference: Story,No Stray Left Behind ,,,Available
+Amy-Rose ,Dachshund,Senior,Female,,,Medical: Spayed/neutered Color: Brown/Chocolate/Tan/Yellow/Fawn Weight: 15 lbs,,No Stray Left Behind ,,,Available
 Austin,Terrier,Adult,Male,"Austin has adventurous spirit and plenty of energy! If you’re looking for a companion to join you on hikes, long walks, or even your daily jog, Austin is ready to be your perfect workout partner.
 He’s crate trained and enjoys having his own cozy space to relax after a day of fun.
 Austin would do best as the only dog in the home, where he can soak up all the love and attention he deserves. He forms strong bonds with his people and is happiest when he’s the center of your world.
-If you’re an active person looking for a loyal best friend to share your adventures with, Austin might be the perfect match!",,Medical: Spayed/neutered Color: Black/White Weight: 18 lbs,Reference: Story,No Stray Left Behind ,,
-Baby Huey,Mastiff,Adult,Male,,,Medical: Spayed/neutered Color: Brindle Weight: 139 lbs,,No Stray Left Behind ,,
+If you’re an active person looking for a loyal best friend to share your adventures with, Austin might be the perfect match!",,Medical: Spayed/neutered Color: Black/White Weight: 18 lbs,Reference: Story,No Stray Left Behind ,,,Unavailable
+Baby Huey ,Mastiff,Adult,Male,,,Medical: Spayed/neutered Color: Brindle Weight: 139 lbs,,No Stray Left Behind ,,,Available
 Ben,French Bulldog,Adult,Male,"After months of veterinary visits, surgeries, and follow-up appointments, Ben has finally been cleared to find the loving home he deserves!
 Like many French Bulldogs, Ben came to us with severe chronic ear disease. His ears were beyond repair, and he underwent a TECA (Total Ear Canal Ablation) surgery to relieve the constant pain and infection he had been living with. Thanks to his amazing veterinary team, he’s feeling so much better.
 Ben doesn’t hear very well anymore—if at all—but that certainly doesn’t stop him from enjoying life! In true Frenchie fashion, he still loves to sing the song of his people and will happily let you know when he has something important to say.
-Ben is ready to leave all those vet appointments behind and trade them for cozy beds, belly rubs, and a family to call his own. He’s a sweet, resilient boy who has overcome so much, and now it’s his turn to be spoiled.",,Color: Tan/Yellow/Fawn/Brown/Chocolate Weight: 25 lbs (current) Medical: Spayed/neutered,Reference: Story,No Stray Left Behind ,,
-Boba,Chihuahua,Puppy,Female,,,Meical: Spayed/neutered Color:  Black/Tan/Yellow/Fawn Weight: 6 lbs,,No Stray Left Behind ,,
-Boo,Pug,Adult,Female,,,Medical: Spayed/neutered Color: White Weight: 11 lbs,,No Stray Left Behind ,,
-Bugsy,Beagle,Adult,Male,,,Medical: Spayed/neutered Color: Cream/Tan/Yellow/Fawn Weight: 15lbs ,,No Stray Left Behind ,,
-Chico,Terrier,Adult,Male,,,Medical: Spayed/neutered Color: Tan/Yellow/Fawn Weight: 11 pounds,,No Stray Left Behind ,,
-Cocoa,Chihuahua,Puppy,Female,,,Medical: Spayed/neutered Color:Black/Tan/Yellow/Fawn Weight: 8lbs,,No Stray Left Behind ,,
-Drake,Terrier,Senior,Male,,,Medical: Spayed/neutered Color: White Weight: 12 lbs,,No Stray Left Behind ,,
-Gregory,Chihuahua,Adult,Female,,,Medical: Spayed/neutered Color: White/Brown/Chocolate weight: 10lbs,,No Stray Left Behind ,,
-Happy,Terrier,Adult,Male,,,Medical: Spayed/neutered Color: White/Tan/Yellow/Fawn Weight: 18lbs,Not good with Cats,No Stray Left Behind ,,
+Ben is ready to leave all those vet appointments behind and trade them for cozy beds, belly rubs, and a family to call his own. He’s a sweet, resilient boy who has overcome so much, and now it’s his turn to be spoiled.",,Color: Tan/Yellow/Fawn/Brown/Chocolate Weight: 25 lbs (current) Medical: Spayed/neutered,Reference: Story,No Stray Left Behind ,,,Unavailable
+Boba,Chihuahua,Puppy,Female,,,Meical: Spayed/neutered Color:  Black/Tan/Yellow/Fawn Weight: 6 lbs,,No Stray Left Behind ,,,Unavailable
+Boo,Pug,Adult,Female,,,Medical: Spayed/neutered Color: White Weight: 11 lbs,,No Stray Left Behind ,,,Available
+Bugsy,Beagle,Adult,Male,,,Medical: Spayed/neutered Color: Cream/Tan/Yellow/Fawn Weight: 15lbs ,,No Stray Left Behind ,,,Unavailable
+Chico ,Terrier,Adult,Male,,,Medical: Spayed/neutered Color: Tan/Yellow/Fawn Weight: 11 pounds,,No Stray Left Behind ,,,Available
+Cocoa ,Chihuahua,Puppy,Female,,,Medical: Spayed/neutered Color:Black/Tan/Yellow/Fawn Weight: 8lbs,,No Stray Left Behind ,,,Available
+Drake ,Terrier,Senior,Male,,,Medical: Spayed/neutered Color: White Weight: 12 lbs,,No Stray Left Behind ,,,Available
+Gregory,Chihuahua,Adult,Female,,,Medical: Spayed/neutered Color: White/Brown/Chocolate weight: 10lbs,,No Stray Left Behind ,,,Unavailable
+Happy,Terrier,Adult,Male,,,Medical: Spayed/neutered Color: White/Tan/Yellow/Fawn Weight: 18lbs,Not good with Cats,No Stray Left Behind ,,,Unavailable
 Harley AND Remi,Chihuahua,Adult,Male,"Remi (female) and Harley (male) are an extraordinary pair looking for a forever home together. Both around 3 years old, they were born without their front legs—but don’t tell them that, because it doesn’t slow them down from enjoying life and sharing love.
 
 These two are incredibly bonded and bring comfort and joy to each other’s lives. They are quiet, gentle dogs who thrive in a calm environment and get along beautifully with other dogs. Their resilience and sweet nature are truly inspiring, and whoever adopts them will gain two loyal companions with hearts of gold.
 
 Remi and Harley’s special needs mean they’ll do best with a family ready to give them the extra care and support they deserve, but the love they give in return is beyond measure.
-",,Medical: Spayed/neutered Color: Black/Brown/Chocolate Weight: 10lbs,,No Stray Left Behind ,,
-Jane,German Shepherd Dog,Puppy,Female,,,Medical: Spayed/neutered Color: Black/White Weight: 14lbs,,No Stray Left Behind ,,
-Julio,Chihuahua,Senior,Male,Hi! I'm Julio! I was rescued from a shelter blind with swollen eyes that were causing him pain. He had surgery to remove both and gets along well without vision.,,Medical: Spayed/neutered Color: Tan/Yellow/Fawn Weight: 9 lbs,,No Stray Left Behind ,,
-Kira,Chihuahua,Adult,Female,,,Medical: Spayed/neutered Color:Black/Tan/Yellow/Fawn WEight: 11lbs,,No Stray Left Behind ,,
-Leia,Dachshund,Senior,Female,,,Medical: Spayed/neutered Color: Brindle Weight: 14lbs,,No Stray Left Behind ,,
+",,Medical: Spayed/neutered Color: Black/Brown/Chocolate Weight: 10lbs,,No Stray Left Behind ,,,Available
+Jane,German Shepherd Dog,Puppy,Female,,,Medical: Spayed/neutered Color: Black/White Weight: 14lbs,,No Stray Left Behind ,,,Unavailable
+Julio,Chihuahua,Senior,Male,Hi! I'm Julio! I was rescued from a shelter blind with swollen eyes that were causing him pain. He had surgery to remove both and gets along well without vision.,,Medical: Spayed/neutered Color: Tan/Yellow/Fawn Weight: 9 lbs,,No Stray Left Behind ,,,Available
+Kira,Chihuahua,Adult,Female,,,Medical: Spayed/neutered Color:Black/Tan/Yellow/Fawn WEight: 11lbs,,No Stray Left Behind ,,,Unavailable
+Leia,Dachshund,Senior,Female,,,Medical: Spayed/neutered Color: Brindle Weight: 14lbs,,No Stray Left Behind ,,,Unavailable
 Lemon,Chihuahua,Adult,Female,"Lemon is everything you could want in a best friend happy, friendly, and full of love! She has never met a stranger and absolutely adores people. Whether you’re relaxing at home or heading out for an adventure, Lemon is happiest when she’s by your side.
 She gets along wonderfully with other dogs and loves to play, making her a great fit for a home with canine companions or one where she can enjoy regular playdates.
 Lemon has a fun-loving personality, a sweet heart, and an infectious zest for life. She’s the kind of dog who will greet you with a wagging tail every day and bring smiles wherever she goes.
-",,Medical: Spayed/neutered Color: Tan/Yellow/Fawn/White Weight: 20lbs,,No Stray Left Behind ,,
-Maeve,Chihuahua,Adult,Female,,,Medical: Spayed/neutered Color:Black Weight: 10lbs,,No Stray Left Behind ,,
+",,Medical: Spayed/neutered Color: Tan/Yellow/Fawn/White Weight: 20lbs,,No Stray Left Behind ,,,Unavailable
+Maeve,Chihuahua,Adult,Female,,,Medical: Spayed/neutered Color:Black Weight: 10lbs,,No Stray Left Behind ,,,Unavailable
 Mary Celeste,Boxer,Senior,Female,"Mary Celeste is a total rockstar
 
 ✔️ Walks beautifully on leash
@@ -53,70 +53,70 @@ Mary Celeste,Boxer,Senior,Female,"Mary Celeste is a total rockstar
 ✔️ No interest in small animals
 ✔️ Dog selective — or happy as your one and only
 
-Calm, easygoing, and ready for her forever home.",,Medical: Spayed/neutered Color:White/Black Weight: 46lbs,Reference: Story,No Stray Left Behind ,,
-Mickey Jr.,Chihuahua,Senior,Male,,,Medical: Spayed/neutered Color: Black/White Weight: 19 lbs,,No Stray Left Behind ,,
-Mila,Chihuahua,Senior,Female,Mila comes pretty close to being a perfect companion. She is calm and self-sustaining. she does have exhuberant moments: when a car ride seems eminent and when her family comes home. She generally sleeps through the night. She is always looking for food and treats - she’s not a beggar - she’s just hopeful. She has a raised food and water feeder table to keep her bowls stable when she eats or drinks.,,Medical: Spayed/neutered Color: Brown/Chocolate WEight: 22lbs,,No Stray Left Behind ,,
-Nala,Chihuahua,Adult,Female,Nala is able to walk around just fine but the shelter reported she has narrowing of disc spaces L-3-L4.,,Medical: Spayed/neutered Color: Brown Weight 9 lbs,,No Stray Left Behind ,,
-Nena,Chihuahua,Adult,Female,,,Medical: Spayed/neutered Color:,,No Stray Left Behind ,,
-Oscar,French Bulldog,Adult,Male,,,Medical: Spayed/neutered Color: Brindle/White Weight: 22 lbs,,No Stray Left Behind ,,
-Peep,Miniature Dachshund,Senior,Female,,,Medical: Spayed/neutered Color:Brown/Chocolate Weight: 10lbs,,No Stray Left Behind ,,
-Poncho,Dachshund,Adult,Male,,,Medical: Spayed/neutered Color: Red/Golden/Orange/Chestnut/Black Weight: 10lbs,,No Stray Left Behind ,,
-Pumpkin,Miniature Pinscher,Puppy,Female,,,Medical: Spayed/neutered Color:Tan/Yellow/Fawn/White Weight: 6 lbs,,No Stray Left Behind ,,
-Robert,Pug,Adult,Male,,,Medical: Spayed/neutered Color: Brown/Chocolate/Black,,No Stray Left Behind ,,
+Calm, easygoing, and ready for her forever home.",,Medical: Spayed/neutered Color:White/Black Weight: 46lbs,Reference: Story,No Stray Left Behind ,,,Available
+Mickey Jr.,Chihuahua,Senior,Male,,,Medical: Spayed/neutered Color: Black/White Weight: 19 lbs,,No Stray Left Behind ,,,Available
+Mila,Chihuahua,Senior,Female,Mila comes pretty close to being a perfect companion. She is calm and self-sustaining. she does have exhuberant moments: when a car ride seems eminent and when her family comes home. She generally sleeps through the night. She is always looking for food and treats - she’s not a beggar - she’s just hopeful. She has a raised food and water feeder table to keep her bowls stable when she eats or drinks.,,Medical: Spayed/neutered Color: Brown/Chocolate WEight: 22lbs,,No Stray Left Behind ,,,Available
+Nala,Chihuahua,Adult,Female,Nala is able to walk around just fine but the shelter reported she has narrowing of disc spaces L-3-L4.,,Medical: Spayed/neutered Color: Brown Weight 9 lbs,,No Stray Left Behind ,,,Unavailable
+Nena,Chihuahua,Adult,Female,,,Medical: Spayed/neutered Color:,,No Stray Left Behind ,,,Unavailable
+Oscar,French Bulldog,Adult,Male,,,Medical: Spayed/neutered Color: Brindle/White Weight: 22 lbs,,No Stray Left Behind ,,,Available
+Peep,Miniature Dachshund,Senior,Female,,,Medical: Spayed/neutered Color:Brown/Chocolate Weight: 10lbs,,No Stray Left Behind ,,,Unavailable
+Poncho,Dachshund,Adult,Male,,,Medical: Spayed/neutered Color: Red/Golden/Orange/Chestnut/Black Weight: 10lbs,,No Stray Left Behind ,,,Available
+Pumpkin,Miniature Pinscher,Puppy,Female,,,Medical: Spayed/neutered Color:Tan/Yellow/Fawn/White Weight: 6 lbs,,No Stray Left Behind ,,,Unavailable
+Robert,Pug,Adult,Male,,,Medical: Spayed/neutered Color: Brown/Chocolate/Black,,No Stray Left Behind ,,,Unavailable
 Sullivan,Yorkshire Terrier,Senior,Female,"Sullivan’s transformation has been nothing short of incredible. When she first came to us, she had almost no hair and was in rough shape. With time, proper care, and lots of love, she has blossomed into a beautiful, happy, and confident dog.
 
 Today, Sullivan enjoys life to the fullest. She lives peacefully with other dogs and gets along wonderfully with her canine companions. Her sweet personality shines through, and she’s ready to share all the love she has with a family of her own.
 
-Sullivan is proof that second chances can change a life. She’s left her difficult past behind and is now looking forward to a future filled with adventures, cuddles, and unconditional love.",,Medical: Spayed/neutered Color:Brown/Chocolate/Cream Weight 10lbs,,No Stray Left Behind ,,
+Sullivan is proof that second chances can change a life. She’s left her difficult past behind and is now looking forward to a future filled with adventures, cuddles, and unconditional love.",,Medical: Spayed/neutered Color:Brown/Chocolate/Cream Weight 10lbs,,No Stray Left Behind ,,,Unavailable
 Trudy,French Bulldog,Adult,Female,"Don’t let her size fool you—Trudy is a petite French Bulldog with an enormous heart and an incredible story. When she came to us, she was unable to walk. Through determination, care, and lots of love, Trudy has made an amazing recovery. Not only can she walk now, but she also loves to play!
 
-Trudy is a happy, affectionate little girl who enjoys spending time with her people and having fun. Her playful spirit and resilience are truly inspiring, and she doesn’t let her past slow her down.",,Medical: Spayed/neutered Color: Brown/Chocolate/White Weight: 20 lbs,,No Stray Left Behind ,,
-Truffle,Chihuahua,Puppy,Female,,,Medical: Spayed/neutered Color: Black/Tan/Yellow/Fawn Weight: 5 lbs,,No Stray Left Behind ,,
-Zella,French Bulldog,Adult,Female,,,Medical: Spayed/neutered Color: Brown/Chocolate/Black Weight: 16 lbs,,No Stray Left Behind ,,
-Clay,Siberian Husky,Adult,Male,,,Medical: Spayed/neutered Color: Black  Weight: 26-60 lbs,,OC Animal care ,,
-Alfredo ,American Bulldog,Adult,Male,,,Medical: Spayed/neutered Color: White. Weight: 26-60 lbs,,OC Animal Care ,,
-Chico,Terrier/Chihuahua,Adult,Male,,,Medical: Spayed/neutered Color: Tan/Yellow/Fawn Weight: 11 pounds,,OC Animal Care ,,
+Trudy is a happy, affectionate little girl who enjoys spending time with her people and having fun. Her playful spirit and resilience are truly inspiring, and she doesn’t let her past slow her down.",,Medical: Spayed/neutered Color: Brown/Chocolate/White Weight: 20 lbs,,No Stray Left Behind ,,,Available
+Truffle,Chihuahua,Puppy,Female,,,Medical: Spayed/neutered Color: Black/Tan/Yellow/Fawn Weight: 5 lbs,,No Stray Left Behind ,,,Unavailable
+Zella,French Bulldog,Adult,Female,,,Medical: Spayed/neutered Color: Brown/Chocolate/Black Weight: 16 lbs,,No Stray Left Behind ,,,Unavailable
+Clay,Siberian Husky,Adult,Male,,,Medical: Spayed/neutered Color: Black  Weight: 26-60 lbs,,OC Animal care ,,,Unavailable
+Alfredo ,American Bulldog,Adult,Male,,,Medical: Spayed/neutered Color: White. Weight: 26-60 lbs,,OC Animal Care ,,,Unavailable
+Chico,Terrier/Chihuahua,Adult,Male,,,Medical: Spayed/neutered Color: Tan/Yellow/Fawn Weight: 11 pounds,,OC Animal Care ,,,Unavailable
 Mimi,,,,"Sweet senior Mimi is looking for her forever home! She's a friendly 10-year-old Pit Bull mix with a heart of gold and enough smiles to last you a lifetime. Mimi loves going on walks so much, she might be the one leading the adventure! If you're looking for a loyal walking buddy, she's ready to be your side.
 
-Mimi is potty-trained, loves receiving pets, and knows basic commands. She is best suited in an adult only home as the only pet so she can bask in your love and attention. Give Mimi (A1943134) the loving home she deserves and adopt or foster-to-adopt her from OC Animal Care!",,,,OC Animal Care ,,https://ocpetinfo.com/adopt/pet-week
-Butter Bean,Pug & Chihuahua Mix,Adult,Female,,,Medical: Spayed/neutered Color: Merle (Red) Weight:  (0-25 lbs),"Friendly, Athletic, Affectionate",Laguna Beach,,
-AJ,Pointer,Adult,Male,,,"Medical: Spayed/neutered Color: Black, White / Cream  Weight:  61-100lbs","Athletic, Playful, Smart, Gentle",Laguna Beach,,
-Rollie Pollie,American Staffordshire Terrier,Adult,Female,,,"Medical: Spayed/neutered Color: Red / Chestnut / Orange, White / Cream Weight: (61-100 lbs)","Affectionate, Couch Potato, Friendly, Funny, Gentle, Loves Kisses, Quiet",Laguna Beach,,
+Mimi is potty-trained, loves receiving pets, and knows basic commands. She is best suited in an adult only home as the only pet so she can bask in your love and attention. Give Mimi (A1943134) the loving home she deserves and adopt or foster-to-adopt her from OC Animal Care!",,,,OC Animal Care ,,https://ocpetinfo.com/adopt/pet-week,Unavailable
+Butter Bean,Pug & Chihuahua Mix,Adult,Female,,,Medical: Spayed/neutered Color: Merle (Red) Weight:  (0-25 lbs),"Friendly, Athletic, Affectionate",Laguna Beach,,,Unavailable
+AJ,Pointer,Adult,Male,,,"Medical: Spayed/neutered Color: Black, White / Cream  Weight:  61-100lbs","Athletic, Playful, Smart, Gentle",Laguna Beach,,,Available
+Rollie Pollie,American Staffordshire Terrier,Adult,Female,,,"Medical: Spayed/neutered Color: Red / Chestnut / Orange, White / Cream Weight: (61-100 lbs)","Affectionate, Couch Potato, Friendly, Funny, Gentle, Loves Kisses, Quiet",Laguna Beach,,,Available
 Lili,"Cairn Terrier
 &
 Chihuahua
-Mix",Adult,Female,,,"Medical: Spayed/neutered Color: Brown, Black, & White Weight: 0-25lbs","Quiet, Curious, VERY SHY TIMID",Laguna Beach,,
+Mix",Adult,Female,,,"Medical: Spayed/neutered Color: Brown, Black, & White Weight: 0-25lbs","Quiet, Curious, VERY SHY TIMID",Laguna Beach,,,Available
 Poppy,"Beagle
 &
 Chihuahua
-Mix",Adult,Female,,,"Medical: Spayed/neutered Color: Red / Chestnut / Orange, White / Cream Weight: 0-25lbs","Playful, Funny, Curious, Friendly",Laguna Beach,,
+Mix",Adult,Female,,,"Medical: Spayed/neutered Color: Red / Chestnut / Orange, White / Cream Weight: 0-25lbs","Playful, Funny, Curious, Friendly",Laguna Beach,,,Unavailable
 Peppa Pug,"Pug
 &
 Chihuahua
-Mix",Adult,Female,,,"Medical: Spayed/neutered Color: Black, Brown / Chocolate Weight: 0-25 lbs","Athletic, Playful, Funny, Friendly",Laguna Beach,,
-Boyd,German Shepherd Dog,Adult,Male,,,Medical: Spayed/neutered Color: Brown Brindle Weight: 69 lbs,"Friendly, Playful, Affectionate",Laguna Beach,,
-Lucy,German Shepherd Dog,Adult,Female,,,Medical: Spayed/neutered Color: black Weight: 29.2 lbs,,La Animal Services,,
-Kai,Chihuahua,Adult,Female,,,Medical: intact Color: White Weight: 6 lbs,,La Animal Services,,
-Ron,American Staffordshire Terrier,Adult,Male,,,Medical: spayed/neutered Color: Black Weight: 67lbs,,La Animal Services,,
-Frida,Staffordshire Bull terrier ,Senior,Female,,,Medical: Spayed/neutered Color: Brown Weight: 51.2 lbs,,La Animal Services,,
-Titan,Boxer,Adult,Male,,,Medical: Intact Color: Black Weight:83.4 lbs,,La Animal Services,,
-Estella,Labrador Retriever,Senior,Female,,,Medical: Intact Color: Chocolate Weight: 83lbs,,La Animal Services,,
-Pippen,Chihuahua,Adult,Male,,,Medical: Spayed/neutered Color: White Weight: 13.1lbs,,La Animal Services,,
-Sasha,Pit Bull Terrier,Adult,Female,,,Medical: Spayed/neutered Color:  Brown Weight: 29lbs,,La Animal Services,,
-Chiqi,Alaskan Husky,Adult,Female,,,Medical: Spayed/neutered Color:  White Weight: 41.8,,La Animal Services ,,
-Bueller,German Shepherd,Adult,Male,,,Medical: Spayed/neutered Color:  Brown Weight: 82.6lbs,,La Animal Services ,,
-Midas,Pit Bull Terrier,Adult,Male,,,Medical: Spayed/neutered Color:  Fawn Weight: 71.4lbs,,La Animal Services ,,
-Zeus,Boxer,Adult,Male,,,Medical: Spayed/neutered Color: Red Weight: 60lbs,,La Animal Services ,,
-Racco,Skey Terrier,Adult,Male,,,Medical: Intact Color: Black Weight: 23.7lbs,,La Animal Services ,,
-Coco ,Chow Chow,Adult,Female,,,Medical: Spayed/neutered Color: Brown Weight: 50lbs,"Hello, My name is Coco 🐻🌸🤎. I’m a quirky girl with a big personality and a very specific list of things I love—deli meat, my favorite people, and standing proudly in the pool like the queen of my own little spa! I’m a bit of an aloof lady at first, but once I decide you’re one of my people, get ready for some serious cuddles because I LOVE snuggling up with my favorites. I may greet you with a few low little “boofs,” but don’t let those fool you—that’s just my special way of speaking! I’m loyal, funny, affectionate, and full of personality, and I can’t wait to meet the people who appreciate a girl with a little extra fluff and a whole lot of love. -🐾🐕",Pets in Need,,
-Nani,Husky,Puppy,Female,,,Medical: Spayed/neutered Color: Black and White Weight: 25lbs,"I’m a lovable, active pup with a big personality and a whole lot of fun to share! I love going on adventures, showing off my “sit” and “down,” and one of my absolute favorite things is lounging and splashing around in the pool! I’m quirky, playful, and full of charm, and I’d love nothing more than to find my forever Ohana. Come meet me and get to know my fun personality! I might just be the missing piece to your family! -🐾🐕",Pets in Need,,
-Artie,German Shephard Mix,Adult,Male,,,Medical: Spayed/neutered Color:  Brown Weight: 40lbs,"I am a dog who knows what he loves and I love exploring, dozing, playing with my dog friends, and munching on some yummy treats 😋 I am also no slouch in the mental department 🤓 I love learning new things and figuring out the best ways to get my way, currently I know if I want to go for a walk, I need to sit by the door. I figured that out all by myself (although I admit, treats from staff members helped me a little bit)! Then at the end of the day, and everything is winding down, if I can sleep on a comfy cushion cuddled up next to my favorite person, I am the happiest dog in the world! I want to give all my love and affection to someone by giving them kisses and hugs 🤗 I am ready for a home that is ready for a pup that is ready to love and play for many years to come! -🐾🐕",Pets in Need,,
-Coral,Pit Bull Terrier Mix,Adult,Female,,,Medical: Spayed/neutered Color: White and Brown Weight:82 lbs,"I love enjoying the good things in life: cozy beds, sunny spots, leisurely sniffing, and (of course) spending time with my people! I know my house manners very well and I promise I wouldn’t think about disturbing you while you are working at home, as long as you can give me plenty of time to get in a nice siesta 😉 Not that I do not like to have fun! Give me a fun toy and I for sure can have a lot of fun by myself or with people😄If you are looking for a couch companion who is happy to soak up all the cuddles, I am your girl! Ask about me and maybe we can pick out the nice nap spot together! – 🐾🐕",Pets in Need,,
-Edwin,Jack Russell Terrier mix,Puppy,Male,,,Medical: Spayed/neutered Color:  White and Gray Weight: 7.74lbs,"Future good boy, professional puppy, and enthusiastic explorer in training! I’m still figuring out exactly who I am (there are simply SO many things to sniff and discover), but I already know I’m curious, sweet, and very excited about whatever adventure comes next. I’m hoping my next big adventure is finding my forever person or family. I promise to bring plenty of puppy fun, questionable decisions, adorable moments, and lots of love. I’m ready to grow up with you and make a lifetime of memories together! -💙 🐾",Pets in Need,,
-Marigold,Poodle mix,Puppy,Female,,,Medical: Spayed/neutered Color:  White/Cream Weight: 20lbs,"I’m a curious girl who loves exploring my surroundings and discovering new things. I’m happiest when I’m close to my people, whether we’re going on an adventure or simply spending time together. I’m new to the shelter, and I can’t wait to meet the person who will become my forever family! 🏡✨",Pets in Need,,
-Coconut,Husky,Adult,Female,,,Medical: Spayed/neutered Color: White Weight: 88.8 lbs,"I’m a playful, active girl who loves walks, beach adventures, and splashing in the water, but my favorite place is right beside my people for some cozy cuddles. I also love being pampered, especially when it’s time for a nice brushing. If you’re looking for a fun-loving adventure buddy who is always ready to snuggle, I might be your perfect match!",Pets in Need,,
-Chloe,Pit Bull Terrier Mix,Puppy,female,,,Medical: Spayed/neutered Color:  White and Black Weight: 13 lbs,"I love playing, I love treats, I love petting, I love running around, I love other dogs, I love life! I am ready to play and tumble with my new family, whoever they are! I would love a home where I get to play and eat all the yummy stuff that people have in those crinkly bags. Ask staff about me and maybe we can be a family who plays and sleeps on the couch together ❤️ -🐾🐕",Pets in Need,,
-Missy,Cane Corso,Adult,Female,,,Medical: Spayed/neutered Color: Black Weight:99.8 lbs,"Hi, I’m Missy! 🐶💕🌸My day-to-day life tends to involve three very important things; food, cuddles, and naps! As long as I can have those in my life I am very happy girl! I may be big, but I promise you won’t even notice me when I climb on the couch or bed to be next to you, I am very stealthy 😉 Ask about me and my habits with the staff! They all love me very much and want me to go into a good home. I say I will be happy in any home who can give me 3 square meals a day! -🐾🐕",Pets in Need,,
+Mix",Adult,Female,,,"Medical: Spayed/neutered Color: Black, Brown / Chocolate Weight: 0-25 lbs","Athletic, Playful, Funny, Friendly",Laguna Beach,,,Available
+Boyd,German Shepherd Dog,Adult,Male,,,Medical: Spayed/neutered Color: Brown Brindle Weight: 69 lbs,"Friendly, Playful, Affectionate",Laguna Beach,,,Unavailable
+Lucy,German Shepherd Dog,Adult,Female,,,Medical: Spayed/neutered Color: black Weight: 29.2 lbs,,La Animal Services,,,Unavailable
+Kai,Chihuahua,Adult,Female,,,Medical: intact Color: White Weight: 6 lbs,,La Animal Services,,,Unavailable
+Ron,American Staffordshire Terrier,Adult,Male,,,Medical: spayed/neutered Color: Black Weight: 67lbs,,La Animal Services,,,Unavailable
+Frida ,Staffordshire Bull terrier ,Senior,Female,,,Medical: Spayed/neutered Color: Brown Weight: 51.2 lbs,,La Animal Services,,,Available
+Titan,Boxer,Adult,Male,,,Medical: Intact Color: Black Weight:83.4 lbs,,La Animal Services,,,Unavailable
+Estella,Labrador Retriever,Senior,Female,,,Medical: Intact Color: Chocolate Weight: 83lbs,,La Animal Services,,,Unavailable
+Pippen,Chihuahua,Adult,Male,,,Medical: Spayed/neutered Color: White Weight: 13.1lbs,,La Animal Services,,,Unavailable
+Sasha,Pit Bull Terrier,Adult,Female,,,Medical: Spayed/neutered Color:  Brown Weight: 29lbs,,La Animal Services,,,Unavailable
+Chiqi ,Alaskan Husky,Adult,Female,,,Medical: Spayed/neutered Color:  White Weight: 41.8,,La Animal Services ,,,Available
+Bueller,German Shepherd,Adult,Male,,,Medical: Spayed/neutered Color:  Brown Weight: 82.6lbs,,La Animal Services ,,,Unavailable
+Midas ,Pit Bull Terrier,Adult,Male,,,Medical: Spayed/neutered Color:  Fawn Weight: 71.4lbs,,La Animal Services ,,,Available
+Zeus,Boxer,Adult,Male,,,Medical: Spayed/neutered Color: Red Weight: 60lbs,,La Animal Services ,,,Unavailable
+Racco,Skey Terrier,Adult,Male,,,Medical: Intact Color: Black Weight: 23.7lbs,,La Animal Services ,,,Unavailable
+Coco ,Chow Chow,Adult,Female,,,Medical: Spayed/neutered Color: Brown Weight: 50lbs,"Hello, My name is Coco 🐻🌸🤎. I’m a quirky girl with a big personality and a very specific list of things I love—deli meat, my favorite people, and standing proudly in the pool like the queen of my own little spa! I’m a bit of an aloof lady at first, but once I decide you’re one of my people, get ready for some serious cuddles because I LOVE snuggling up with my favorites. I may greet you with a few low little “boofs,” but don’t let those fool you—that’s just my special way of speaking! I’m loyal, funny, affectionate, and full of personality, and I can’t wait to meet the people who appreciate a girl with a little extra fluff and a whole lot of love. -🐾🐕",Pets in Need,,,Unavailable
+Nani,Husky,Puppy,Female,,,Medical: Spayed/neutered Color: Black and White Weight: 25lbs,"I’m a lovable, active pup with a big personality and a whole lot of fun to share! I love going on adventures, showing off my “sit” and “down,” and one of my absolute favorite things is lounging and splashing around in the pool! I’m quirky, playful, and full of charm, and I’d love nothing more than to find my forever Ohana. Come meet me and get to know my fun personality! I might just be the missing piece to your family! -🐾🐕",Pets in Need,,,Unavailable
+Artie ,German Shephard Mix,Adult,Male,,,Medical: Spayed/neutered Color:  Brown Weight: 40lbs,"I am a dog who knows what he loves and I love exploring, dozing, playing with my dog friends, and munching on some yummy treats 😋 I am also no slouch in the mental department 🤓 I love learning new things and figuring out the best ways to get my way, currently I know if I want to go for a walk, I need to sit by the door. I figured that out all by myself (although I admit, treats from staff members helped me a little bit)! Then at the end of the day, and everything is winding down, if I can sleep on a comfy cushion cuddled up next to my favorite person, I am the happiest dog in the world! I want to give all my love and affection to someone by giving them kisses and hugs 🤗 I am ready for a home that is ready for a pup that is ready to love and play for many years to come! -🐾🐕",Pets in Need,,,Available
+Coral ,Pit Bull Terrier Mix,Adult,Female,,,Medical: Spayed/neutered Color: White and Brown Weight:82 lbs,"I love enjoying the good things in life: cozy beds, sunny spots, leisurely sniffing, and (of course) spending time with my people! I know my house manners very well and I promise I wouldn’t think about disturbing you while you are working at home, as long as you can give me plenty of time to get in a nice siesta 😉 Not that I do not like to have fun! Give me a fun toy and I for sure can have a lot of fun by myself or with people😄If you are looking for a couch companion who is happy to soak up all the cuddles, I am your girl! Ask about me and maybe we can pick out the nice nap spot together! – 🐾🐕",Pets in Need,,,Available
+Edwin,Jack Russell Terrier mix,Puppy,Male,,,Medical: Spayed/neutered Color:  White and Gray Weight: 7.74lbs,"Future good boy, professional puppy, and enthusiastic explorer in training! I’m still figuring out exactly who I am (there are simply SO many things to sniff and discover), but I already know I’m curious, sweet, and very excited about whatever adventure comes next. I’m hoping my next big adventure is finding my forever person or family. I promise to bring plenty of puppy fun, questionable decisions, adorable moments, and lots of love. I’m ready to grow up with you and make a lifetime of memories together! -💙 🐾",Pets in Need,,,Unavailable
+Marigold,Poodle mix,Puppy,Female,,,Medical: Spayed/neutered Color:  White/Cream Weight: 20lbs,"I’m a curious girl who loves exploring my surroundings and discovering new things. I’m happiest when I’m close to my people, whether we’re going on an adventure or simply spending time together. I’m new to the shelter, and I can’t wait to meet the person who will become my forever family! 🏡✨",Pets in Need,,,Unavailable
+Coconut,Husky,Adult,Female,,,Medical: Spayed/neutered Color: White Weight: 88.8 lbs,"I’m a playful, active girl who loves walks, beach adventures, and splashing in the water, but my favorite place is right beside my people for some cozy cuddles. I also love being pampered, especially when it’s time for a nice brushing. If you’re looking for a fun-loving adventure buddy who is always ready to snuggle, I might be your perfect match!",Pets in Need,,,Unavailable
+Chloe,Pit Bull Terrier Mix,Puppy,female,,,Medical: Spayed/neutered Color:  White and Black Weight: 13 lbs,"I love playing, I love treats, I love petting, I love running around, I love other dogs, I love life! I am ready to play and tumble with my new family, whoever they are! I would love a home where I get to play and eat all the yummy stuff that people have in those crinkly bags. Ask staff about me and maybe we can be a family who plays and sleeps on the couch together ❤️ -🐾🐕",Pets in Need,,,Unavailable
+Missy,Cane Corso,Adult,Female,,,Medical: Spayed/neutered Color: Black Weight:99.8 lbs,"Hi, I’m Missy! 🐶💕🌸My day-to-day life tends to involve three very important things; food, cuddles, and naps! As long as I can have those in my life I am very happy girl! I may be big, but I promise you won’t even notice me when I climb on the couch or bed to be next to you, I am very stealthy 😉 Ask about me and my habits with the staff! They all love me very much and want me to go into a good home. I say I will be happy in any home who can give me 3 square meals a day! -🐾🐕",Pets in Need,,,Unavailable
 Kona,German Shepherd,Adult,Female,Has been waiting since June and is looking for a fresh start with a family. Loves having space to run and play.,,Medical: Spayed/neutered Color: Tan Weight:60.2 lbs,"Smart, athletic, goofy, playful, adventurous; loves pools and chew treats.",Pasedena Humane,,"🐾 Meet Kona!
 
 Kona has been waiting for her forever home since June, and she's ready for a fresh start with a loving family! This smart, athletic girl loves having space to run and play. She's goofy, adventurous, and enjoys pools and chew treats. Could you be the one to give Kona the happy ending she deserves? 💛
@@ -133,8 +133,8 @@ Could Kona be your new best friend? 🏡
 
 🐾 Find your next best friend with PetRadius!
 
-#PetRadius #AdoptKona #AdoptDontShop #GermanShepherd #RescueDog"
-Chica,Pit Bull Terrier,Adult,Female,"A sweet, easygoing pittie mix who loves being around her people. Currently in foster.",,Medical: Spayed/neutered Color:  Grey/White Weight:78 lbs,"Sweet, loyal, affectionate, cuddly, people-oriented.",Pasedena Humane,,
+#PetRadius #AdoptKona #AdoptDontShop #GermanShepherd #RescueDog",Available
+Chica,Pit Bull Terrier,Adult,Female,"A sweet, easygoing pittie mix who loves being around her people. Currently in foster.",,Medical: Spayed/neutered Color:  Grey/White Weight:78 lbs,"Sweet, loyal, affectionate, cuddly, people-oriented.",Pasedena Humane,,,Unavailable
 Boda,Pit Bull Terrier,Adult,Male,A strong but polite dog who enjoys simple activities and is available for a 10-day adoption trial.,,Medical: Spayed/neutered Color:  Grey/White Weight:102 lbs,"Gentle, confident, mellow, playful, polite; loves toys and swimming.",Pasedena Humane,,"🐾 Meet Boda!
 
 Boda is a strong but polite guy who enjoys the simple things in life! He loves toys, swimming, and spending time with people. He's mellow, playful, and ready to find a loving home. He's also available for a 10-day adoption trial! 💙
@@ -152,7 +152,7 @@ Could Boda be your new best friend? 🏡
 
 🐾 Find your next best friend with PetRadius!
 
-#PetRadius #AdoptBoda #AdoptDontShop #PitBullTerrier #RescueDog"
+#PetRadius #AdoptBoda #AdoptDontShop #PitBullTerrier #RescueDog",Available
 Raya,Pit Bull Terrier / Dutch Shepherd,Adult,Female,"A playful girl who loves grass, belly rubs, walks, and meeting new people.",,Medical: Spayed/neutered Color:  Brindle/White Weight:90.8 lbs,"Silly, playful, social, affectionate, cuddly.",Pasedena Humane,,"🐾 Meet Raya!
 
 Raya is a playful girl who loves rolling in the grass, getting belly rubs, going on walks, and meeting new people! She's silly, social, and affectionate, and she loves a good cuddle. She's ready to bring plenty of happiness to her future family! 💗
@@ -169,8 +169,8 @@ Could Raya be your new best friend? 🏡
 
 🐾 Find your next best friend with PetRadius!
 
-#PetRadius #AdoptRaya #AdoptDontShop #RescueDog #ShelterPets"
-Monica,American Pit Bull Terrier,Adult,Female,"A terrier-pit bull mix who enjoys fetch, pools, sunshine, and adventures.",,Medical: Spayed/neutered Color: Black/White Weight:49.6 lbs,"Sweet, enthusiastic, playful, people-loving; would do best as the only pet.",Pasedena Humane,,
+#PetRadius #AdoptRaya #AdoptDontShop #RescueDog #ShelterPets",Available
+Monica,American Pit Bull Terrier,Adult,Female,"A terrier-pit bull mix who enjoys fetch, pools, sunshine, and adventures.",,Medical: Spayed/neutered Color: Black/White Weight:49.6 lbs,"Sweet, enthusiastic, playful, people-loving; would do best as the only pet.",Pasedena Humane,,,Unavailable
 Saba,German Shepherd,Senior,Female,"Looking for someone to be her loyal sidekick. Loves walks, exploring, and playing fetch.",,Medical: Spayed/neutered Color:  Tan/Black Weight:62.8 lbs,"Playful, confident, easygoing, affectionate, loyal.",Pasedena Humane,,"🐾 Meet Saba!
 
 Saba is looking for a loyal sidekick to share life's adventures with! This affectionate girl loves walks, exploring, and playing fetch. She's confident, easygoing, and ready to find someone to call her own. ❤️
@@ -187,7 +187,7 @@ Could Saba be your new best friend? 🏡
 
 🐾 Find your next best friend with PetRadius!
 
-#PetRadius #AdoptSaba #AdoptDontShop #GermanShepherd #RescueDog"
+#PetRadius #AdoptSaba #AdoptDontShop #GermanShepherd #RescueDog",Available
 Whimsy,German Shepherd,Adult,Female,"Loves exploring, swimming, toys, and food puzzles. Knows several commands.",,Medical: Spayed/neutered Color: Black/Brown Weight:107.8 lbs,"Adventurous, affectionate, playful, intelligent, food-motivated.",Pasedena Humane,,"🐾 Meet Whimsy!
 
 Whimsy is ready to bring adventure and fun into your life! She loves exploring, swimming, playing with toys, and solving food puzzles. She's an intelligent girl who knows several commands and loves keeping busy. 💛
@@ -204,7 +204,7 @@ Could Whimsy be your new best friend? 🏡
 
 🐾 Find your next best friend with PetRadius!
 
-#PetRadius #AdoptWhimsy #AdoptDontShop #GermanShepherd #RescueDog"
+#PetRadius #AdoptWhimsy #AdoptDontShop #GermanShepherd #RescueDog",Available
 Osito,Pit Bull Terrier,Senior,Male,An older dog who still enjoys adventures and foster field trips.,,Medical: Spayed/neutered Color:  Grey/White Weight: 67.2lbs,"Sweet, easygoing, goofy, gentle, affectionate; good leash manners.",Pasedena Humane,,"🐾 Meet Osito!
 
 Osito may be a senior, but he's still ready for new adventures! This sweet, goofy boy enjoys foster field trips and has good leash manners. He's gentle, easygoing, and full of affection, making him a wonderful companion to get to know. 🤍
@@ -221,7 +221,7 @@ Could Osito be your new best friend? 🏡
 
 🐾 Find your next best friend with PetRadius!
 
-#PetRadius #AdoptOsito #AdoptDontShop #SeniorDog #RescueDog"
+#PetRadius #AdoptOsito #AdoptDontShop #SeniorDog #RescueDog",Available
 Rocco,American Pit Bull Terrier,Adult,Male,Loves summer activities and is looking for a person to share them with.,,Medical: Spayed/neutered Color: Fawn/White Weight: 113.6 lbs,"Gentle, happy, affectionate, treat-loving, playful.",Pasedena Humane,,"🐾 Meet Rocco!
 
 Rocco is looking for someone to share life's fun moments with! This happy, gentle boy loves treats, playtime, and affection. He's ready to bring plenty of joy to a family looking for a loving companion. ☀️
@@ -238,7 +238,7 @@ Could Rocco be your new best friend? 🏡
 
 🐾 Find your next best friend with PetRadius!
 
-#PetRadius #AdoptRocco #AdoptDontShop #PitBullTerrier #RescueDog"
+#PetRadius #AdoptRocco #AdoptDontShop #PitBullTerrier #RescueDog",Available
 Ella,German Shepherd,Senior,Female,Currently in foster and eligible for an adoption trial.,,Medical: Spayed/neutered Color: Brown/Black Weight: 64lbs,Detailed personality story isn't currently listed on her profile.,Pasedena Humane,,"🐾 Meet Ella!
 
 Ella is currently staying in a foster home and is eligible for an adoption trial! She's looking for a loving family willing to give her a chance at a forever home. Could you be the one to help her start her next chapter? 💛
@@ -256,7 +256,7 @@ Could Ella be your new best friend? 🏡
 
 🐾 Find your next best friend with PetRadius!
 
-#PetRadius #AdoptElla #AdoptDontShop #SeniorDog #GermanShepherd"
+#PetRadius #AdoptElla #AdoptDontShop #SeniorDog #GermanShepherd",Available
 Disco,German Shepherd,Adult,Male,Currently in foster and eligible for an adoption trial.,,Medical: Spayed/neutered Color: Black/Brown Weight:76.6 lbs,Detailed personality story isn't currently listed on her profile.,Pasedena Humane,,"🐾 Meet Disco!
 
 Disco is currently staying in a foster home and is eligible for an adoption trial! He's waiting for someone to give him a chance at a loving home and a fresh start. Maybe his next adventure will be with you! 🖤
@@ -274,13 +274,13 @@ Could Disco be your new best friend? 🏡
 
 🐾 Find your next best friend with PetRadius!
 
-#PetRadius #AdoptDisco #AdoptDontShop #GermanShepherd #RescueDog"
-,,,,,,Medical: Spayed/neutered Color:  Weight:,Detailed personality story isn't currently listed on her profile.,Pasedena Humane,,
-,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,
-,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,
-,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,
-,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,
-,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,
-,,,,,,Medical: Spayed/neutered Color:  Weight:,,,,
-,,,,,,Medical: Spayed/neutered Color:  Weight:,,,,
-,,,,,,Medical: Spayed/neutered Color:  Weight:,,,,
+#PetRadius #AdoptDisco #AdoptDontShop #GermanShepherd #RescueDog",Available
+,,,,,,Medical: Spayed/neutered Color:  Weight:,Detailed personality story isn't currently listed on her profile.,Pasedena Humane,,,
+,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,,
+,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,,
+,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,,
+,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,,
+,,,,,,Medical: Spayed/neutered Color:  Weight:,,Pasedena Humane,,,
+,,,,,,Medical: Spayed/neutered Color:  Weight:,,,,,
+,,,,,,Medical: Spayed/neutered Color:  Weight:,,,,,
+,,,,,,Medical: Spayed/neutered Color:  Weight:,,,,,

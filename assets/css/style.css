@@ -782,3 +782,28 @@ p { margin: 0; }
 .legal strong { color: var(--ink); font-weight: 600; }
 .legal section a { color: var(--brown); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
 @media (max-width: 640px) { .legal-toc ol { columns: 1; } .legal-toc { padding: 18px 18px; } }
+
+/* ---------- Pet status ---------- */
+.pet-card .thumb { position: relative; }
+.status-badge {
+  position: absolute; left: 10px; top: 10px; padding: 4px 10px; border-radius: 999px;
+  font-size: 11.5px; font-weight: 600; letter-spacing: .02em; background: rgba(40,36,32,.82); color: #fff;
+}
+.status-badge.status-adopted { background: #2b6a47; }
+.status-badge.status-pending { background: #b07a1e; }
+.pet-card-wrap.is-unavailable .thumb img { filter: grayscale(.55); opacity: .85; }
+.tag-status { background: #f1e4d6; color: var(--brown-dark); font-weight: 600; margin-left: 6px; }
+.status-note {
+  display: flex; flex-direction: column; gap: 4px; background: #fbf3e2; border: 1px solid #f0e0bd;
+  border-radius: 12px; padding: 12px 14px; margin: 14px 0 18px; font-size: 14px; color: #5f4a1c;
+}
+.status-note strong { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+.status-note a { color: var(--brown); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; align-self: flex-start; }
+.status-note.status-adopted { background: #e8f2ea; border-color: #cfe3d4; color: #245c36; }
+@media (max-width: 640px) {
+  .filter-selects { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 460px) {
+  .filter-selects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filter-selects select:first-of-type { grid-column: 1 / -1; }
+}
