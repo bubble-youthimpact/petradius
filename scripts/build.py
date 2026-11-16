@@ -156,6 +156,8 @@ PETS = load_pets()
 
 RESOURCES = [
     # (section, title, description, image, url)
+    # Keep this list in the order resources were added (oldest first, newest last).
+    # The Resources page shows each section newest-first.
     ("guide", "Pet Owner's Essential Guide", "A practical guide to welcoming your new canine companion home",
      "pet-owners-essential-guide", "https://ab749b1020e6b18e17bd6108ef43b12e.cdn.bubble.io/f1785722489065x939737311521714400/Pet_Owners_Essential_Guide.pdf"),
     ("guide", "Is a Dog Right for You? A Comprehensive Readiness Checklist", "A practical self-assessment & readiness checklist for prospective dog owners",
@@ -168,6 +170,8 @@ RESOURCES = [
      "pet-nutrition-feeding-guide", "https://ab749b1020e6b18e17bd6108ef43b12e.cdn.bubble.io/f1788950675084x822288546177472900/Pet%20Nutrition%20%26%20Feeding%20Guide.pdf"),
     ("guide", "Pet Health Guide", "Proactive medical care keeps your pet protected against preventable diseases and helps identify health concerns early before they become critical.",
      "pet-health-guide", "https://ab749b1020e6b18e17bd6108ef43b12e.cdn.bubble.io/f1788950763870x926942003721289900/Pet%20Health%20Guide.pdf"),
+    ("guide", "Dog Adoption Budget Breakdown", "Plan for the real cost of a dog: initial adoption and medical fees, essential startup supplies, and ongoing monthly care expenses.",
+     "dog-adoption-budget-breakdown", "../assets/docs/dog-adoption-budget-breakdown.pdf"),
     ("website", "AAHA Canine Vaccination Guidelines", "These Guidelines empower veterinarians to make the best possible personalized recommendations for their patients by determining which vaccines are essential for each individual dog.",
      "aaha-vaccination-guidelines", "https://www.aaha.org/resources/2022-aaha-canine-vaccination-guidelines/"),
     ("website", "Dog Leash", "Heavy Duty Nylon Webbing, Padded Handle for Comfort, Visible at Night, for Walking & Training",
@@ -186,6 +190,8 @@ RESOURCES = [
      "humane-world-care-resources", "https://www.humaneworld.org/en/animal-care-resources"),
     ("website", "Best Friends Pet Care Resources", "A free library from Best Friends Animal Society on pet health, training, behavior, adoption and rescue, written by vets and behavior specialists.",
      "best-friends-pet-care", "https://bestfriends.org/pet-care-resources"),
+    ("website", "Canine Separation Anxiety: Strategies for Treatment and Management", "A veterinary research review on why some dogs struggle when left alone, and the training approaches that help them cope with gradually longer absences.",
+     "canine-separation-anxiety", "https://pmc.ncbi.nlm.nih.gov/articles/PMC7521022/"),
     ("video", "How To Teach Your Dog The Basics", "Training your dog is important, and there are some basics every dog should know. In this video I show you how to train your dog the basic commands.",
      "dog-training-basics", "https://www.youtube.com/watch?v=lUzcA9qa_P8"),
 ]
@@ -619,7 +625,8 @@ def resources():
     out = []
     for key, label in sections:
         cards = []
-        for sec, title, desc, img, url in RESOURCES:
+        # Newest first: add new resources at the END of RESOURCES and they appear at the top
+        for sec, title, desc, img, url in reversed(RESOURCES):
             if sec != key:
                 continue
             cards.append(f"""          <a class="res-card" href="{e(url)}" target="_blank" rel="noopener">
