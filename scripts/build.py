@@ -16,6 +16,9 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_NAME = "PetRadius"
+# Live site address, e.g. "https://username.github.io/petradius". Social sites (Facebook, iMessage,
+# Slack, X) need a full URL for the share thumbnail; leave empty to use a relative path.
+SITE_URL = "https://petradius.org"
 EMAIL = "petradius.official@gmail.com"
 INSTAGRAM_HANDLE = "petradiusofficial"
 INSTAGRAM_URL = "https://www.instagram.com/petradiusofficial/"
@@ -253,6 +256,9 @@ def layout(path, title, description, body, active="", extra_head="", extra_scrip
     full_title = f"{title} | {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME} — Every Pet Deserves a Loving Home"
     cls = f' class="{body_class}"' if body_class else ""
     cls += f' data-base="{p}"' + (f' data-page="{page}"' if page else "")
+    page_url = (SITE_URL.rstrip("/") + "/" + (path.strip("/") + "/" if path.strip("/") else "")) if SITE_URL else ""
+    page_url_tags = (f'\n  <meta property="og:url" content="{page_url}">\n  <link rel="canonical" href="{page_url}">') if page_url else ""
+    og_img = (SITE_URL.rstrip("/") + "/" if SITE_URL else p) + "assets/img/og-image.jpg"
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -264,6 +270,15 @@ def layout(path, title, description, body, active="", extra_head="", extra_scrip
   <meta property="og:title" content="{e(full_title)}">
   <meta property="og:description" content="{e(description)}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{SITE_NAME}">{page_url_tags}
+  <meta property="og:image" content="{og_img}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PetRadius homepage: Every Pet Deserves a Loving Home">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{e(full_title)}">
+  <meta name="twitter:description" content="{e(description)}">
+  <meta name="twitter:image" content="{og_img}">
   <link rel="icon" href="{p}assets/img/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="{p}assets/img/favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="{p}assets/img/apple-touch-icon.png">
@@ -1060,3 +1075,8 @@ if __name__ == "__main__":
     privacy()
     terms()
     site_data()
+    # GitHub Pages custom domain
+    if SITE_URL:
+        from urllib.parse import urlparse
+        with open(os.path.join(ROOT, "CNAME"), "w") as f:
+            f.write(urlparse(SITE_URL).netloc + "\n")
