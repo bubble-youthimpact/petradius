@@ -206,3 +206,102 @@
     });
   }
 })();
+
+/* ================================================================
+   Share buttons, count-up stats, toast
+   ================================================================ */
+(function () {
+  var toastTimer;
+  function toast(msg) {
+    var el = document.querySelector('.toast');
+    if (!el) {
+      el = document.createElement('div');
+      el.className = 'toast';
+      el.setAttribute('role', 'status');
+      document.body.appendChild(el);
+    }
+    el.textContent = msg;
+    requestAnimationFrame(function () { el.classList.add('show'); });
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { el.classList.remove('show'); }, 2400);
+  }
+  window.PetRadiusToast = toast;
+
+  // Absolute URL for a path relative to the site root (works on petradius.org and in previews)
+  function siteUrl(path) {
+    var base = document.body.getAttribute('data-base') || './';
+    return new URL(base + (path || ''), location.href).href;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  // Phones and tablets get the native share sheet; computers copy the link
+  var isTouch = window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-share]');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var url = siteUrl(btn.getAttribute('data-share'));
+    var title = btn.getAttribute('data-share-title') || document.title;
+
+    if (isTouch && navigator.share) {
+      navigator.share({ title: title, url: url }).catch(function () {});
+      return;
+    }
+    copyText(url).then(function () {
+      toast('Link copied');
+      btn.classList.add('is-copied');
+      var label = btn.querySelector('span');
+      var old = label ? label.textContent : '';
+      if (label) label.textContent = 'Copied!';
+      setTimeout(function () {
+        btn.classList.remove('is-copied');
+        if (label) label.textContent = old;
+      }, 1800);
+    }, function () {
+      window.prompt('Copy this link:', url);
+    });
+  });
+
+  // Count-up numbers (homepage stats)
+  var counters = Array.prototype.slice.call(document.querySelectorAll('[data-countup]'));
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (counters.length && !reduce && 'IntersectionObserver' in window) {
+    var run = function (el) {
+      var target = parseInt(el.getAttribute('data-countup'), 10) || 0;
+      var dur = 1400, start = null;
+      var step = function (t) {
+        if (start === null) start = t;
+        var k = Math.min(1, (t - start) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        el.textContent = Math.round(target * eased);
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    counters.forEach(function (el) { el.textContent = '0'; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { io.unobserve(en.target); run(en.target); }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { io.observe(el); });
+  }
+})();

@@ -157,22 +157,45 @@ def pet_img(pet):
 
 PETS = load_pets()
 
+# Homepage FAQ: (question, answer). The first one starts open. Placeholder questions for now.
+FAQS = [
+    ("How do I adopt a pet I see on PetRadius?",
+     "PetRadius showcases pets from partner shelters, but adoptions are handled by the shelter itself. Open a pet\u2019s profile and tap \u201cVisit shelter\u201d to see their adoption steps, fees and visiting hours."),
+    ("Does PetRadius charge any fees?",
+     "No. Browsing pets, taking quizzes and reading our resources is free. Any adoption fee is set and collected by the shelter."),
+    ("How up to date are the pet listings?",
+     "We check listings against each shelter\u2019s website regularly. Pets can be adopted quickly, so confirm availability with the shelter before you visit."),
+    ("Can I save pets I\u2019m interested in?",
+     "Yes. Create a free account and tap the heart on any pet to add them to your favorites. Your quiz results are saved to your profile too."),
+    ("My shelter would like to be featured. How do we join?",
+     "We\u2019d love to hear from you. Send us a message through the contact page and we\u2019ll get back to you about listing your animals."),
+]
+
+
+def share_btn(path, title, label=True, cls=""):
+    """Share button. path is relative to the site root, e.g. 'pets/pet/?id=aj'.
+    Desktop: copies the link. Phones: opens the phone's share sheet. Handled in main.js."""
+    text = '<span>Share</span>' if label else ''
+    return (f'<button class="share-btn{" icon-only" if not label else ""}{(" " + cls) if cls else ""}" type="button" '
+            f'data-share="{e(path)}" data-share-title="{e(title)}" aria-label="Share {e(title)}">{icon("share")}{text}</button>')
+
+
 RESOURCES = [
     # (section, title, description, image, url)
     # Keep this list in the order resources were added (oldest first, newest last).
     # The Resources page shows each section newest-first.
     ("guide", "Pet Owner's Essential Guide", "A practical guide to welcoming your new canine companion home",
-     "pet-owners-essential-guide", "https://ab749b1020e6b18e17bd6108ef43b12e.cdn.bubble.io/f1785722489065x939737311521714400/Pet_Owners_Essential_Guide.pdf"),
+     "pet-owners-essential-guide", "../assets/docs/pet-owners-essential-guide.pdf"),
     ("guide", "Is a Dog Right for You? A Comprehensive Readiness Checklist", "A practical self-assessment & readiness checklist for prospective dog owners",
-     "dog-readiness-checklist", "https://ab749b1020e6b18e17bd6108ef43b12e.cdn.bubble.io/f1785722494051x827319255128716500/Is%20a%20Dog%20Right%20for%20You_%20A%20Comprehensive%20Readiness%20Checklist.pdf"),
+     "dog-readiness-checklist", "../assets/docs/dog-readiness-checklist.pdf"),
     ("guide", "Pet Behavior Guide", "Understanding your pet’s body language and behavioral cues is essential for building trust, preventing anxiety, and addressing common challenges effectively.",
-     "pet-behavior-guide", "https://ab749b1020e6b18e17bd6108ef43b12e.cdn.bubble.io/f1788950237522x459334904184573600/Pet%20Behavior%20Guide.pdf"),
+     "pet-behavior-guide", "../assets/docs/pet-behavior-guide.pdf"),
     ("guide", "First Week Checklist", "Bringing a new pet home is a major transition. Use this step-by-step checklist to ensure a safe, calm, and structured setup during your pet's critical first week.",
-     "first-week-checklist", "https://ab749b1020e6b18e17bd6108ef43b12e.cdn.bubble.io/f1788950471049x114177018173015070/First%20Week%20Checklist.pdf"),
+     "first-week-checklist", "../assets/docs/first-week-checklist.pdf"),
     ("guide", "Pet Nutrition & Feeding Guide", "Proper diet and feeding habits lay the foundation for your pet's lifelong health and energy. Use this guide to manage feeding schedules and avoid hazardous foods.",
-     "pet-nutrition-feeding-guide", "https://ab749b1020e6b18e17bd6108ef43b12e.cdn.bubble.io/f1788950675084x822288546177472900/Pet%20Nutrition%20%26%20Feeding%20Guide.pdf"),
+     "pet-nutrition-feeding-guide", "../assets/docs/pet-nutrition-feeding-guide.pdf"),
     ("guide", "Pet Health Guide", "Proactive medical care keeps your pet protected against preventable diseases and helps identify health concerns early before they become critical.",
-     "pet-health-guide", "https://ab749b1020e6b18e17bd6108ef43b12e.cdn.bubble.io/f1788950763870x926942003721289900/Pet%20Health%20Guide.pdf"),
+     "pet-health-guide", "../assets/docs/pet-health-guide.pdf"),
     ("guide", "Dog Adoption Budget Breakdown", "Plan for the real cost of a dog: initial adoption and medical fees, essential startup supplies, and ongoing monthly care expenses.",
      "dog-adoption-budget-breakdown", "../assets/docs/dog-adoption-budget-breakdown.pdf"),
     ("website", "AAHA Canine Vaccination Guidelines", "These Guidelines empower veterinarians to make the best possible personalized recommendations for their patients by determining which vaccines are essential for each individual dog.",
@@ -228,6 +251,9 @@ def icon(name, extra=""):
         "mail": '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
         "lock": '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
         "instagram": '<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/>',
+        "share": '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98"/><path d="m15.41 6.51-6.82 3.98"/>',
+        "x": '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+        "download": '<path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/>',
         "external": '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
     }
     return ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" '
@@ -424,7 +450,14 @@ def write(path, content):
 # ----------------------------------------------------------------------
 def home():
     p = "./"
-    featured = "\n".join(pet_card(x, p) for x in PETS if x.get("featured"))[:]
+    featured = "\n".join(pet_card(x, p) for x in PETS if x.get("featured"))
+    # Counted from the site's own data, so the numbers stay accurate as pets/resources are added
+    n_shelters = len({x["shelter"] for x in PETS if x["shelter"]})
+    faq_items = "\n".join(
+        f"""          <details class="faq-item"{' open' if i == 0 else ''}>
+            <summary>{e(q)}{icon('chevron-down')}</summary>
+            <div class="faq-answer"><p>{e(a)}</p></div>
+          </details>""" for i, (q, a) in enumerate(FAQS))
     body = f"""    <section class="hero" style="background-image:url('assets/img/hero.webp')">
       <div class="container">
         <img class="hero-logo" src="assets/img/logo.webp" alt="" width="44" height="44">
@@ -439,9 +472,9 @@ def home():
 
     <section class="stats" aria-label="PetRadius in numbers">
       <div class="container stats-grid">
-        <div class="stat">{icon('home')}<strong>12+</strong><span>Partner Shelters</span></div>
-        <div class="stat">{icon('heart')}<strong>340+</strong><span>Pets Profiles Listed</span></div>
-        <div class="stat">{icon('globe')}<strong>3</strong><span>Countries</span></div>
+        <div class="stat">{icon('home')}<strong data-countup="{n_shelters}">{n_shelters}</strong><span>Partner Shelters</span></div>
+        <div class="stat">{icon('heart')}<strong data-countup="{len(PETS)}">{len(PETS)}</strong><span>Pet Profiles</span></div>
+        <div class="stat">{icon('book')}<strong data-countup="{len(RESOURCES)}">{len(RESOURCES)}</strong><span>Resources</span></div>
       </div>
     </section>
 
@@ -456,6 +489,18 @@ def home():
         </div>
         <div class="center mt-32">
           <a class="btn btn-ghost" href="pets/">View all pets {icon('arrow-right')}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="faq-title">Frequently Asked Questions</h2>
+          <p>Answers to common questions about PetRadius and adopting a pet.</p>
+        </div>
+        <div class="faq-list">
+{faq_items}
         </div>
       </div>
     </section>
@@ -621,7 +666,10 @@ def pet_article(pet):
           <span class="tag">{e(pet['type'])}</span>{'' if pet['status'] == 'Available' else ' <span class="tag tag-status">' + e(pet['status']) + '</span>'}
           <div class="pet-title">
             <h1>{e(pet['name'])}</h1>
-            <button class="fav-btn" type="button" data-fav="{pet['slug']}" data-name="{e(pet['name'])}" aria-pressed="false" aria-label="Save {e(pet['name'])} to favorites">{icon('heart')}</button>
+            <div class="pet-actions">
+              {share_btn("pets/pet/?id=" + pet['slug'], "Meet " + pet['name'] + " on PetRadius", label=False)}
+              <button class="fav-btn" type="button" data-fav="{pet['slug']}" data-name="{e(pet['name'])}" aria-pressed="false" aria-label="Save {e(pet['name'])} to favorites">{icon('heart')}</button>
+            </div>
           </div>
           {status_html}
           {chips_html}
@@ -669,14 +717,20 @@ def resources():
         for sec, title, desc, img, url in reversed(RESOURCES):
             if sec != key:
                 continue
-            cards.append(f"""          <a class="res-card" href="{e(url)}" target="_blank" rel="noopener">
+            guide = sec == "guide" and url.lower().endswith(".pdf")
+            attrs = f' data-guide="{e(url)}" data-title="{e(title)}"' if guide else ""
+            more = "Open guide" if guide else "Read more"
+            cards.append(f"""          <div class="res-item" id="r-{img}">
+          <a class="res-card" href="{e(url)}" target="_blank" rel="noopener"{attrs}>
             <div class="thumb"><img src="{p}assets/img/resources/{img}.webp" alt="" loading="lazy" width="780" height="512"></div>
             <div class="body">
               <h3>{e(title)}</h3>
               <p>{e(desc)}</p>
-              <span class="read-more">Read more {icon('arrow-right')}</span>
+              <span class="read-more">{more} {icon('arrow-right')}</span>
             </div>
-          </a>""")
+          </a>
+          {share_btn("resources/?r=" + img, title, label=False, cls="res-share")}
+          </div>""")
         out.append(f"""        <section class="res-section" aria-labelledby="res-{key}">
           <h2 id="res-{key}">{label}</h2>
           <div class="res-grid">
@@ -695,7 +749,29 @@ def resources():
 {chr(10).join(out)}
       </div>
     </div>"""
-    write("resources", layout("resources", "Resources", "Guides, websites and videos to help you give your companion the best life possible.", body, active="resources"))
+    body += f"""
+
+    <dialog class="guide-modal" id="guide-modal" aria-labelledby="guide-title">
+      <div class="guide-head">
+        <h2 id="guide-title">Guide</h2>
+        <div class="guide-tools">
+          {share_btn("resources/", "PetRadius guide", label=False, cls="guide-share")}
+          <a class="icon-btn" id="guide-open" href="#" target="_blank" rel="noopener" aria-label="Open in a new tab">{icon('external')}</a>
+          <a class="icon-btn" id="guide-download" href="#" download aria-label="Download PDF">{icon('download')}</a>
+          <button class="icon-btn" type="button" id="guide-close" aria-label="Close">{icon('x')}</button>
+        </div>
+      </div>
+      <div class="guide-body">
+        <iframe id="guide-frame" title="Guide" src="about:blank"></iframe>
+        <div class="guide-fallback" id="guide-fallback" hidden>
+          <img id="guide-thumb" src="" alt="">
+          <p>This guide is a PDF. Open it to read or save it on your phone.</p>
+          <a class="btn btn-primary" id="guide-fallback-open" href="#" target="_blank" rel="noopener">Open PDF {icon('external')}</a>
+        </div>
+      </div>
+    </dialog>"""
+    write("resources", layout("resources", "Resources", "Guides, websites and videos to help you give your companion the best life possible.", body, active="resources",
+                              extra_scripts=f'\n  <script src="{p}assets/js/resources.js"></script>'))
 
 
 QUIZZES = [
@@ -758,7 +834,7 @@ def quiz_page(q):
 
     <section class="quiz-section has-back">
       <div class="container">
-        <div class="quiz-wrap quiz-back"><a class="back-link" href="{p}quiz/">{icon('arrow-left')}All quizzes</a></div>
+        <div class="quiz-wrap quiz-back"><a class="back-link" href="{p}quiz/">{icon('arrow-left')}All quizzes</a>{share_btn("quiz/" + q['slug'] + "/", q['title'] + " | PetRadius quiz")}</div>
         <div id="petradius-quiz-widget" data-quiz="{q['key']}" data-slug="{q['slug']}" data-title="{e(q['title'])}" data-base="{p}">
           <div class="quiz-card" id="quizCard">
             <div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
@@ -778,6 +854,7 @@ def quiz_page(q):
             <p class="results-saved" id="resultsSaved" aria-live="polite"></p>
             <div class="quiz-actions">
               <button class="btn-solid" id="restartBtn" type="button">Retake Quiz</button>
+              {share_btn("quiz/" + q['slug'] + "/", q['title'] + " | PetRadius quiz", cls="share-quiz")}
               <a class="btn-link" href="{p}quiz/">Try another quiz</a>
             </div>
           </div>
