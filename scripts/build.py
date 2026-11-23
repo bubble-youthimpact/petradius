@@ -33,6 +33,9 @@ TAGLINE = "Connecting loving families with pets in need of a forever home."
 # and it will be used automatically; otherwise a placeholder is shown.
 # ----------------------------------------------------------------------
 import csv
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from guides import GUIDES, STAGES as GUIDE_STAGES, BODIES as GUIDE_BODIES
 import re
 
 PETS_CSV = os.path.join(ROOT, "scripts", "data", "pets.csv")
@@ -157,6 +160,45 @@ def pet_img(pet):
 
 PETS = load_pets()
 
+# Pet product recommendations for beginners: (category key, name, why we like it, Amazon link)
+# Links with /dp/ go to a specific product. Links with /s?k= open an Amazon search for that product —
+# swap in a /dp/ link whenever you pick the exact listing you want to recommend.
+PRODUCT_CATEGORIES = [
+    ("feeding", "\U0001F37D️", "Feeding", "Bowls, food and feeders for healthy mealtimes."),
+    ("walking", "\U0001F9AE", "Walking & ID", "Everything for safe, comfortable walks."),
+    ("home", "\U0001F6CF️", "Home & comfort", "A safe, cozy space for your new pet to settle in."),
+    ("grooming", "✂️", "Grooming", "Basics to keep coats, nails and skin healthy at home."),
+    ("toys", "\U0001F9F8", "Toys & enrichment", "Mental stimulation that tires dogs out and prevents boredom."),
+    ("training", "\U0001F9B4", "Training & clean-up", "Rewards for good behavior and help with accidents."),
+    ("cats", "\U0001F431", "For cats", "Essentials for welcoming a new cat home."),
+]
+PRODUCTS = [
+    ("feeding", "Large-Breed Puppy Food with DHA", "Puppy formula with DHA for brain and vision development and calcium for strong bones and teeth.", "https://www.amazon.com/dp/B002OY0Q9K"),
+    ("feeding", "Stainless Steel Food & Water Bowls", "Durable, dishwasher-safe and doesn’t hold odors — the bowl type our budget guide recommends.", "https://www.amazon.com/s?k=stainless+steel+dog+bowls+non+slip"),
+    ("feeding", "Slow Feeder Bowl", "Slows down fast eaters and turns mealtime into a mini puzzle.", "https://www.amazon.com/s?k=slow+feeder+dog+bowl"),
+    ("walking", "Heavy-Duty Nylon Leash", "Padded handle for comfort and reflective stitching so you’re visible at night.", "https://www.amazon.com/dp/B08574XLL8"),
+    ("walking", "No-Pull Dog Harness", "Front-clip design gives you more control than a collar while your dog learns leash manners.", "https://www.amazon.com/s?k=no+pull+dog+harness+front+clip"),
+    ("walking", "Personalized ID Tag", "Your phone number on the collar is the fastest way home if your pet slips out.", "https://www.amazon.com/s?k=personalized+dog+id+tag"),
+    ("walking", "Poop Bags with Dispenser", "Clips onto the leash so you’re never caught without one.", "https://www.amazon.com/s?k=dog+poop+bags+with+dispenser"),
+    ("home", "Washable Calming Dog Bed", "Raised rim and plush faux fur for comfort, with a non-slip, waterproof base.", "https://www.amazon.com/dp/B0DVH7XXXN"),
+    ("home", "Wire Dog Crate with Divider", "A safe den for crate training; the divider lets the crate grow with a puppy.", "https://www.amazon.com/s?k=wire+dog+crate+with+divider"),
+    ("home", "Pet Gate", "Keeps a new pet in a safe “quiet zone” during the first week.", "https://www.amazon.com/s?k=pet+gate+for+doorways"),
+    ("grooming", "Self-Cleaning Slicker Brush", "Removes loose fur and tangles; one click releases the hair.", "https://www.amazon.com/s?k=self+cleaning+slicker+brush+dog"),
+    ("grooming", "Dog Nail Clippers with Safety Guard", "The guard helps you avoid cutting too short while you build confidence.", "https://www.amazon.com/s?k=dog+nail+clippers+safety+guard"),
+    ("grooming", "Gentle Oatmeal Dog Shampoo", "Soap-free and soothing for sensitive or itchy skin.", "https://www.amazon.com/s?k=oatmeal+dog+shampoo"),
+    ("toys", "KONG Classic", "Stuff it with food and freeze it — our Essential Blueprint’s favorite boredom buster.", "https://www.amazon.com/s?k=KONG+Classic+dog+toy"),
+    ("toys", "Snuffle Mat", "Sniffing is tiring work: 15 minutes of sniffing equals about an hour of running.", "https://www.amazon.com/s?k=snuffle+mat+for+dogs"),
+    ("toys", "Dog Puzzle Toy", "Hide treats and let your dog work them out for mental enrichment.", "https://www.amazon.com/s?k=dog+puzzle+toy+treat"),
+    ("training", "Small Soft Training Treats", "Tiny, low-calorie rewards you can give often during short training sessions.", "https://www.amazon.com/s?k=small+soft+dog+training+treats"),
+    ("training", "Treat Pouch", "Keeps treats handy so you can reward good behavior within 1–2 seconds.", "https://www.amazon.com/s?k=dog+treat+training+pouch"),
+    ("training", "Enzyme Stain & Odor Remover", "Breaks down accident odors so pets aren’t drawn back to the same spot.", "https://www.amazon.com/s?k=enzyme+pet+stain+odor+remover"),
+    ("cats", "Large Litter Box", "Remember the N + 1 rule: one box per cat, plus one.", "https://www.amazon.com/s?k=large+cat+litter+box"),
+    ("cats", "Sisal Scratching Post", "Gives claws a better target than your furniture — tall enough for a full stretch.", "https://www.amazon.com/s?k=tall+sisal+cat+scratching+post"),
+    ("cats", "Wand Toy", "Lets you play without using your hands as toys.", "https://www.amazon.com/s?k=cat+wand+toy+feather"),
+    ("cats", "Cat Water Fountain", "Cats prefer moving water; a fountain helps them drink more.", "https://www.amazon.com/s?k=cat+water+fountain"),
+    ("cats", "Hard-Sided Cat Carrier", "For safe trips to the vet and the ride home from the shelter.", "https://www.amazon.com/s?k=hard+sided+cat+carrier"),
+]
+
 # Homepage FAQ: (question, answer). The first one starts open. Placeholder questions for now.
 FAQS = [
     ("How do I adopt a pet I see on PetRadius?",
@@ -181,31 +223,12 @@ def share_btn(path, title, label=True, cls=""):
 
 
 RESOURCES = [
-    # (section, title, description, image, url)
+    # (section, title, description, image, url) — websites and videos.
+    # Guides live in scripts/guides.py and products in PRODUCTS below.
     # Keep this list in the order resources were added (oldest first, newest last).
     # The Resources page shows each section newest-first.
-    ("guide", "Pet Owner's Essential Guide", "A practical guide to welcoming your new canine companion home",
-     "pet-owners-essential-guide", "../assets/docs/pet-owners-essential-guide.pdf"),
-    ("guide", "Is a Dog Right for You? A Comprehensive Readiness Checklist", "A practical self-assessment & readiness checklist for prospective dog owners",
-     "dog-readiness-checklist", "../assets/docs/dog-readiness-checklist.pdf"),
-    ("guide", "Pet Behavior Guide", "Understanding your pet’s body language and behavioral cues is essential for building trust, preventing anxiety, and addressing common challenges effectively.",
-     "pet-behavior-guide", "../assets/docs/pet-behavior-guide.pdf"),
-    ("guide", "First Week Checklist", "Bringing a new pet home is a major transition. Use this step-by-step checklist to ensure a safe, calm, and structured setup during your pet's critical first week.",
-     "first-week-checklist", "../assets/docs/first-week-checklist.pdf"),
-    ("guide", "Pet Nutrition & Feeding Guide", "Proper diet and feeding habits lay the foundation for your pet's lifelong health and energy. Use this guide to manage feeding schedules and avoid hazardous foods.",
-     "pet-nutrition-feeding-guide", "../assets/docs/pet-nutrition-feeding-guide.pdf"),
-    ("guide", "Pet Health Guide", "Proactive medical care keeps your pet protected against preventable diseases and helps identify health concerns early before they become critical.",
-     "pet-health-guide", "../assets/docs/pet-health-guide.pdf"),
-    ("guide", "Dog Adoption Budget Breakdown", "Plan for the real cost of a dog: initial adoption and medical fees, essential startup supplies, and ongoing monthly care expenses.",
-     "dog-adoption-budget-breakdown", "../assets/docs/dog-adoption-budget-breakdown.pdf"),
     ("website", "AAHA Canine Vaccination Guidelines", "These Guidelines empower veterinarians to make the best possible personalized recommendations for their patients by determining which vaccines are essential for each individual dog.",
      "aaha-vaccination-guidelines", "https://www.aaha.org/resources/2022-aaha-canine-vaccination-guidelines/"),
-    ("website", "Dog Leash", "Heavy Duty Nylon Webbing, Padded Handle for Comfort, Visible at Night, for Walking & Training",
-     "dog-leash", "https://www.amazon.com/dp/B08574XLL8"),
-    ("website", "Dog Food", "Development puppy food with DHA for brain and vision development, calcium to build strong bones and teeth, for large dogs",
-     "dog-food", "https://www.amazon.com/dp/B002OY0Q9K"),
-    ("website", "Dog Bed", "Soothing Raised Rim, Plush Faux Fur, Keeps Its Shape, Machine Washable, Non-Slip Waterproof Base, Dark Grey, Small",
-     "dog-bed", "https://www.amazon.com/dp/B0DVH7XXXN"),
     ("website", "How To Groom Your Dog Like a Pro", "A practical guide for dog owners who want to keep their pup looking and feeling great without the salon appointment.",
      "dog-grooming", "https://www.igroomhub.com.au/blog/how-to-groom-a-dog"),
     ("website", "Pet Age Calculator", "Ever wonder how old your dog is in human years?",
@@ -265,6 +288,8 @@ e = html.escape
 # LAYOUT
 # ----------------------------------------------------------------------
 NAV = [("about", "About"), ("pets", "Pet Profiles"), ("resources", "Resources"), ("quiz", "Quiz"), ("contact", "Contact")]
+# Where a nav item links to when it isn't its own folder (Resources opens on the Guides tab)
+NAV_HREF = {"resources": "guides"}
 
 
 def layout(path, title, description, body, active="", extra_head="", extra_scripts="", body_class="", page=""):
@@ -276,7 +301,7 @@ def layout(path, title, description, body, active="", extra_head="", extra_scrip
         for slug, label in NAV:
             cur = ' aria-current="page"' if slug == active else ""
             chev = icon("chevron-right") if cls_icon else ""
-            out.append(f'<li><a href="{p}{slug}/"{cur}>{label}{chev}</a></li>')
+            out.append(f'<li><a href="{p}{NAV_HREF.get(slug, slug)}/"{cur}>{label}{chev}</a></li>')
         return "\n          ".join(out)
 
     full_title = f"{title} | {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME} — Every Pet Deserves a Loving Home"
@@ -389,7 +414,7 @@ def layout(path, title, description, body, active="", extra_head="", extra_scrip
         <div>
           <h3>Explore</h3>
           <ul>
-            {"".join(f'<li><a href="{p}{s}/">{l}</a></li>' for s, l in NAV)}
+            {"".join(f'<li><a href="{p}{NAV_HREF.get(s, s)}/">{l}</a></li>' for s, l in NAV)}
           </ul>
         </div>
         <div>
@@ -420,11 +445,23 @@ def status_badge(pet):
     return f'<span class="status-badge status-{slugify(pet["status"])}">{e(pet["status"])}</span>'
 
 
+# City -> region, for the location filter on the Pet Profiles page. Add new cities here.
+REGIONS = {
+    "Tustin, CA": "Orange County", "Irvine, CA": "Orange County", "Laguna Beach, CA": "Orange County",
+    "Los Angeles, CA": "Los Angeles County", "Pasadena, CA": "Los Angeles County",
+    "Redwood City, CA": "Bay Area",
+}
+
+
+def region_of(location):
+    return REGIONS.get(location, "Other")
+
+
 def pet_card(pet, p):
     search = " ".join([pet["name"], pet["breed"], pet["type"], pet["age"], pet["sex"], pet["characteristics"],
                        pet["shelter"], pet["location"], pet["color"]]).lower()
     meta = " · ".join(x for x in [pet["age"], pet["sex"], pet["location"]] if x)
-    return f"""        <div class="pet-card-wrap{'' if pet['status'] == 'Available' else ' is-unavailable'}" data-search="{e(search)}" data-type="{pet['type'].lower()}" data-age="{e(pet['age'].lower())}" data-shelter="{slugify(pet['shelter'])}" data-status="{slugify(pet['status'])}">
+    return f"""        <div class="pet-card-wrap{'' if pet['status'] == 'Available' else ' is-unavailable'}" data-search="{e(search)}" data-type="{pet['type'].lower()}" data-age="{e(pet['age'].lower())}" data-shelter="{slugify(pet['shelter'])}" data-region="{slugify(region_of(pet['location']))}" data-city="{slugify(pet['location'])}" data-status="{slugify(pet['status'])}">
         <a class="pet-card" href="{p}pets/pet/?id={pet['slug']}">
           <div class="thumb"><img src="{p}{pet_img(pet)}" alt="{e(pet['name'])}, {e(pet['breed'])}" loading="lazy" width="577" height="577">{status_badge(pet)}</div>
           <div class="body">
@@ -453,6 +490,7 @@ def home():
     featured = "\n".join(pet_card(x, p) for x in PETS if x.get("featured"))
     # Counted from the site's own data, so the numbers stay accurate as pets/resources are added
     n_shelters = len({x["shelter"] for x in PETS if x["shelter"]})
+    n_resources = len(GUIDES) + len(RESOURCES)  # guides + websites + videos (products not counted)
     faq_items = "\n".join(
         f"""          <details class="faq-item"{' open' if i == 0 else ''}>
             <summary>{e(q)}{icon('chevron-down')}</summary>
@@ -474,7 +512,7 @@ def home():
       <div class="container stats-grid">
         <div class="stat">{icon('home')}<strong data-countup="{n_shelters}">{n_shelters}</strong><span>Partner Shelters</span></div>
         <div class="stat">{icon('heart')}<strong data-countup="{len(PETS)}">{len(PETS)}</strong><span>Pet Profiles</span></div>
-        <div class="stat">{icon('book')}<strong data-countup="{len(RESOURCES)}">{len(RESOURCES)}</strong><span>Resources</span></div>
+        <div class="stat">{icon('book')}<strong data-countup="{n_resources}">{n_resources}</strong><span>Resources</span></div>
       </div>
     </section>
 
@@ -511,7 +549,7 @@ def home():
         <p>Whether you are looking to adopt, foster, or volunteer, there is a place for you in our community.</p>
         <div class="cta-actions">
           <a class="btn btn-light" href="contact/">Get in touch</a>
-          <a class="btn btn-outline-light" href="resources/">Adoption Guide</a>
+          <a class="btn btn-outline-light" href="guides/">Adoption Guides</a>
         </div>
       </div>
     </section>"""
@@ -569,6 +607,17 @@ def pets_index():
     shelters = sorted({x["shelter"] for x in PETS if x["shelter"]})
     age_opts = "".join(f'<option value="{a.lower()}">{a}</option>' for a in ages)
     sh_opts = "".join(f'<option value="{slugify(n)}">{e(n)}</option>' for n in shelters)
+    # Location filter: each region, then its cities
+    loc_opts = []
+    regions = {}
+    for x in PETS:
+        if x["location"]:
+            regions.setdefault(region_of(x["location"]), set()).add(x["location"])
+    for reg in sorted(regions, key=lambda r: (r == "Other", r)):
+        cities = sorted(regions[reg])
+        loc_opts.append(f'<optgroup label="{e(reg)}"><option value="r:{slugify(reg)}">All {e(reg)}</option>'
+                        + "".join(f'<option value="c:{slugify(c)}">{e(c.replace(", CA", ""))}</option>' for c in cities) + '</optgroup>')
+    loc_opts = "".join(loc_opts)
     present = [st for st in STATUS_ORDER if any(x["status"] == st for x in PETS)]
     present += sorted({x["status"] for x in PETS} - set(STATUS_ORDER))
     st_opts = "".join(f'<option value="{slugify(st)}"{" selected" if st == "Available" else ""}>{e(st)}</option>' for st in present)
@@ -597,6 +646,8 @@ def pets_index():
           <div class="filter-selects">
             <label class="visually-hidden" for="f-status">Status</label>
             <select id="f-status"><option value="">All statuses</option>{st_opts}</select>
+            <label class="visually-hidden" for="f-loc">Location</label>
+            <select id="f-loc"><option value="">All locations</option>{loc_opts}</select>
             <label class="visually-hidden" for="f-age">Age</label>
             <select id="f-age"><option value="">Any age</option>{age_opts}</select>
             <label class="visually-hidden" for="f-shelter">Shelter</label>
@@ -707,9 +758,19 @@ def pet_page():
                              active="pets", body_class="pet-detail-page", extra_scripts=scripts))
 
 
+def res_tabs(active, p):
+    """Sub-navigation shared by Guides, Products and Websites & Videos (all under Resources)."""
+    tabs = [("guides", "Guides", "book"), ("products", "Products", "heart"), ("resources", "Websites & Videos", "globe")]
+    out = []
+    for slug, label, ic in tabs:
+        cur = ' aria-current="page"' if slug == active else ""
+        out.append(f'<a href="{p}{slug}/"{cur}>{icon(ic)}<span>{label}</span></a>')
+    return f'<nav class="res-tabs" aria-label="Resources sections"><div class="container"><div class="res-tabs-inner">{"".join(out)}</div></div></nav>'
+
+
 def resources():
     p = "../"
-    sections = [("guide", "Guides"), ("website", "Websites"), ("video", "Videos")]
+    sections = [("website", "Websites"), ("video", "Videos")]
     out = []
     for key, label in sections:
         cards = []
@@ -717,16 +778,13 @@ def resources():
         for sec, title, desc, img, url in reversed(RESOURCES):
             if sec != key:
                 continue
-            guide = sec == "guide" and url.lower().endswith(".pdf")
-            attrs = f' data-guide="{e(url)}" data-title="{e(title)}"' if guide else ""
-            more = "Open guide" if guide else "Read more"
             cards.append(f"""          <div class="res-item" id="r-{img}">
-          <a class="res-card" href="{e(url)}" target="_blank" rel="noopener"{attrs}>
+          <a class="res-card" href="{e(url)}" target="_blank" rel="noopener">
             <div class="thumb"><img src="{p}assets/img/resources/{img}.webp" alt="" loading="lazy" width="780" height="512"></div>
             <div class="body">
               <h3>{e(title)}</h3>
               <p>{e(desc)}</p>
-              <span class="read-more">{more} {icon('arrow-right')}</span>
+              <span class="read-more">Read more {icon('arrow-right')}</span>
             </div>
           </a>
           {share_btn("resources/?r=" + img, title, label=False, cls="res-share")}
@@ -740,38 +798,173 @@ def resources():
     body = f"""    <section class="page-hero">
       <div class="container">
         <h1>Resources</h1>
-        <p>Whether you are a first-time adopter or a seasoned pet parent, our guides help you give your companion the best life possible.</p>
+        <p>Trusted websites and videos to help you give your companion the best life possible.</p>
       </div>
     </section>
+    {res_tabs("resources", p)}
 
-    <div class="section">
+    <div class="section filters-top">
       <div class="container">
 {chr(10).join(out)}
       </div>
     </div>"""
-    body += f"""
+    guide_slugs = ",".join(g["slug"] for g in GUIDES)
+    write("resources", layout("resources", "Websites & Videos", "Trusted websites and videos to help you give your companion the best life possible.", body, active="resources",
+                              extra_head=f'\n  <link rel="stylesheet" href="{p}assets/css/guides.css">',
+                              extra_scripts=f'\n  <script src="{p}assets/js/resources.js" data-guides="{guide_slugs}"></script>'))
 
-    <dialog class="guide-modal" id="guide-modal" aria-labelledby="guide-title">
-      <div class="guide-head">
-        <h2 id="guide-title">Guide</h2>
-        <div class="guide-tools">
-          {share_btn("resources/", "PetRadius guide", label=False, cls="guide-share")}
-          <a class="icon-btn" id="guide-open" href="#" target="_blank" rel="noopener" aria-label="Open in a new tab">{icon('external')}</a>
-          <a class="icon-btn" id="guide-download" href="#" download aria-label="Download PDF">{icon('download')}</a>
-          <button class="icon-btn" type="button" id="guide-close" aria-label="Close">{icon('x')}</button>
+
+SPECIES_LABEL = {"dog": "Dogs", "cat": "Cats", "dog cat": "Dogs & cats"}
+
+
+def guide_card(g, p, head="h2"):
+    """Vertical guide tile (same style as the quiz page)."""
+    n = [x["slug"] for x in GUIDES].index(g["slug"]) + 1
+    return f"""          <a class="guide-tile" href="{p}guides/{g['slug']}/" data-stage="{g['stage']}" data-species="{g['species']}">
+            <span class="tile-icon">{icon(g['icon'])}<b>{n}</b></span>
+            <div class="tile-body">
+              <span class="meta">{e(g['tag'])} \u00b7 {SPECIES_LABEL[g['species']]} \u00b7 {g['minutes']} min</span>
+              <{head}>{e(g['title'])}</{head}>
+              <p>{e(g['short'])}</p>
+            </div>
+            <span class="tile-cta">Open guide {icon('arrow-right')}</span>
+          </a>"""
+
+
+def guides_index():
+    p = "../"
+    groups = []
+    for key, label in GUIDE_STAGES:
+        tiles = "\n".join(guide_card(g, p) for g in GUIDES if g["stage"] == key)
+        groups.append(f"""        <section class="guide-group" data-group="{key}" aria-labelledby="gg-{key}">
+          <h2 class="guide-group-title" id="gg-{key}">{e(label)}</h2>
+          <div class="guide-list">
+{tiles}
+          </div>
+        </section>""")
+    stage_chips = '<button type="button" class="filter-chip" data-gfilter-stage="" aria-pressed="true">All guides</button>' + "".join(
+        f'<button type="button" class="filter-chip" data-gfilter-stage="{k}" aria-pressed="false">{e(l)}</button>' for k, l in GUIDE_STAGES)
+    body = f"""    <section class="page-hero">
+      <div class="container">
+        <h1>Guides</h1>
+        <p>Interactive guides for new and future pet parents \u2014 checklists you can tick off, calculators and quick references, in the order you\u2019ll need them.</p>
+      </div>
+    </section>
+    {res_tabs("guides", p)}
+
+    <div class="section filters-top">
+      <div class="container guide-index">
+        <div class="guide-filters" id="guide-filters">
+          <div class="guide-chips" role="group" aria-label="Filter by stage">{stage_chips}</div>
+        </div>
+{chr(10).join(groups)}
+      </div>
+    </div>"""
+    write("guides", layout("guides", "Guides", "Interactive PetRadius guides: readiness checklist, budget calculator, first week checklist, essential tips, nutrition, health and behavior.", body,
+                           active="resources", extra_head=f'\n  <link rel="stylesheet" href="{p}assets/css/guides.css">',
+                           extra_scripts=f'\n  <script src="{p}assets/js/guides.js"></script>'))
+
+
+def guide_page(g):
+    path = f"guides/{g['slug']}"
+    p = "../../"
+    content = GUIDE_BODIES[g["slug"]](e, icon)
+    pdf = f"{p}assets/docs/{g['slug']}.pdf"
+    # Page images: shown in the popup on phones that can't display PDFs inline (Android)
+    pages = "".join(
+        f'<img src="{p}assets/img/guides/{g["slug"]}-{i}.webp" alt="{e(g["title"])}, page {i}" loading="lazy" width="1100" height="1555">'
+        for i in range(1, g["pages"] + 1))
+    idx = [x["slug"] for x in GUIDES].index(g["slug"])
+    more = [GUIDES[(idx + k) % len(GUIDES)] for k in (1, 2)]
+    more_html = "\n".join(guide_card(x, p, head="h3") for x in more)
+    body = f"""    <section class="page-hero compact guide-hero">
+      <div class="container">
+        <span class="guide-kicker">{icon(g['icon'])}{e(g['tag'])} · {g['minutes']} min read</span>
+        <h1>{e(g['title'])}</h1>
+        <p>{e(g['intro'])}</p>
+      </div>
+    </section>
+    {res_tabs("guides", p)}
+
+    <div class="section guide-section">
+      <div class="container">
+        <div class="guide-toolbar">
+          <a class="back-link" href="{p}guides/">{icon('arrow-left')}All guides</a>
+          <div class="guide-toolbar-actions">
+            <a class="share-btn" href="{pdf}" target="_blank" rel="noopener" data-original>{icon('eye')}<span>View original</span></a>
+            {share_btn(path + "/", g['title'] + " | PetRadius guide")}
+          </div>
+        </div>
+        <div class="guide-content">
+{content}
+        </div>
+
+        <section class="more-guides" aria-labelledby="more-title">
+          <h2 id="more-title">Up next</h2>
+          <div class="guide-list">
+{more_html}
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <dialog class="orig-modal" id="orig-modal" aria-labelledby="orig-title">
+      <div class="orig-head">
+        <h2 id="orig-title">{e(g['title'])}</h2>
+        <div class="orig-tools">
+          <a class="icon-btn" href="{pdf}" target="_blank" rel="noopener" aria-label="Open in a new tab">{icon('external')}</a>
+          <a class="icon-btn" href="{pdf}" download aria-label="Download PDF">{icon('download')}</a>
+          <button class="icon-btn" type="button" data-close aria-label="Close">{icon('x')}</button>
         </div>
       </div>
-      <div class="guide-body">
-        <iframe id="guide-frame" title="Guide" src="about:blank"></iframe>
-        <div class="guide-fallback" id="guide-fallback" hidden>
-          <img id="guide-thumb" src="" alt="">
-          <p>This guide is a PDF. Open it to read or save it on your phone.</p>
-          <a class="btn btn-primary" id="guide-fallback-open" href="#" target="_blank" rel="noopener">Open PDF {icon('external')}</a>
-        </div>
+      <div class="orig-body">
+        <iframe title="{e(g['title'])} (PDF)" data-src="{pdf}#view=FitH" hidden></iframe>
+        <div class="orig-images" hidden>{pages}</div>
       </div>
     </dialog>"""
-    write("resources", layout("resources", "Resources", "Guides, websites and videos to help you give your companion the best life possible.", body, active="resources",
-                              extra_scripts=f'\n  <script src="{p}assets/js/resources.js"></script>'))
+    write(path, layout(path, g["title"], g["short"], body, active="resources", body_class="guide-page",
+                       extra_head=f'\n  <link rel="stylesheet" href="{p}assets/css/guides.css">',
+                       extra_scripts=f'\n  <script src="{p}assets/js/guides.js"></script>'))
+
+
+def products():
+    p = "../"
+    chips = "".join(f'<a class="filter-chip" href="#{k}">{em} {e(n)}</a>' for k, em, n, _ in PRODUCT_CATEGORIES)
+    sections = []
+    for key, emoji, name, lead in PRODUCT_CATEGORIES:
+        cards = []
+        for _, pname, why, url in [x for x in PRODUCTS if x[0] == key]:
+            label = "View on Amazon" if "/dp/" in url else "Find on Amazon"
+            cards.append(f"""            <div class="product-card">
+              <span class="product-emoji" aria-hidden="true">{emoji}</span>
+              <h3>{e(pname)}</h3>
+              <p>{e(why)}</p>
+              <a class="btn btn-ghost product-btn" href="{e(url)}" target="_blank" rel="noopener">{label} {icon('external')}</a>
+            </div>""")
+        sections.append(f"""        <section class="product-section" id="{key}" aria-labelledby="pc-{key}">
+          <div class="product-section-head"><h2 id="pc-{key}"><span aria-hidden="true">{emoji}</span> {e(name)}</h2><p>{e(lead)}</p></div>
+          <div class="product-grid">
+{chr(10).join(cards)}
+          </div>
+        </section>""")
+    body = f"""    <section class="page-hero">
+      <div class="container">
+        <h1>Recommended Products</h1>
+        <p>The beginner essentials we recommend for bringing a new dog or cat home, grouped by what you’ll need them for.</p>
+      </div>
+    </section>
+    {res_tabs("products", p)}
+
+    <div class="section products-page filters-top">
+      <div class="container">
+        <div class="product-jump" role="navigation" aria-label="Product categories">{chips}</div>
+{chr(10).join(sections)}
+        <p class="product-note">Links open Amazon in a new tab. Prices and availability change often, so check details before you buy. New pet? Start with our <a href="{p}guides/first-week-checklist/">First Week Checklist</a> and <a href="{p}guides/dog-adoption-budget-breakdown/">budget calculator</a>.</p>
+      </div>
+    </div>"""
+    write("products", layout("products", "Recommended Products", "Beginner pet product recommendations from PetRadius: feeding, walking, home, grooming, toys, training and cat essentials.", body,
+                             active="resources", extra_head=f'\n  <link rel="stylesheet" href="{p}assets/css/guides.css">'))
+
 
 
 QUIZZES = [
@@ -1166,6 +1359,10 @@ if __name__ == "__main__":
     pets_index()
     pet_page()
     resources()
+    guides_index()
+    for g in GUIDES:
+        guide_page(g)
+    products()
     quiz_hub()
     for q in QUIZZES:
         quiz_page(q)
