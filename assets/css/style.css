@@ -864,3 +864,14 @@ p { margin: 0; }
 .quiz-back { align-items: center; justify-content: space-between; gap: 12px; }
 #petradius-quiz-widget .share-quiz { height: auto; padding: 10px 22px; border: 1.5px solid var(--brown); font-size: 14px; font-weight: 600; }
 
+
+/* FAQ category tabs */
+.faq-tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; max-width: 760px; margin: 0 auto 22px; }
+.faq-tabs .filter-chip[aria-selected="true"] { background: var(--brown); border-color: var(--brown); color: #fff; }
+.faq-list[hidden] { display: none; }
+.faq-list:not([hidden]) { animation: faqIn .3s var(--ease); }
+@media (max-width: 600px) {
+  .faq-tabs { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin-left: -18px; margin-right: -18px; padding: 0 18px 2px; scrollbar-width: none; }
+  .faq-tabs::-webkit-scrollbar { display: none; }
+  .faq-tabs .filter-chip { flex: none; }
+}

@@ -161,30 +161,42 @@ def pet_img(pet):
 PETS = load_pets()
 
 # Pet product recommendations for beginners: (category key, name, why we like it, Amazon link)
+# Links with /dp/ go to a specific product. Links with /s?k= open an Amazon search for that product —
+# swap in a /dp/ link whenever you pick the exact listing you want to recommend.
 PRODUCT_CATEGORIES = [
-    ("walking", "\U0001F9AE", "Walking essentials", "Everything for safe, comfortable daily walks."),
-    ("toys", "\U0001F9F8", "Toys & entertainment", "Play and enrichment to keep dogs busy and happy."),
-    ("grooming", "\U0001F9FC", "Grooming & cleaning", "Keep coats healthy and clean up accidents."),
-    ("food", "\U0001F37D️", "Food & everyday essentials", "Mealtime, water and rest, covered."),
-    ("travel", "\U0001F697", "Car & travel", "For safer, cleaner trips with your dog."),
+    ("feeding", "\U0001F37D️", "Feeding", "Bowls, food and feeders for healthy mealtimes."),
+    ("walking", "\U0001F9AE", "Walking & ID", "Everything for safe, comfortable walks."),
+    ("home", "\U0001F6CF️", "Home & comfort", "A safe, cozy space for your new pet to settle in."),
+    ("grooming", "✂️", "Grooming", "Basics to keep coats, nails and skin healthy at home."),
+    ("toys", "\U0001F9F8", "Toys & enrichment", "Mental stimulation that tires dogs out and prevents boredom."),
+    ("training", "\U0001F9B4", "Training & clean-up", "Rewards for good behavior and help with accidents."),
+    ("cats", "\U0001F431", "For cats", "Essentials for welcoming a new cat home."),
 ]
 PRODUCTS = [
-    ("walking", "Rabbitgoo Adjustable Dog Harness", "Comfortable harness for everyday walks.", "https://www.amazon.com/s?k=Rabbitgoo+adjustable+dog+harness"),
-    ("walking", "6-Foot Dog Leash", "A standard leash for daily walks and training.", "https://www.amazon.com/s?k=6+foot+durable+dog+leash"),
-    ("walking", "Earth Rated Poop Bags", "Thick waste bags with convenient dispensers.", "https://www.amazon.com/s?k=Earth+Rated+dog+poop+bags"),
-    ("toys", "KONG Classic", "Fillable toy that can keep dogs occupied.", "https://www.amazon.com/s?k=KONG+Classic+dog+toy"),
-    ("toys", "Outward Hound Puzzle Toy", "Interactive toy that encourages problem-solving.", "https://www.amazon.com/s?k=Outward+Hound+dog+puzzle+toy"),
-    ("toys", "Dog Snuffle Mat", "Allows dogs to search for hidden treats using their noses.", "https://www.amazon.com/s?k=dog+snuffle+mat"),
-    ("toys", "Chuckit! Ultra Ball", "Durable fetch ball for outdoor play.", "https://www.amazon.com/s?k=Chuckit+Ultra+Ball"),
-    ("grooming", "KONG ZoomGroom Brush", "Rubber grooming brush that helps remove loose fur.", "https://www.amazon.com/s?k=KONG+ZoomGroom"),
-    ("grooming", "Hertzko Self-Cleaning Brush", "Grooming brush with retractable bristles for easier cleaning.", "https://www.amazon.com/s?k=Hertzko+self+cleaning+dog+brush"),
-    ("grooming", "Nature’s Miracle Stain and Odor Remover", "Helps clean up pet accidents and odors.", "https://www.amazon.com/s?k=Natures+Miracle+dog+stain+odor+remover"),
-    ("food", "Outward Hound Slow Feeder", "Makes mealtime last longer for dogs that eat too quickly.", "https://www.amazon.com/s?k=Outward+Hound+Fun+Feeder"),
-    ("food", "Stainless Steel Dog Bowls", "Easy-to-clean food and water bowls.", "https://www.amazon.com/s?k=stainless+steel+non+slip+dog+bowls"),
-    ("food", "Washable Dog Bed", "Comfortable resting space with removable, washable covers.", "https://www.amazon.com/s?k=washable+orthopedic+dog+bed"),
-    ("food", "Portable Dog Water Bottle", "Convenient for walks, hikes, and trips.", "https://www.amazon.com/s?k=portable+dog+water+bottle"),
-    ("travel", "Waterproof Dog Car Seat Cover", "Protects your car seats from dirt and fur.", "https://www.amazon.com/s?k=waterproof+dog+car+seat+cover"),
-    ("travel", "Crash-Tested Dog Car Harness", "A restraint option for safer car travel. Check vehicle compatibility and independent crash-testing information.", "https://www.amazon.com/s?k=crash+tested+dog+car+harness"),
+    ("feeding", "Large-Breed Puppy Food with DHA", "Puppy formula with DHA for brain and vision development and calcium for strong bones and teeth.", "https://www.amazon.com/dp/B002OY0Q9K"),
+    ("feeding", "Stainless Steel Food & Water Bowls", "Durable, dishwasher-safe and doesn’t hold odors — the bowl type our budget guide recommends.", "https://www.amazon.com/s?k=stainless+steel+dog+bowls+non+slip"),
+    ("feeding", "Slow Feeder Bowl", "Slows down fast eaters and turns mealtime into a mini puzzle.", "https://www.amazon.com/s?k=slow+feeder+dog+bowl"),
+    ("walking", "Heavy-Duty Nylon Leash", "Padded handle for comfort and reflective stitching so you’re visible at night.", "https://www.amazon.com/dp/B08574XLL8"),
+    ("walking", "No-Pull Dog Harness", "Front-clip design gives you more control than a collar while your dog learns leash manners.", "https://www.amazon.com/s?k=no+pull+dog+harness+front+clip"),
+    ("walking", "Personalized ID Tag", "Your phone number on the collar is the fastest way home if your pet slips out.", "https://www.amazon.com/s?k=personalized+dog+id+tag"),
+    ("walking", "Poop Bags with Dispenser", "Clips onto the leash so you’re never caught without one.", "https://www.amazon.com/s?k=dog+poop+bags+with+dispenser"),
+    ("home", "Washable Calming Dog Bed", "Raised rim and plush faux fur for comfort, with a non-slip, waterproof base.", "https://www.amazon.com/dp/B0DVH7XXXN"),
+    ("home", "Wire Dog Crate with Divider", "A safe den for crate training; the divider lets the crate grow with a puppy.", "https://www.amazon.com/s?k=wire+dog+crate+with+divider"),
+    ("home", "Pet Gate", "Keeps a new pet in a safe “quiet zone” during the first week.", "https://www.amazon.com/s?k=pet+gate+for+doorways"),
+    ("grooming", "Self-Cleaning Slicker Brush", "Removes loose fur and tangles; one click releases the hair.", "https://www.amazon.com/s?k=self+cleaning+slicker+brush+dog"),
+    ("grooming", "Dog Nail Clippers with Safety Guard", "The guard helps you avoid cutting too short while you build confidence.", "https://www.amazon.com/s?k=dog+nail+clippers+safety+guard"),
+    ("grooming", "Gentle Oatmeal Dog Shampoo", "Soap-free and soothing for sensitive or itchy skin.", "https://www.amazon.com/s?k=oatmeal+dog+shampoo"),
+    ("toys", "KONG Classic", "Stuff it with food and freeze it — our Essential Blueprint’s favorite boredom buster.", "https://www.amazon.com/s?k=KONG+Classic+dog+toy"),
+    ("toys", "Snuffle Mat", "Sniffing is tiring work: 15 minutes of sniffing equals about an hour of running.", "https://www.amazon.com/s?k=snuffle+mat+for+dogs"),
+    ("toys", "Dog Puzzle Toy", "Hide treats and let your dog work them out for mental enrichment.", "https://www.amazon.com/s?k=dog+puzzle+toy+treat"),
+    ("training", "Small Soft Training Treats", "Tiny, low-calorie rewards you can give often during short training sessions.", "https://www.amazon.com/s?k=small+soft+dog+training+treats"),
+    ("training", "Treat Pouch", "Keeps treats handy so you can reward good behavior within 1–2 seconds.", "https://www.amazon.com/s?k=dog+treat+training+pouch"),
+    ("training", "Enzyme Stain & Odor Remover", "Breaks down accident odors so pets aren’t drawn back to the same spot.", "https://www.amazon.com/s?k=enzyme+pet+stain+odor+remover"),
+    ("cats", "Large Litter Box", "Remember the N + 1 rule: one box per cat, plus one.", "https://www.amazon.com/s?k=large+cat+litter+box"),
+    ("cats", "Sisal Scratching Post", "Gives claws a better target than your furniture — tall enough for a full stretch.", "https://www.amazon.com/s?k=tall+sisal+cat+scratching+post"),
+    ("cats", "Wand Toy", "Lets you play without using your hands as toys.", "https://www.amazon.com/s?k=cat+wand+toy+feather"),
+    ("cats", "Cat Water Fountain", "Cats prefer moving water; a fountain helps them drink more.", "https://www.amazon.com/s?k=cat+water+fountain"),
+    ("cats", "Hard-Sided Cat Carrier", "For safe trips to the vet and the ride home from the shelter.", "https://www.amazon.com/s?k=hard+sided+cat+carrier"),
 ]
 
 # Homepage FAQ: (category, [(question, answer), ...]). Each category is a tab; its first question starts open.
@@ -979,7 +991,7 @@ def products():
     for key, emoji, name, lead in PRODUCT_CATEGORIES:
         cards = []
         for _, pname, why, url in [x for x in PRODUCTS if x[0] == key]:
-            label = "View on Amazon"
+            label = "View on Amazon" if "/dp/" in url else "Find on Amazon"
             cards.append(f"""            <div class="product-card">
               <span class="product-emoji" aria-hidden="true">{emoji}</span>
               <h3>{e(pname)}</h3>
@@ -995,7 +1007,7 @@ def products():
     body = f"""    <section class="page-hero">
       <div class="container">
         <h1>Recommended Products</h1>
-        <p>The beginner essentials we recommend for life with a new dog, grouped by what you’ll need them for.</p>
+        <p>The beginner essentials we recommend for bringing a new dog or cat home, grouped by what you’ll need them for.</p>
       </div>
     </section>
     {res_tabs("products", p)}
@@ -1007,7 +1019,7 @@ def products():
         <p class="product-note">Links open Amazon in a new tab. Prices and availability change often, so check details before you buy. New pet? Start with our <a href="{p}guides/first-week-checklist/">First Week Checklist</a> and <a href="{p}guides/dog-adoption-budget-breakdown/">budget calculator</a>.</p>
       </div>
     </div>"""
-    write("products", layout("products", "Recommended Products", "Beginner pet product recommendations from PetRadius: walking, toys, grooming, food, everyday essentials and car travel.", body,
+    write("products", layout("products", "Recommended Products", "Beginner pet product recommendations from PetRadius: feeding, walking, home, grooming, toys, training and cat essentials.", body,
                              active="resources", extra_head=f'\n  <link rel="stylesheet" href="{p}assets/css/guides.css">'))
 
 

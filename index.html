@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css?v=72c479bc">
+  <link rel="stylesheet" href="./assets/css/style.css?v=c4c6e6b9">
 </head>
 <body data-base="./">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -180,28 +180,79 @@
           <h2 id="faq-title">Frequently Asked Questions</h2>
           <p>Answers to common questions about PetRadius and adopting a pet.</p>
         </div>
-        <div class="faq-list">
-          <details class="faq-item" open>
-            <summary>How do I adopt a pet I see on PetRadius?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="faq-answer"><p>PetRadius showcases pets from partner shelters, but adoptions are handled by the shelter itself. Open a pet’s profile and tap “Visit shelter” to see their adoption steps, fees and visiting hours.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Does PetRadius charge any fees?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="faq-answer"><p>No. Browsing pets, taking quizzes and reading our resources is free. Any adoption fee is set and collected by the shelter.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>How up to date are the pet listings?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="faq-answer"><p>We check listings against each shelter’s website regularly. Pets can be adopted quickly, so confirm availability with the shelter before you visit.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Can I save pets I’m interested in?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="faq-answer"><p>Yes. Create a free account and tap the heart on any pet to add them to your favorites. Your quiz results are saved to your profile too.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>My shelter would like to be featured. How do we join?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="faq-answer"><p>We’d love to hear from you. Send us a message through the contact page and we’ll get back to you about listing your animals.</p></div>
-          </details>
-        </div>
+        <div class="faq-tabs" role="tablist" aria-label="FAQ categories"><button type="button" class="filter-chip" role="tab" id="faq-t-general" aria-controls="faq-p-general" aria-selected="true">General</button><button type="button" class="filter-chip" role="tab" id="faq-t-adoption" aria-controls="faq-p-adoption" aria-selected="false" tabindex="-1">Adoption</button><button type="button" class="filter-chip" role="tab" id="faq-t-shelters-and-rescues" aria-controls="faq-p-shelters-and-rescues" aria-selected="false" tabindex="-1">Shelters &amp; Rescues</button><button type="button" class="filter-chip" role="tab" id="faq-t-website-and-features" aria-controls="faq-p-website-and-features" aria-selected="false" tabindex="-1">Website &amp; Features</button></div>
+          <div class="faq-list" role="tabpanel" id="faq-p-general" aria-labelledby="faq-t-general">
+            <details class="faq-item" open>
+              <summary>What is PetRadius?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>PetRadius is a platform that connects potential adopters with local animal shelters and rescue organizations. We make finding adoptable pets easier through detailed pet profiles, stories, and search tools.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Is PetRadius free to use?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Yes! PetRadius is completely free for people looking to discover adoptable pets and learn more about animal adoption.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Does PetRadius operate as an animal shelter?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>No. PetRadius is an online platform that helps connect people with shelters and rescue organizations. All adoptions are handled directly through the respective organizations.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Where does PetRadius get its pet listings?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Our listings come from animal shelters and rescue organizations. We work to share accurate and updated information about available pets.</p></div>
+            </details>
+          </div>
+          <div class="faq-list" role="tabpanel" id="faq-p-adoption" aria-labelledby="faq-t-adoption" hidden>
+            <details class="faq-item" open>
+              <summary>How do I adopt a pet I find on PetRadius?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Once you find a pet you’re interested in, visit the associated shelter’s profile or website to learn about its adoption process and submit an application.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Can I meet a pet before adopting it?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Yes! Most shelters allow potential adopters to schedule a meeting with an animal before making an adoption decision. Contact the shelter directly for details.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>What should I consider before adopting a pet?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Consider your lifestyle, living situation, available time, financial responsibilities, and the long-term commitment of caring for an animal.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Are all pets listed on PetRadius still available?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Availability can change quickly as pets get adopted or placed on hold. We recommend contacting the shelter directly to confirm a pet’s current availability.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Can I adopt a pet from a shelter outside my area?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Adoption policies vary by organization. Some shelters accept applications from people outside their local area, while others have geographic restrictions.</p></div>
+            </details>
+          </div>
+          <div class="faq-list" role="tabpanel" id="faq-p-shelters-and-rescues" aria-labelledby="faq-t-shelters-and-rescues" hidden>
+            <details class="faq-item" open>
+              <summary>Can my animal shelter partner with PetRadius?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Absolutely! We welcome partnerships with animal shelters and rescue organizations interested in increasing their visibility and helping more animals find homes.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Does PetRadius charge shelters to be featured?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>No. Our goal is to provide shelters with free promotional opportunities and help increase exposure for their adoptable animals.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>How can my shelter submit pets to PetRadius?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Shelters interested in being featured can contact our team to discuss partnership opportunities and the process of submitting pet profiles.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Can shelters request specific animals to be featured?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Yes! We especially encourage shelters to share animals that have been waiting longer for adoption or need additional visibility.</p></div>
+            </details>
+          </div>
+          <div class="faq-list" role="tabpanel" id="faq-p-website-and-features" aria-labelledby="faq-t-website-and-features" hidden>
+            <details class="faq-item" open>
+              <summary>How can I search for specific pets?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>You can use our search filters to narrow down available pets based on factors such as location, breed, age, and size.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Why does PetRadius include individual pet stories?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>We believe every animal has a unique personality and background. Sharing their stories helps potential adopters connect with pets beyond their basic information.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>What should I do if I notice incorrect information on a pet profile?<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="faq-answer"><p>Please contact us with the pet’s name and the information that needs updating so we can look into it.</p></div>
+            </details>
+          </div>
       </div>
     </section>
 
@@ -248,7 +299,7 @@
     </div>
   </footer>
 
-  <script src="./assets/js/main.js?v=2e58e41a"></script>
+  <script src="./assets/js/main.js?v=a671ebbe"></script>
   <script type="module" src="./assets/js/account.js?v=abac2516"></script>
 </body>
 </html>
