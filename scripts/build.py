@@ -279,7 +279,8 @@ def icon(name, extra=""):
         "download": '<path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/>',
         "external": '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
     }
-    return ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" '
+    # width/height are a fallback so icons stay small even if a stylesheet fails to load (CSS sets the real size)
+    return ('<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" '
             'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"%s>%s</svg>') % (extra, paths[name])
 
 e = html.escape
@@ -474,7 +475,24 @@ def pet_card(pet, p):
         </div>"""
 
 
+_asset_versions = {}
+
+
+def _versioned(m):
+    """Add ?v=<content hash> to local CSS/JS links so browsers always load the latest file after an update."""
+    url = m.group(2)
+    rel = re.sub(r"^(\./|\.\./)+", "", url)
+    f = os.path.join(ROOT, rel)
+    if rel not in _asset_versions and os.path.isfile(f):
+        import hashlib
+        with open(f, "rb") as fh:
+            _asset_versions[rel] = hashlib.sha256(fh.read()).hexdigest()[:8]
+    v = _asset_versions.get(rel)
+    return f'{m.group(1)}"{url}?v={v}"' if v else m.group(0)
+
+
 def write(path, content):
+    content = re.sub(r'((?:href|src)=)"((?:\./|\.\./)*assets/(?:css|js)/[\w.-]+\.(?:css|js))"', _versioned, content)
     out = os.path.join(ROOT, path, "index.html") if path else os.path.join(ROOT, "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
